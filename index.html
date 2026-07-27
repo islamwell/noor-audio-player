@@ -378,7 +378,7 @@ canvas#viz{width:100%;height:56px;display:block;opacity:.9}
     </div>
     <nav class="nav" id="nav"></nav>
     <div class="side-foot"><span class="dot"></span><span id="srcNote">loading playlist…</span></div>
-    <div class="side-ver" id="sideVer">v1.0.1 (updated 2026-07-27 05:55)</div>
+    <div class="side-ver" id="sideVer">v1.0.5 (updated 2026-07-27 06:15)</div>
   </aside>
 
   <!-- ░░ MAIN ░░ -->
@@ -579,20 +579,38 @@ const save=()=>{localStorage.setItem('noor.fav',JSON.stringify([...st.fav]));loc
 
 /* ═══════════ PARSER ═══════════ */
 function parse(txt){
-  const cats=[];let c=null,n=0;
+  const cats=[];let c=null,n=0,sc=null;
   txt.split(/\r?\n/).forEach(raw=>{
     const l=raw.trim();
     if(!l||l.startsWith('//')||l.startsWith(';'))return;
+    if(l.startsWith('##')){
+      if(!c)return;
+      const subName=l.replace(/^#+\s*/,'').trim();
+      sc={id:c.id+'_s'+(c.subcats?c.subcats.length:0),name:subName||'General',tracks:[]};
+      if(!c.subcats)c.subcats=[];
+      c.subcats.push(sc);
+      return;
+    }
     if(l.startsWith('#')){
       const[b,ic]=l.replace(/^#+\s*/,'').split('::').map(x=>x&&x.trim());
-      c={id:'c'+cats.length,name:b||'Collection',icon:CAT_ICON[(ic||'').toLowerCase()]||'star',desc:'',grad:GRADS[cats.length%GRADS.length],tracks:[]};
+      c={id:'c'+cats.length,name:b||'Collection',icon:CAT_ICON[(ic||'').toLowerCase()]||'star',desc:'',grad:GRADS[cats.length%GRADS.length],tracks:[],subcats:[]};
+      sc=null;
       cats.push(c);return;
     }
     if(l.startsWith('@')){if(c)c.desc=l.slice(1).trim();return}
     const p=l.split('|').map(x=>x.trim());
     if(p.length<2||!/^https?:|^\.?\/|\.mp3|\.m4a|\.ogg|\.wav/i.test(p[1]))return;
-    if(!c){c={id:'c0',name:'Library',icon:'star',desc:'',grad:GRADS[0],tracks:[]};cats.push(c)}
-    c.tracks.push({id:'t'+(n++),title:p[0],url:p[1],artist:p[2]||c.name,dur:p[3]||'',cid:c.id,cname:c.name,icon:c.icon,grad:c.grad});
+    if(!c){c={id:'c0',name:'Library',icon:'star',desc:'',grad:GRADS[0],tracks:[],subcats:[]};cats.push(c)}
+    const tr={id:'t'+(n++),title:p[0],url:p[1],artist:p[2]||c.name,dur:p[3]||'',cid:c.id,cname:c.name,icon:c.icon,grad:c.grad};
+    c.tracks.push(tr);
+    if(sc)sc.tracks.push(tr);
+    else {
+      if(!c.subcats.length){
+        sc={id:c.id+'_s0',name:'General',tracks:[]};
+        c.subcats.push(sc);
+      }
+      c.subcats[0].tracks.push(tr);
+    }
   });
   return cats.filter(x=>x.tracks.length);
 }
@@ -622,7 +640,25 @@ const byId=id=>st.all.find(t=>t.id===id);
   buildNav();render();
   const v=+(localStorage.getItem('noor.vol')??85);$('#volR').value=v;setVol(v);
   toast(I.check,st.all.length+' tracks loaded from '+src);
+
+  document.addEventListener('click', e => {
+    if (e.target.closest('#sideVer') || e.target.closest('#footer-version')) {
+      forceUpdate();
+    }
+  });
 })();
+
+function forceUpdate(){
+  toast(I.info, 'Checking for updates & clearing cache...');
+  setTimeout(()=>{
+    if('caches' in window){
+      caches.keys().then(names=>names.forEach(name=>caches.delete(name)));
+    }
+    const url=new URL(window.location.href);
+    url.searchParams.set('v', Date.now());
+    window.location.href=url.toString();
+  },500);
+}
 
 /* ═══════════ NAV & CHIPS ═══════════ */
 function buildNav(){
@@ -631,23 +667,52 @@ function buildNav(){
    <button class="nitem" data-go="home">${I.star}<span>Discover</span></button>
    <button class="nitem" data-go="fav">${I.heart}<span>Favourites</span><span class="cnt">${st.fav.size}</span></button>
    <div class="nav-lbl">Collections</div>`;
-  st.cats.forEach(c=>h+=`<button class="nitem" data-go="cat" data-id="${c.id}">${I[c.icon]}<span>${esc(c.name)}</span><span class="cnt">${c.tracks.length}</span></button>`);
+  st.cats.forEach(c=>{
+    const hasSub = c.subcats && (c.subcats.length>1 || c.subcats[0].name !== 'General');
+    h+=`<div class="nav-grp" style="display:flex;flex-direction:column;">
+      <div style="display:flex;align-items:center;">
+        <button class="nitem" data-go="cat" data-id="${c.id}" style="flex:1">${I[c.icon]}<span>${esc(c.name)}</span><span class="cnt">${c.tracks.length}</span></button>
+        ${hasSub ? `<button class="nav-exp" data-exp="${c.id}" aria-label="Expand" style="background:none;border:none;color:var(--text-3);padding:10px;cursor:pointer;display:flex;align-items:center;">▾</button>` : ''}
+      </div>
+      ${hasSub ? `<div class="sub-nav" id="snav_${c.id}" style="display:none;padding-left:24px;flex-direction:column;gap:2px;margin-bottom:4px;">
+        ${c.subcats.map(sc => `<button class="nitem" data-go="cat" data-id="${c.id}" data-sub="${sc.id}" style="padding:6px 10px;font-size:12.5px;min-height:34px;"><span style="flex:1;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">↳ ${esc(sc.name)}</span><span class="cnt" style="font-size:11px;">${sc.tracks.length}</span></button>`).join('')}
+      </div>` : ''}
+    </div>`;
+  });
   nav.innerHTML=h;
   ch.innerHTML=`<button class="chip" data-go="home">${I.star} All</button>`+
     st.cats.map(c=>`<button class="chip" data-go="cat" data-id="${c.id}">${I[c.icon]} ${esc(c.name)}</button>`).join('')+
     `<button class="chip" data-go="fav">${I.heart} Favourites</button>`;
   [nav,ch].forEach(el=>el.addEventListener('click',e=>{
-    const b=e.target.closest('[data-go]');if(!b)return;
-    go(b.dataset.go==='cat'?{t:'cat',id:b.dataset.id}:{t:b.dataset.go});
+    const exp=e.target.closest('[data-exp]');
+    if(exp){
+      e.stopPropagation();
+      const snav=$('#snav_'+exp.dataset.exp);
+      if(snav)snav.style.display=snav.style.display==='none'?'flex':'none';
+      return;
+    }
+    const b=e.target.closest('[data-go]');
+    if(!b)return;
+    go(b.dataset.go==='cat'?{t:'cat',id:b.dataset.id,sub:b.dataset.sub||null}:{t:b.dataset.go});
     closeSide();
   }));
 }
 function markNav(){
   const k=st.view.t==='cat'?st.view.id:st.view.t;
+  const subk=st.view.sub;
   $$('.nitem,.chip').forEach(b=>{
     const key=b.dataset.go==='cat'?b.dataset.id:b.dataset.go;
-    b.classList.toggle(b.classList.contains('chip')?'on':'on',key===k);
+    const isSub=b.dataset.sub;
+    if(isSub){
+      b.classList.toggle('on',key===k&&isSub===subk);
+    } else {
+      b.classList.toggle(b.classList.contains('chip')?'on':'on',key===k&&!subk);
+    }
   });
+  if(st.view.t==='cat'){
+    const snav=$('#snav_'+st.view.id);
+    if(snav)snav.style.display='flex';
+  }
 }
 function go(v){st.view=v;st.search='';$('#q').value='';render();window.scrollTo({top:0,behavior:'smooth'})}
 
@@ -676,6 +741,41 @@ function render(){
   }
   if(v.t==='cat'){
     const c=st.cats.find(x=>x.id===v.id);if(!c)return go({t:'home'});
+    const hasSub=c.subcats&&(c.subcats.length>1||c.subcats[0].name!=='General');
+    let subHTML='';
+    if(hasSub){
+      subHTML=`<div class="sub-chips" style="display:flex;gap:8px;margin:20px 0;flex-wrap:wrap;">
+        <button class="chip ${!v.sub?'on':''}" data-subbtn="all" style="cursor:pointer;">All (${c.tracks.length})</button>
+        ${c.subcats.map(sc=>`<button class="chip ${v.sub===sc.id?'on':''}" data-subbtn="${sc.id}" style="cursor:pointer;">${esc(sc.name)} (${sc.tracks.length})</button>`).join('')}
+      </div>`;
+    }
+    let bodyHTML='';
+    if(!hasSub||!v.sub||v.sub==='all'){
+      if(hasSub){
+        bodyHTML=c.subcats.map(sc=>`
+          <div class="subcat-acc" style="margin-bottom: 24px; border: 1px solid var(--stroke); border-radius: 14px; overflow: hidden; background: rgba(255,255,255,0.02);">
+            <div class="subcat-hdr" data-toggleacc="${sc.id}" style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(255,255,255,0.03);cursor:pointer;border-bottom:1px solid var(--stroke);">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <span style="color:var(--text-1);font-weight:600;font-size:15px;">${esc(sc.name)}</span>
+                <span style="font-size:12px;color:var(--text-3);background:rgba(255,255,255,0.06);padding:2px 8px;border-radius:12px;">${sc.tracks.length} tracks</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;">
+                <button class="btn p" data-playsub="${sc.id}" style="padding:6px 12px;font-size:12.5px;min-height:32px;" onclick="event.stopPropagation()">${I.play} Play</button>
+                <span class="acc-arr" id="arr_${sc.id}" style="color:var(--text-3);transition:transform 0.2s;">▾</span>
+              </div>
+            </div>
+            <div class="rowgrid acc-body" id="body_${sc.id}" style="padding:14px;display:grid;">
+              ${sc.tracks.map(rowHTML).join('')}
+            </div>
+          </div>
+        `).join('');
+      } else {
+        bodyHTML=`<div class="rowgrid">${c.tracks.map(rowHTML).join('')}</div>`;
+      }
+    } else {
+      const sc=c.subcats.find(x=>x.id===v.sub)||c.subcats[0];
+      bodyHTML=`<div class="shead"><h3>${esc(sc.name)}</h3><div class="line"></div></div><div class="rowgrid">${sc.tracks.map(rowHTML).join('')}</div>`;
+    }
     el.innerHTML=`<button class="back">${I.chevL} All collections</button>
       <div class="banner" style="--grad:${c.grad}"><div class="glow"></div><div class="pat"></div>
         <div class="banner-in"><div class="bico">${I[c.icon]}</div>
@@ -683,8 +783,9 @@ function render(){
           <div style="display:flex;gap:10px"><button class="btn p" data-all="${c.id}">${I.play} Play all</button>
           <button class="btn g" data-shuf="${c.id}">${I.shuffle} Shuffle</button></div>
         </div></div>
+      ${subHTML}
       <div class="shead"><h3>Tracks</h3><div class="line"></div></div>
-      <div class="rowgrid">${c.tracks.map(rowHTML).join('')}</div>`;
+      ${bodyHTML}`;
     el.querySelector('.back').onclick=()=>go({t:'home'});
     markNav();bind(c.tracks);return;
   }
@@ -732,24 +833,55 @@ function render(){
       <div class="rowgrid">${c.tracks.slice(0,4).map(rowHTML).join('')}</div>`).join('')}
     <footer style="margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--stroke); color: var(--text-3); font-size: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
       <div>Noor · Islamic Audio Player</div>
-      <div id="footer-version">v1.0.1 (updated 2026-07-27 05:55)</div>
+      <div id="footer-version">v1.0.5 (updated 2026-07-27 06:15)</div>
     </footer>`;
   el.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go({t:'cat',id:b.dataset.id}));
   markNav();bind(st.all);
 }
 const emptyHTML=(h,p)=>`<div class="empty">${I.sad}<h4>${h}</h4><p>${p}</p></div>`;
-function bind(ctx){
-  $('#view').addEventListener('click',e=>{
-    const f=e.target.closest('[data-fav]');
-    if(f){e.stopPropagation();toggleFav(f.dataset.fav);return}
-    const p=e.target.closest('[data-play]');
-    if(p){play(p.dataset.play,ctx);return}
-    const a=e.target.closest('[data-all]');if(a){const c=st.cats.find(x=>x.id===a.dataset.all);play(c.tracks[0].id,c.tracks);return}
-    const s=e.target.closest('[data-shuf]');if(s){const c=st.cats.find(x=>x.id===s.dataset.shuf);st.shuffle=true;syncToggles();play(c.tracks[(Math.random()*c.tracks.length)|0].id,c.tracks);return}
-    if(e.target.closest('[data-shufall]')){st.shuffle=true;syncToggles();play(st.all[(Math.random()*st.all.length)|0].id,st.all);return}
-    if(e.target.closest('[data-favall]')){const f=st.all.filter(t=>st.fav.has(t.id));if(f.length)play(f[0].id,f);return}
-  },{once:true});
-}
+let currentCtx=null;
+function bind(ctx){currentCtx=ctx||st.all}
+$('#view').addEventListener('click',e=>{
+  const f=e.target.closest('[data-fav]');
+  if(f){e.stopPropagation();e.preventDefault();toggleFav(f.dataset.fav);return}
+  const tacc=e.target.closest('[data-toggleacc]');
+  if(tacc){
+    e.stopPropagation();
+    const sid=tacc.dataset.toggleacc;
+    const body=$('#body_'+sid), arr=$('#arr_'+sid);
+    if(body){
+      const isHidden=body.style.display==='none';
+      body.style.display=isHidden?'grid':'none';
+      if(arr)arr.style.transform=isHidden?'rotate(0deg)':'rotate(-90deg)';
+    }
+    return;
+  }
+  const psub=e.target.closest('[data-playsub]');
+  if(psub){
+    e.stopPropagation();
+    const sid=psub.dataset.playsub;
+    for(const cat of st.cats){
+      if(cat.subcats){
+        const sc=cat.subcats.find(x=>x.id===sid);
+        if(sc&&sc.tracks.length){play(sc.tracks[0].id,sc.tracks);return}
+      }
+    }
+    return;
+  }
+  const sbtn=e.target.closest('[data-subbtn]');
+  if(sbtn){
+    e.stopPropagation();
+    const subid=sbtn.dataset.subbtn;
+    go({t:'cat', id:st.view.id, sub: subid==='all'?null:subid});
+    return;
+  }
+  const p=e.target.closest('[data-play]');
+  if(p){play(p.dataset.play,currentCtx);return}
+  const a=e.target.closest('[data-all]');if(a){const c=st.cats.find(x=>x.id===a.dataset.all);if(c)play(c.tracks[0].id,c.tracks);return}
+  const s=e.target.closest('[data-shuf]');if(s){const c=st.cats.find(x=>x.id===s.dataset.shuf);if(c){st.shuffle=true;syncToggles();play(c.tracks[(Math.random()*c.tracks.length)|0].id,c.tracks)}return}
+  if(e.target.closest('[data-shufall]')){st.shuffle=true;syncToggles();play(st.all[(Math.random()*st.all.length)|0].id,st.all);return}
+  if(e.target.closest('[data-favall]')){const fTracks=st.all.filter(t=>st.fav.has(t.id));if(fTracks.length)play(fTracks[0].id,fTracks);return}
+});
 function toggleFav(id){
   st.fav.has(id)?st.fav.delete(id):st.fav.add(id);save();
   toast(I.heart,st.fav.has(id)?'Added to favourites':'Removed from favourites');
