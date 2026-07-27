@@ -613,11 +613,20 @@ const A=document.getElementById('audio');
 const st={cats:[],all:[],view:{t:'home'},queue:[],qi:-1,cur:null,shuffle:false,repeat:'off',
   fav:new Set(JSON.parse(localStorage.getItem('noor.fav')||'[]')),
   recent:JSON.parse(localStorage.getItem('noor.recent')||'[]'),
+  pos:JSON.parse(localStorage.getItem('noor.pos')||'{}'),
   rate:1,sleep:0,sleepT:null,muted:false,search:''};
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmt=s=>{if(!isFinite(s)||s<0)s=0;const m=Math.floor(s/60),x=Math.floor(s%60);return m+':'+String(x).padStart(2,'0')};
-const save=()=>{localStorage.setItem('noor.fav',JSON.stringify([...st.fav]));localStorage.setItem('noor.recent',JSON.stringify(st.recent.slice(0,14)))};
+const save=()=>{localStorage.setItem('noor.fav',JSON.stringify([...st.fav]));localStorage.setItem('noor.recent',JSON.stringify(st.recent.slice(0,14)));localStorage.setItem('noor.pos',JSON.stringify(st.pos))};
+const savePos=()=>{
+  if(st.cur && A && isFinite(A.currentTime) && A.currentTime > 3 && (!A.duration || A.duration - A.currentTime > 3)){
+    st.pos[st.cur.id] = Math.floor(A.currentTime);
+    localStorage.setItem('noor.pos', JSON.stringify(st.pos));
+  }
+};
+window.addEventListener('beforeunload', savePos);
+window.addEventListener('pagehide', savePos);
 
 /* ═══════════ PARSER ═══════════ */
 function parse(txt){
@@ -681,6 +690,14 @@ const byId=id=>st.all.find(t=>t.id===id);
   const note=$('#srcNote'); if(note) note.textContent=st.all.length+' tracks · '+src;
   buildNav();render();
   const v=+(localStorage.getItem('noor.vol')??85);$('#volR').value=v;setVol(v);
+  if(st.recent.length && byId(st.recent[0])){
+    st.cur = byId(st.recent[0]);
+    st.queue = st.all.map(x=>x.id);
+    st.qi = st.queue.indexOf(st.cur.id);
+    A.src = st.cur.url;
+    paintNow();
+    $('#pbar').classList.add('up');
+  }
   toast(I.check,st.all.length+' tracks loaded from '+src);
 
   document.addEventListener('click', e => {
@@ -762,12 +779,13 @@ function go(v){st.view=v;st.search='';$('#q').value='';if(typeof closeSearchDrop
 function artHTML(t,cls){return `<div class="art ${cls||''}" style="--grad:${t.grad}"><div class="pat"></div>${I[t.icon]}<div class="ov">${I.play}</div></div>`}
 function rowHTML(t,i){
   const on=st.cur&&st.cur.id===t.id;
+  const posBadge=st.pos[t.id] && st.pos[t.id]>3 ? `<span style="font-size:11px;color:var(--em);background:color-mix(in srgb,var(--em) 15%,transparent);padding:2px 6px;border-radius:6px;margin-right:6px;display:inline-flex;align-items:center;gap:3px;" title="Resumes at ${fmt(st.pos[t.id])}">⏱ ${fmt(st.pos[t.id])}</span>` : '';
   return `<div class="tr ${on?'on':''} ${on&&A.paused?'paused':''}" data-play="${t.id}">
     ${artHTML(t)}
     <div class="tmeta"><h5>${esc(t.title)}</h5><p>${esc(t.artist)} · ${esc(t.cname)}</p></div>
     <div class="tright">
       ${on?`<div class="eq"><i></i><i></i><i></i><i></i></div>`:''}
-      <span class="dur">${t.dur||durCache[t.id]||''}</span>
+      <span class="dur">${posBadge}${t.dur||durCache[t.id]||''}</span>
       <button class="fav ${st.fav.has(t.id)?'on':''}" data-fav="${t.id}" aria-label="Favourite">${I.heart}</button>
     </div></div>`;
 }
@@ -879,7 +897,7 @@ function render(){
     <footer style="margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--stroke); color: var(--text-3); font-size: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
       <div>NurulQuran · Islamic Audio Player</div>
       <div class="footer-bottom">
-        <div id="footer-version">v1.0.10 (updated 2026-07-27 07:58)</div>
+        <div id="footer-version">v1.0.11 (updated 2026-07-27 08:08)</div>
         <div style="font-size: 11px; opacity: 0.7;">Click version number to clear cache & force reload</div>
       </div>
     </footer>`;
@@ -943,6 +961,11 @@ function toggleFav(id){
 /* ═══════════ PLAYBACK ═══════════ */
 function play(id,ctx){
   const t=byId(id);if(!t)return;
+  if(st.cur && st.cur.id === id && A.src){
+    if(A.paused) A.play(); else A.pause();
+    return;
+  }
+  savePos();
   if(ctx&&ctx.length){st.queue=ctx.map(x=>x.id)}else if(!st.queue.length){st.queue=st.all.map(x=>x.id)}
   st.qi=st.queue.indexOf(id);
   st.cur=t;
@@ -991,7 +1014,11 @@ function next(user){
   A.pause();
 }
 function prev(){
-  if(A.currentTime>4)return A.currentTime=0;
+  if(A.currentTime>4){
+    A.currentTime=0;
+    if(st.cur){delete st.pos[st.cur.id];localStorage.setItem('noor.pos',JSON.stringify(st.pos));}
+    return;
+  }
   if(st.qi>0)play(st.queue[st.qi-1]);else A.currentTime=0;
 }
 $('#playB').onclick=$('#playB2').onclick=()=>{
@@ -1018,18 +1045,37 @@ A.addEventListener('play',()=>{
 A.addEventListener('pause',()=>{
   const ic=I.play;$('#playB').innerHTML=ic;$('#playB2').innerHTML=ic;
   $('#sheet').classList.remove('playing');$$('.tr.on').forEach(e=>e.classList.add('paused'));
+  savePos();
 });
-A.addEventListener('ended',()=>{if(st.repeat==='one'){A.currentTime=0;A.play()}else next(false)});
+A.addEventListener('ended',()=>{
+  if(st.cur){delete st.pos[st.cur.id];localStorage.setItem('noor.pos',JSON.stringify(st.pos));}
+  if(st.repeat==='one'){A.currentTime=0;A.play()}else next(false);
+});
 A.addEventListener('error',()=>toast(I.info,'Playback failed — the source may be offline'));
 A.addEventListener('loadedmetadata',()=>{
   const d=fmt(A.duration);$('#tDur').textContent=d;$('#tDur2').textContent=d;
   if(st.cur){durCache[st.cur.id]=d;const e=$('.tr.on .dur');if(e)e.textContent=d}
+  if(st.cur && st.pos[st.cur.id] && isFinite(st.pos[st.cur.id]) && st.pos[st.cur.id] > 3 && (!A.duration || A.duration - st.pos[st.cur.id] > 3)){
+    A.currentTime = st.pos[st.cur.id];
+    toast(I.clock, 'Resumed from ' + fmt(st.pos[st.cur.id]));
+  }
 });
 A.addEventListener('timeupdate',()=>{
   const p=A.duration?A.currentTime/A.duration*100:0;
   $('#f1').style.width=p+'%';$('#f2').style.width=p+'%';
   $('#h1').style.left=p+'%';$('#h2').style.left=p+'%';$('#pline').style.width=p+'%';
   $('#tCur').textContent=$('#tCur2').textContent=fmt(A.currentTime);
+  if(st.cur){
+    if(A.currentTime > 3 && (!A.duration || A.duration - A.currentTime > 3)){
+      st.pos[st.cur.id] = Math.floor(A.currentTime);
+      if(Math.floor(A.currentTime) % 5 === 0){
+        localStorage.setItem('noor.pos', JSON.stringify(st.pos));
+      }
+    } else if(A.currentTime <= 3 && st.pos[st.cur.id]){
+      delete st.pos[st.cur.id];
+      localStorage.setItem('noor.pos', JSON.stringify(st.pos));
+    }
+  }
 });
 
 /* seek */
