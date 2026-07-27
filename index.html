@@ -337,7 +337,7 @@ canvas#viz{width:100%;height:56px;display:block;opacity:.9}
   box-shadow:var(--shadow);animation:tin .35s var(--ease)}
 .toast svg{width:17px;height:17px;color:var(--em);flex:none}
 @keyframes tin{from{opacity:0;transform:translateY(14px) scale(.96)}}
-.scrim{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.6);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:.3s}
+.scrim{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:.3s}
 .scrim.on{opacity:1;pointer-events:auto}
 
 /* ============ RESPONSIVE ============ */
@@ -345,7 +345,7 @@ canvas#viz{width:100%;height:56px;display:block;opacity:.9}
 @media(max-width:1000px){
   .app{grid-template-columns:1fr}
   .side{position:fixed;left:0;top:0;z-index:50;width:290px;transform:translateX(-102%);transition:transform .45s var(--ease);
-    background:color-mix(in srgb,var(--bg-2) 96%,transparent)}
+    background:color-mix(in srgb,var(--bg-2) 98%,#000);backdrop-filter:none}
   .side.open{transform:none;box-shadow:var(--shadow)}
   .menu-btn{display:grid}
   .sheet-body{gap:26px}
@@ -799,7 +799,7 @@ function render(){
     el.innerHTML=`<button class="back">${I.chevL} All collections</button>
       <div class="banner" style="--grad:${c.grad}"><div class="glow"></div><div class="pat"></div>
         <div class="banner-in"><div class="bico">${I[c.icon]}</div>
-          <div style="flex:1;min-width:200px"><h2>${esc(c.name)}</h2><p>${esc(c.desc||'Curated audio collection')} · ${c.tracks.length} tracks</p></div>
+          <div style="flex:1;min-width:200px;overflow:hidden;"><h2>${esc(c.name)}</h2>${c.desc?`<p class="ar" style="margin:6px 0 4px;font-size:16.5px;color:var(--gold);direction:rtl;text-align:right;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(c.desc)}</p>`:''}<p style="margin:2px 0 0;font-size:13px;color:var(--text-2);">${c.tracks.length} tracks</p></div>
           <div style="display:flex;gap:10px"><button class="btn p" data-all="${c.id}">${I.play} Play all</button>
           <button class="btn g" data-shuf="${c.id}">${I.shuffle} Shuffle</button></div>
         </div></div>
@@ -844,7 +844,7 @@ function render(){
       <button class="tile" data-go="cat" data-id="${c.id}" style="--grad:${c.grad}">
         <div class="glow"></div><div class="pat"></div>
         <div class="ico">${I[c.icon]}</div>
-        <div><h4>${esc(c.name)}</h4><p>${c.tracks.length} tracks${c.desc?' · '+esc(c.desc.slice(0,42)):''}</p></div>
+        <div style="position:relative;width:100%;overflow:hidden;"><h4>${esc(c.name)}</h4>${c.desc?`<p class="ar" style="margin:4px 0 2px;font-size:13.2px;color:var(--gold);direction:rtl;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100%;">${esc(c.desc)}</p>`:''}<p style="margin:2px 0 0;font-size:11.5px;color:var(--text-3);">${c.tracks.length} tracks</p></div>
         <div class="arrow">${I.chevR}</div>
       </button>`).join('')}</div>
     ${rec.length?`<div class="shead"><h3>Recently played</h3><div class="line"></div></div><div class="rowgrid">${rec.map(rowHTML).join('')}</div>`:''}
@@ -854,7 +854,7 @@ function render(){
     <footer style="margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--stroke); color: var(--text-3); font-size: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
       <div>NurulQuran · Islamic Audio Player</div>
       <div class="footer-bottom">
-        <div id="footer-version">v1.0.7 (updated 2026-07-27 06:50)</div>
+        <div id="footer-version">v1.0.8 (updated 2026-07-27 07:05)</div>
         <div style="font-size: 11px; opacity: 0.7;">Click version number to clear cache & force reload</div>
       </div>
     </footer>`;

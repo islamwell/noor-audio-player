@@ -2,7 +2,7 @@
 // Syntax: # Category Name :: icon | ## Sub-collection Name | Track Title | URL | Artist
 
 # AJJ HaveANiceDay :: quran
-@ Curated audio collection from NQ International — 18 tracks
+@ الله نور السماوات والأرض مثل نوره كمشكاة فيها مصباح
 Aaj Ki Baat Aallam Iqbal Poem Baang e Dara | https://nq-international.com/wp-content/uploads/AJJ-HaveANiceDay/Aaj-Ki-Baat-Aallam-Iqbal-Poem-Baang-e-Dara.mp3 | AJJ HaveANiceDay
 Aaj Ki Baat Beautiful LifeQuotes 13 | https://nq-international.com/wp-content/uploads/AJJ-HaveANiceDay/Aaj-Ki-Baat-Beautiful-LifeQuotes-13.mp3 | AJJ HaveANiceDay
 Aaj Ki Baat Benefits Of Team Work | https://nq-international.com/wp-content/uploads/AJJ-HaveANiceDay/Aaj-Ki-Baat-Benefits-Of-Team-Work.mp3 | AJJ HaveANiceDay
@@ -23,7 +23,7 @@ DS PoqtaKirdaar(Day8) | https://nq-international.com/wp-content/uploads/AJJ-Have
 DS Women never be pleased(Day4) 6 min | https://nq-international.com/wp-content/uploads/AJJ-HaveANiceDay/DS_Women%20never%20be%20pleased%28Day4%29%20--6%20min.mp3 | AJJ HaveANiceDay
 
 # Aaj ki Baat :: book
-@ Curated audio collection from NQ International — 14 tracks
+@ إن هذا القرآن يهدي للتي هي أقوم ويبشر المؤمنين
 2017 02 16 AUDIO 00000177 | https://nq-international.com/wp-content/uploads/Aaj%20ki%20Baat/2017-02-16-AUDIO-00000177.mp3 | Aaj ki Baat
 AJJ Blow fish ka lesson | https://nq-international.com/wp-content/uploads/Aaj%20ki%20Baat/AJJ_Blow%20fish%20ka%20lesson.mp3 | Aaj ki Baat
 AJJ Khauf khuda aik Naimat | https://nq-international.com/wp-content/uploads/Aaj%20ki%20Baat/AJJ_Khauf%20khuda%20aik%20Naimat.mp3 | Aaj ki Baat
@@ -40,7 +40,7 @@ Short Clip Ibadet Kia Hoti Hai | https://nq-international.com/wp-content/uploads
 Short Clip Kamiabi Ki Kunji | https://nq-international.com/wp-content/uploads/Aaj%20ki%20Baat/Short%20Clip_%20Kamiabi%20Ki%20Kunji.mp3 | Aaj ki Baat
 
 # Aaj ki baat Lesson from history(Azmat Mumin) :: scroll
-@ Curated audio collection from NQ International — 7 tracks
+@ وننزل من القرآن ما هو شفاء ورحمة للمؤمنين
 Ajj LFH Auranzeb Aalamgeer | https://nq-international.com/wp-content/uploads/Aaj%20ki%20baat-Lesson%20from%20history%28Azmat%20Mumin%29/Ajj%20-LFH%20-Auranzeb%20Aalamgeer.mp3 | Aaj ki baat Lesson from history(Azmat Mumin)
 Ajj LFH I mkaan kabhi khatum nahin hota | https://nq-international.com/wp-content/uploads/Aaj%20ki%20baat-Lesson%20from%20history%28Azmat%20Mumin%29/Ajj_LFH%20-I%20mkaan%20kabhi%20khatum%20nahin%20hota.mp3 | Aaj ki baat Lesson from history(Azmat Mumin)
 Ajj LFH Ikhtlaf kyy bawajood | https://nq-international.com/wp-content/uploads/Aaj%20ki%20baat-Lesson%20from%20history%28Azmat%20Mumin%29/Ajj%20_LFH%20-Ikhtlaf%20kyy%20bawajood.mp3 | Aaj ki baat Lesson from history(Azmat Mumin)
@@ -50,7 +50,7 @@ Ajj LFH Tareekh ka safha | https://nq-international.com/wp-content/uploads/Aaj%2
 Ajj LFH Zalim ka dil hil gya | https://nq-international.com/wp-content/uploads/Aaj%20ki%20baat-Lesson%20from%20history%28Azmat%20Mumin%29/Ajj-LFH-%20Zalim%20ka%20dil%20hil%20gya.mp3 | Aaj ki baat Lesson from history(Azmat Mumin)
 
 # After Ramadan 2019 lectures :: lantern
-@ Curated audio collection from NQ International — 19 tracks
+@ كتاب أنزلناه إليك مبارك ليدبروا آياته وليتذكر أولوا الألباب
 Lect AKHARI SAFAR Prt1 | https://nq-international.com/wp-content/uploads/After%20Ramadan%202019%20lectures/Lect_AKHARI%20SAFAR_Prt1.mp3 | After Ramadan 2019 lectures
 Lect AKHARI SAFAR Prt2 | https://nq-international.com/wp-content/uploads/After%20Ramadan%202019%20lectures/Lect_AKHARI%20SAFAR_Prt2.mp3 | After Ramadan 2019 lectures
 Lect Aulad ky bigar sy nibatny ky asool Prt1 | https://nq-international.com/wp-content/uploads/After%20Ramadan%202019%20lectures/Lect_Aulad%20ky%20bigar%20sy%20nibatny%20ky%20asool_Prt1.mp3 | After Ramadan 2019 lectures
@@ -72,7 +72,7 @@ Lect Zindagi Awr Maut Ka Fasla Prt2 | https://nq-international.com/wp-content/up
 Lect Zindagi Awr Maut Ka Fasla Prt3 | https://nq-international.com/wp-content/uploads/After%20Ramadan%202019%20lectures/Lect_Zindagi%20Awr%20Maut%20Ka%20Fasla_Prt3.mp3 | After Ramadan 2019 lectures
 
 # Akhirat :: crescent
-@ Curated audio collection from NQ International — 10 tracks
+@ الذين آمنوا وتطمئن قلوبهم بذكر الله ألا بذكر الله تطمئن القلوب
 Allah ki kitab awr meyri kitab | https://nq-international.com/wp-content/uploads/Akhirat/Allah_ki_kitab_awr_meyri_kitab.mp3 | Akhirat
 DL Gunnahu ky asaraat | https://nq-international.com/wp-content/uploads/Akhirat/DL-Gunnahu%20ky%20asaraat.mp3 | Akhirat
 Deen Ki Badi Tasweer A | https://nq-international.com/wp-content/uploads/Akhirat/Deen%20Ki%20Badi%20Tasweer-A.mp3 | Akhirat
@@ -85,7 +85,7 @@ jeeny ky 2 rasty | https://nq-international.com/wp-content/uploads/Akhirat/jeeny
 surrah yasin ka message | https://nq-international.com/wp-content/uploads/Akhirat/surrah_yasin_ka_message.mp3 | Akhirat
 
 # Akhiri safar ki tayyari wafaat se dafan tak SEMINAR 5 27 15 :: globe
-@ Curated audio collection from NQ International — 7 tracks
+@ رب زدني علما
 Maut part 1 Berlin masjid CT Seminar | https://nq-international.com/wp-content/uploads/Akhiri-safar-ki-tayyari-wafaat-se-dafan-tak-SEMINAR-5-27-15/Maut-part-1-Berlin-masjid-CT-Seminar.mp3 | Akhiri safar ki tayyari wafaat se dafan tak SEMINAR 5 27 15
 Maut part 2 Berlin masjid CT Seminar | https://nq-international.com/wp-content/uploads/Akhiri-safar-ki-tayyari-wafaat-se-dafan-tak-SEMINAR-5-27-15/Maut-part-2-Berlin-masjid-CT-Seminar.mp3 | Akhiri safar ki tayyari wafaat se dafan tak SEMINAR 5 27 15
 Maut part 3 Berlin masjid CT Seminar presentation | https://nq-international.com/wp-content/uploads/Akhiri-safar-ki-tayyari-wafaat-se-dafan-tak-SEMINAR-5-27-15/Maut-part-3-Berlin-masjid-CT-Seminar-presentation.mp3 | Akhiri safar ki tayyari wafaat se dafan tak SEMINAR 5 27 15
@@ -95,7 +95,7 @@ Maut part 6 Berlin masjid CT Seminar wasiat urdu doc prtB talk on sood | https:/
 Maut part 7 Berlin masjid CT Seminar 2nd prt presentation | https://nq-international.com/wp-content/uploads/Akhiri-safar-ki-tayyari-wafaat-se-dafan-tak-SEMINAR-5-27-15/Maut-part-7-Berlin-masjid-CT-Seminar-2nd-prt-presentation.mp3 | Akhiri safar ki tayyari wafaat se dafan tak SEMINAR 5 27 15
 
 # Ambassador of Islam Short course Islam A Z :: star
-@ Curated audio collection from NQ International — 52 tracks
+@ وعسى أن تكرهوا شيئا وهو خير لكم وعسى أن تحبوا شيئا وهو شر لكم
 ## Aqaaid
 01 Intro Day1 Emmbaseder of Islam November 26 2018 (1) | https://nq-international.com/wp-content/uploads/Ambassador%20of%20Islam-Short%20course-Islam%20A-Z/Aqaaid/01-Intro-Day1-Emmbaseder-of-Islam-November-26-2018%20%281%29.mp3 | Ambassador of Islam Short course Islam A Z
 02 Aqeeda Day1 Emmbasader Of Islam November 26 2018 | https://nq-international.com/wp-content/uploads/Ambassador%20of%20Islam-Short%20course-Islam%20A-Z/Aqaaid/02-Aqeeda-Day1-Emmbasader-Of-Islam-November-26-2018.mp3 | Ambassador of Islam Short course Islam A Z
@@ -154,7 +154,7 @@ Maut part 7 Berlin masjid CT Seminar 2nd prt presentation | https://nq-internati
 18 Mamlaat Day12 Ambassador of Islam | https://nq-international.com/wp-content/uploads/Ambassador%20of%20Islam-Short%20course-Islam%20A-Z/Muaamlaat/18-Mamlaat-Day12-Ambassador-of-Islam.mp3 | Ambassador of Islam Short course Islam A Z
 
 # Ambassador of Islam Sort Course Ashra Mubasharah :: sun
-@ Curated audio collection from NQ International — 13 tracks
+@ وإذ تأذن ربكم لئن شكرتم لأزيدنكم
 01 Abu Baqar edited | https://nq-international.com/wp-content/uploads/Ambassador%20of%20Islam-%20Sort%20Course-Ashra%20Mubasharah/01-Abu-Baqar-edited.mp3 | Ambassador of Islam Sort Course Ashra Mubasharah
 01 Usman e Ghani Edited | https://nq-international.com/wp-content/uploads/Ambassador%20of%20Islam-%20Sort%20Course-Ashra%20Mubasharah/01-Usman%20e%20Ghani%20Edited.mp3 | Ambassador of Islam Sort Course Ashra Mubasharah
 02 Abu Baqar edited | https://nq-international.com/wp-content/uploads/Ambassador%20of%20Islam-%20Sort%20Course-Ashra%20Mubasharah/02-Abu-Baqar-edited.mp3 | Ambassador of Islam Sort Course Ashra Mubasharah
@@ -170,7 +170,7 @@ Umar RA edited | https://nq-international.com/wp-content/uploads/Ambassador%20of
 Zubair Bin Awaam Edited | https://nq-international.com/wp-content/uploads/Ambassador%20of%20Islam-%20Sort%20Course-Ashra%20Mubasharah/Zubair%20Bin%20Awaam-Edited.mp3 | Ambassador of Islam Sort Course Ashra Mubasharah
 
 # Asma al Husna :: gem
-@ Curated audio collection from NQ International — 35 tracks
+@ فارذكروني أذكركم واشكروا لي ولا تكفرون
 1 2 Ar Rahman Ar Raheem | https://nq-international.com/wp-content/uploads/Asma%20al%20Husna/1-2-Ar%20Rahman-Ar%20Raheem.mp3 | Asma al Husna
 10+37 Al MUTAKABBIRAl KABIR | https://nq-international.com/wp-content/uploads/Asma%20al%20Husna/10%2B37-Al-MUTAKABBIRAl-KABIR.mp3 | Asma al Husna
 11 12 Al KHALIQ The creator Al BARI The maker of good | https://nq-international.com/wp-content/uploads/Asma%20al%20Husna/11-12-Al-KHALIQ%20The%20creator%20-Al-BARI%20The%20maker%20of%20good.mp3 | Asma al Husna
@@ -208,11 +208,11 @@ Zubair Bin Awaam Edited | https://nq-international.com/wp-content/uploads/Ambass
 99 AS SABUR | https://nq-international.com/wp-content/uploads/Asma%20al%20Husna/99-AS-SABUR.mp3 | Asma al Husna
 
 # Assorted Lectures :: diamond
-@ Curated audio collection from NQ International — 1 tracks
+@ ادعوني أستجب لكم
 Namae Aamaal | https://nq-international.com/wp-content/uploads/Namae%20%20Aamaal.mp3 | Assorted Lectures
 
 # Assorted lectures :: flower
-@ Curated audio collection from NQ International — 7 tracks
+@ واعتصموا بحبل الله جميعا ولا تفرقوا
 Dua e Istakharah | https://nq-international.com/wp-content/uploads/Assorted%20lectures/Dua-e-Istakharah.mp3 | Assorted lectures
 Future of Islam in Our Hands(a) | https://nq-international.com/wp-content/uploads/Assorted%20lectures/Future%20of%20Islam%20in%20Our%20Hands%28a%29.mp3 | Assorted lectures
 Kal Key Liye Kya Karein | https://nq-international.com/wp-content/uploads/Assorted%20lectures/Kal%20Key%20Liye%20Kya%20Karein.mp3 | Assorted lectures
@@ -222,7 +222,7 @@ Shukar Naimatoon Ko Badha Deta Hai | https://nq-international.com/wp-content/upl
 You Cant plant the trees of paradise with seeds of hell | https://nq-international.com/wp-content/uploads/Assorted%20lectures/You%20Cant%20plant%20the%20trees%20of%20paradise%20with%20seeds%20of%20hell.mp3 | Assorted lectures
 
 # Books :: tree
-@ Curated audio collection from NQ International — 502 tracks
+@ ومن يتق الله يجعل له مخرجا ويرزقه من حيث لا يحتسب
 ## Amaal esey key farishtey utrein
 aykfu action1 pag 21 24 aamal asy kay frishtay utrhay 7 1 16 | https://nq-international.com/wp-content/uploads/Books/Amaal%20esey%20key%20farishtey%20utrein/aykfu-action1-pag-21-24-aamal-asy-kay-frishtay-utrhay-7-1-16.mp3 | Books
 aykfu action11 12 pag 49 55 aamal asy kay frishtay utrhay | https://nq-international.com/wp-content/uploads/Books/Amaal%20esey%20key%20farishtey%20utrein/aykfu-action11-12-pag-49-55-aamal-asy-kay-frishtay-utrhay.mp3 | Books
@@ -754,7 +754,7 @@ Tarbia intro 3 17 2016 Tlaq kay msyial edited | https://nq-international.com/wp-
 Kitaab e Zindagi Mai Kya Hai | https://nq-international.com/wp-content/uploads/Books/Zindagi%20mein%20kiya%20hey/Kitaab%20e%20Zindagi%20Mai%20Kya%20Hai.mp3 | Books
 
 # DQ 2015 :: leaf
-@ Curated audio collection from NQ International — 138 tracks
+@ إن مع العسر يسرا
 DQ15 A Intro .6 15 2015 | https://nq-international.com/wp-content/uploads/DQ%202015/DQ15_A_Intro%20.6-15-2015.mp3 | DQ 2015
 DQ15 B Fatihah .6 15 2015 | https://nq-international.com/wp-content/uploads/DQ%202015/DQ15_B_Fatihah%20.6-15-2015.mp3 | DQ 2015
 DQ15 C Baqrah 1 39 .6 15 2015 | https://nq-international.com/wp-content/uploads/DQ%202015/DQ15_C_Baqrah%201-39%20%20.6-15-2015.mp3 | DQ 2015
@@ -895,7 +895,7 @@ DQ15 para 2 B 177 220 Track 05 .6 17 2015 | https://nq-international.com/wp-cont
 missing ayah of al anaam | https://nq-international.com/wp-content/uploads/DQ%202015/missing%20ayah%20of%20al%20anaam.mp3 | DQ 2015
 
 # DQ 2017 :: fountain
-@ Curated audio collection from NQ International — 205 tracks
+@ رب اشرح لي صدري ويسر لي أمري
 ## Day 00
 01 welcome Ramadan Dil ke sfaii and Ikhlaas Paris 5 21 2017 | https://nq-international.com/wp-content/uploads/DQ%202017/Day%2000/01-welcome-Ramadan-Dil-ke-sfaii-and-Ikhlaas-Paris-%205-21-2017%20.mp3 | DQ 2017
 02 welcome Ramadan Dil ke sfaii and Ikhlaas Paris 5 21 2017 | https://nq-international.com/wp-content/uploads/DQ%202017/Day%2000/02-welcome-Ramadan-Dil-ke-sfaii-and-Ikhlaas-Paris-%205-21-2017%20.mp3 | DQ 2017
@@ -1139,7 +1139,7 @@ Lecture... nikah se talaq taq part b | https://nq-international.com/wp-content/u
 laylatul qadr | https://nq-international.com/wp-content/uploads/DQ%202017/Laylat%20ul%20Qadr%20ki%20fazeelat/laylatul%20qadr.mp3 | DQ 2017
 
 # Dawah CD 2011 :: globe
-@ Curated audio collection from NQ International — 25 tracks
+@ ربنا آتنا في الدنيا حسنة وفي الآخرة حسنة وقنا عذاب النار
 Day of judgement rejoice or regret (Surah Waqiah) CD Track 01 | https://nq-international.com/wp-content/uploads/Dawah%20CD%202011/Day%20of%20judgement%20rejoice%20or%20regret%20%28Surah%20Waqiah%29_CD_Track_01.mp3 | Dawah CD 2011
 Day of judgement rejoice or regret (Surah Waqiah) CD Track 02 | https://nq-international.com/wp-content/uploads/Dawah%20CD%202011/Day%20of%20judgement%20rejoice%20or%20regret%20%28Surah%20Waqiah%29_CD_Track_02.mp3 | Dawah CD 2011
 Day of judgement rejoice or regret (Surah Waqiah) CD Track 03 | https://nq-international.com/wp-content/uploads/Dawah%20CD%202011/Day%20of%20judgement%20rejoice%20or%20regret%20%28Surah%20Waqiah%29_CD_Track_03.mp3 | Dawah CD 2011
@@ -1167,7 +1167,7 @@ Will I Be Forgiven CD Track 03 | https://nq-international.com/wp-content/uploads
 Will I Be Forgiven CD Track 04 | https://nq-international.com/wp-content/uploads/Dawah%20CD%202011/Will%20I%20Be%20Forgiven_CD_Track_04.mp3 | Dawah CD 2011
 
 # Dawah CD 2014 :: globe
-@ Curated audio collection from NQ International — 20 tracks
+@ ربنا لا تزغ قلوبنا بعد إذ هديتنا وهب لنا من لدنك رحمة
 CD2014 Allah key rastey ki rukawat(Track02) | https://nq-international.com/wp-content/uploads/Dawah%20CD%202014/CD2014%20Allah%20key%20rastey%20ki%20rukawat%28Track02%29.mp3 | Dawah CD 2014
 CD2014 Aulad Aik Azeem Sarmaya | https://nq-international.com/wp-content/uploads/Dawah%20CD%202014/CD2014%20Aulad%20Aik%20Azeem%20Sarmaya.mp3 | Dawah CD 2014
 CD2014 Fohash Ka Zehar Track01 | https://nq-international.com/wp-content/uploads/Dawah%20CD%202014/CD2014%20Fohash%20Ka%20Zehar%20Track01.mp3 | Dawah CD 2014
@@ -1190,14 +1190,14 @@ Surah Raad (Track04) | https://nq-international.com/wp-content/uploads/Dawah%20C
 Surah Raad (Track05) | https://nq-international.com/wp-content/uploads/Dawah%20CD%202014/Surah%20Raad%20%28Track05%29.mp3 | Dawah CD 2014
 
 # Dawah CD 2015 :: globe
-@ Curated audio collection from NQ International — 4 tracks
+@ يا أيها الذين آمنوا استعينوا بالصبر والصلاة إن الله مع الصابرين
 Mohamd saw most influenced person (prt1) | https://nq-international.com/wp-content/uploads/Dawah%20CD%202015/Mohamd%20saw%20most%20influenced%20person%20%28prt1%29.mp3 | Dawah CD 2015
 Mohamd saw most influenced person (prt2) | https://nq-international.com/wp-content/uploads/Dawah%20CD%202015/Mohamd%20saw%20most%20influenced%20person%20%28prt2%29.mp3 | Dawah CD 2015
 Mohamd saw most influenced person (prt3) | https://nq-international.com/wp-content/uploads/Dawah%20CD%202015/Mohamd%20saw%20most%20influenced%20person%20%28prt3%29.mp3 | Dawah CD 2015
 Mohamd saw most influenced person (prt4) | https://nq-international.com/wp-content/uploads/Dawah%20CD%202015/Mohamd%20saw%20most%20influenced%20person%20%28prt4%29.mp3 | Dawah CD 2015
 
 # Dawah Cds other :: compass
-@ Curated audio collection from NQ International — 26 tracks
+@ قول معروف ومغفرة خير من صدقة يتبعها أذى
 ## Aala key badley adna Grass is Greener
 impatient attitude1 | https://nq-international.com/wp-content/uploads/Dawah%20Cds%20other/Aala%20key%20badley%20adna-Grass%20is%20Greener/impatient%20attitude1.mp3 | Dawah Cds other
 impatient attitude2 | https://nq-international.com/wp-content/uploads/Dawah%20Cds%20other/Aala%20key%20badley%20adna-Grass%20is%20Greener/impatient%20attitude2.mp3 | Dawah Cds other
@@ -1232,17 +1232,17 @@ Beloved of Allah SWT What Allah likes and dislikes | https://nq-international.co
 Jaisa Beej Waisa Pauda Jaisi Maa Waisa Bacchey | https://nq-international.com/wp-content/uploads/Dawah%20Cds%20other/Jaisa%20Beej%20Waisa%20Pauda%20-%20Jaisi%20Maa%20Waisa%20Bacchey.mp3 | Dawah Cds other
 
 # Dawah trip 2008 :: compass
-@ Curated audio collection from NQ International — 1 tracks
+@ ورحمتي وسعت كل شيء
 nama amaal | https://nq-international.com/wp-content/uploads/Dawah%20trip%202008/nama-amaal.mp3 | Dawah trip 2008
 
 # Dawah trip 2009 :: compass
-@ Curated audio collection from NQ International — 3 tracks
+@ قل يا عبادي الذين أسرفوا على أنفسهم لا تقنطوا من رحمة الله
 Markham Dars GatesParadise | https://nq-international.com/wp-content/uploads/Dawah%20trip%202009/Markham-Dars-GatesParadise.mp3 | Dawah trip 2009
 Norway Dars Momin Ka Hifazat E Emaan | https://nq-international.com/wp-content/uploads/Dawah%20trip%202009/Norway-Dars-Momin%20Ka%20Hifazat%20E%20Emaan.mp3 | Dawah trip 2009
 UK Taqwa Ki Daulat | https://nq-international.com/wp-content/uploads/Dawah%20trip%202009/UK-Taqwa%20Ki%20Daulat.mp3 | Dawah trip 2009
 
 # Detailed Lectures :: cloud
-@ Curated audio collection from NQ International — 9 tracks
+@ إن الله يأمر بالعدل والإحسان وإيتاء ذي القربى
 Deen Ki Badi Tasweer A | https://nq-international.com/wp-content/uploads/Detailed%20Lectures/Deen%20Ki%20Badi%20Tasweer-A.mp3 | Detailed Lectures
 Deen Ki Badi Tasweer B | https://nq-international.com/wp-content/uploads/Detailed%20Lectures/Deen%20Ki%20Badi%20Tasweer-B.mp3 | Detailed Lectures
 Deen Ki Badi Tasweer C | https://nq-international.com/wp-content/uploads/Detailed%20Lectures/Deen%20Ki%20Badi%20Tasweer-C.mp3 | Detailed Lectures
@@ -1254,7 +1254,7 @@ jeeny ky 2 rasty | https://nq-international.com/wp-content/uploads/Detailed%20Le
 surrah yasin ka message | https://nq-international.com/wp-content/uploads/Detailed%20Lectures/surrah_yasin_ka_message.mp3 | Detailed Lectures
 
 # Emaan Billah :: mountain
-@ Curated audio collection from NQ International — 20 tracks
+@ وما خلقت الجن والإنس إلا ليعبدون
 ## Asma al Husnah
 99 AS SABUR(The Patient one ) | https://nq-international.com/wp-content/uploads/Emaan%20Billah/Asma%20al%20Husnah/99-AS-SABUR%28The%20Patient%20one%20%29.mp3 | Emaan Billah
 AlAsmaul Alhusna D1 Part 03 2017 | https://nq-international.com/wp-content/uploads/Emaan%20Billah/Asma%20al%20Husnah/AlAsmaul%20Alhusna%20D1%20Part%2003%202017.mp3 | Emaan Billah
@@ -1281,13 +1281,13 @@ Lec06 WR15 7 Wilayat ki haqeeqat Alia Home 4 25 2015 | https://nq-international.
 Q&A WR15 7 Wilayat ki haqeeqat Alia Home 4 25 2015 | https://nq-international.com/wp-content/uploads/Emaan%20Billah/Wilaayut%20ki%20haqeeqat/Q%26A_WR15_7_Wilayat%20ki%20haqeeqat%20_Alia%20Home%20%20%204-25-2015.mp3 | Emaan Billah
 
 # Emaan bil Quran :: quran
-@ Curated audio collection from NQ International — 3 tracks
+@ وهو الذي يقبل التوبة عن عباده ويعفو عن السيئات
 Lec Quran Ko Pakar Ker Chorna 01 | https://nq-international.com/wp-content/uploads/Emaan%20bil%20Quran/Lec_Quran%20Ko%20Pakar%20Ker%20Chorna%2001.mp3 | Emaan bil Quran
 Lec Quran Ko Pakar Ker Chorna 02 Tauba | https://nq-international.com/wp-content/uploads/Emaan%20bil%20Quran/Lec_Quran%20Ko%20Pakar%20Ker%20Chorna%2002_Tauba.mp3 | Emaan bil Quran
 Lec Quran Ko Pakar Ker Chorna Poem 03 | https://nq-international.com/wp-content/uploads/Emaan%20bil%20Quran/Lec_Quran%20Ko%20Pakar%20Ker%20Chorna%20Poem%2003.mp3 | Emaan bil Quran
 
 # Eman Billah :: arch
-@ Curated audio collection from NQ International — 31 tracks
+@ والذين جاهدوا فينا لنهدینهم سبلنا وإن الله لمع المحسنين
 Arkane Islam aur Nabi ki ummat Part 1 | https://nq-international.com/wp-content/uploads/Eman%20Billah/Arkane%20Islam%20aur%20Nabi%20ki%20ummat-Part%201.mp3 | Eman Billah
 Arkane Islam aur Nabi ki ummat Part 2 | https://nq-international.com/wp-content/uploads/Eman%20Billah/Arkane%20Islam%20aur%20Nabi%20ki%20ummat-Part%202.mp3 | Eman Billah
 Eid Takbeeraat All in one | https://nq-international.com/wp-content/uploads/Eman%20Billah/Eid%20Takbeeraat%20All%20in%20one.mp3 | Eman Billah
@@ -1321,11 +1321,11 @@ Q&A WR15 6 Waseely ki haqeeqat nur masjid 4 24 2015 | https://nq-international.c
 Q&A WR15 7 Wilayat ki haqeeqat Alia Home 4 25 2015 | https://nq-international.com/wp-content/uploads/Eman%20Billah/Q%26A_WR15_7_Wilayat%20ki%20haqeeqat%20_Alia%20Home%20%20%204-25-2015.mp3 | Eman Billah
 
 # Ethics :: scale
-@ Curated audio collection from NQ International — 1 tracks
+@ إن الله وملائكته يصلون على النبي يا أيها الذين آمنوا صلوا عليه وسلموا تسليما
 SL D13 Miljul Ker Kam Kerna | https://nq-international.com/wp-content/uploads/Ethics/SL_D13_Miljul-Ker-Kam-Kerna.mp3 | Ethics
 
 # Hayaate Sahabah key Darkhshaan Pehloo :: sun
-@ Curated audio collection from NQ International — 40 tracks
+@ إنما المؤمنون إخوة فأصلحوا بين أخويكم واتقوا الله لعلكم ترحمون
 Abdullah Ibn Abbas RA | https://nq-international.com/wp-content/uploads/Hayaate%20Sahabah%20key%20Darkhshaan%20Pehloo/Abdullah-Ibn-Abbas-RA.mp3 | Hayaate Sahabah key Darkhshaan Pehloo
 Abdullah bin Huzafa RA | https://nq-international.com/wp-content/uploads/Hayaate%20Sahabah%20key%20Darkhshaan%20Pehloo/Abdullah-bin-Huzafa-RA.mp3 | Hayaate Sahabah key Darkhshaan Pehloo
 Abdullah bin Umm Maktoom RA | https://nq-international.com/wp-content/uploads/Hayaate%20Sahabah%20key%20Darkhshaan%20Pehloo/Abdullah-bin-Umm-Maktoom-RA.mp3 | Hayaate Sahabah key Darkhshaan Pehloo
@@ -1368,7 +1368,7 @@ Zaid ul khair RA | https://nq-international.com/wp-content/uploads/Hayaate%20Sah
 yeh ghazi yeh tery purasraar bndayy | https://nq-international.com/wp-content/uploads/Hayaate%20Sahabah%20key%20Darkhshaan%20Pehloo/yeh-ghazi-yeh-tery-purasraar-bndayy.mp3 | Hayaate Sahabah key Darkhshaan Pehloo
 
 # How to be sucesful in life :: flower
-@ Curated audio collection from NQ International — 19 tracks
+@ كل نفس ذائقة الموت وإنما توفون أجوركم يوم القيامة
 SL D 7 Doosroun Kay Sath Muamlat Part2 | https://nq-international.com/wp-content/uploads/How%20to%20be%20sucesful%20in%20life/SL_D%207_Doosroun%20Kay%20Sath%20Muamlat%20Part2.mp3 | How to be sucesful in life
 SL D 8 MakeDairyToCheckYourself | https://nq-international.com/wp-content/uploads/How%20to%20be%20sucesful%20in%20life/SL_D%208_MakeDairyToCheckYourself.mp3 | How to be sucesful in life
 SL D 9 Aqal Se Aqly saleem tak(origin) | https://nq-international.com/wp-content/uploads/How%20to%20be%20sucesful%20in%20life/SL_D%209_Aqal%20Se%20Aqly%20saleem%20tak%28origin%29%20.mp3 | How to be sucesful in life
@@ -1390,7 +1390,7 @@ SL D5 Takhliqi Anasir C | https://nq-international.com/wp-content/uploads/How%20
 SL D6 Doosroun Kay Sath Muamlat Part1 | https://nq-international.com/wp-content/uploads/How%20to%20be%20sucesful%20in%20life/SL_D6_Doosroun%20Kay%20Sath%20Muamlat%20Part1.mp3 | How to be sucesful in life
 
 # ISLAM A Z(Aqaaid) :: key
-@ Curated audio collection from NQ International — 15 tracks
+@ وتعاونوا على البر والتقوى ولا تعاونوا على الإثم والعدوان
 01 Intro Day1 Emmbaseder of Islam November 26 2018 | https://nq-international.com/wp-content/uploads/ISLAM%20A-Z%28Aqaaid%29/01-Intro-Day1-Emmbaseder-of-Islam-November-26-2018.mp3 | ISLAM A Z(Aqaaid)
 02 Aqeeda Day1 Emmbasader Of Islam November 26 2018 | https://nq-international.com/wp-content/uploads/ISLAM%20A-Z%28Aqaaid%29/02-Aqeeda-Day1-Emmbasader-Of-Islam-November-26-2018.mp3 | ISLAM A Z(Aqaaid)
 03 Aqeeda Day1 Emmbassader Of Islam November 26 2018 | https://nq-international.com/wp-content/uploads/ISLAM%20A-Z%28Aqaaid%29/03-Aqeeda-Day1-Emmbassader-Of-Islam-November-26-2018.mp3 | ISLAM A Z(Aqaaid)
@@ -1408,7 +1408,7 @@ SL D6 Doosroun Kay Sath Muamlat Part1 | https://nq-international.com/wp-content/
 15 Aqeeda Day4 Ambassador of Islam November 29 2018 | https://nq-international.com/wp-content/uploads/ISLAM%20A-Z%28Aqaaid%29/15-Aqeeda-Day4-Ambassador-of-Islam-November-29-2018.mp3 | ISLAM A Z(Aqaaid)
 
 # ISLAMIC MONTH :: shield
-@ Curated audio collection from NQ International — 57 tracks
+@ المال والبنون زينة الحياة الدنيا والباقيات الصالحات خير عند ربك ثوابا
 ## Day 1
 Tauba 1 15 Tilawat | https://nq-international.com/wp-content/uploads/ISLAMIC%20MONTH/Day%201/Tauba-1-15-Tilawat.mp3 | ISLAMIC MONTH
 Tauba 1 15 Translation RQ | https://nq-international.com/wp-content/uploads/ISLAMIC%20MONTH/Day%201/Tauba-1-15-Translation-RQ.mp3 | ISLAMIC MONTH
@@ -1479,7 +1479,7 @@ Tauba 113 116 Tafseer Juz 11 Sep 4 2017 RQ | https://nq-international.com/wp-con
 if prophet visit us | https://nq-international.com/wp-content/uploads/ISLAMIC%20MONTH/if-prophet-visit-us.mp3 | ISLAMIC MONTH
 
 # Ireland Dawah Trip :: compass
-@ Curated audio collection from NQ International — 5 tracks
+@ وقل ربي ارحمهما كما ربياني صغيرا
 Race for Junnah English(no ending words) | https://nq-international.com/wp-content/uploads/Ireland%20Dawah%20Trip/Race%20for%20Junnah%20-English%28no%20ending%20words%29.mp3 | Ireland Dawah Trip
 Wake up Ummah | https://nq-international.com/wp-content/uploads/Ireland%20Dawah%20Trip/%20Wake%20up%20Ummah.mp3 | Ireland Dawah Trip
 Zindagi aik Imtihaan | https://nq-international.com/wp-content/uploads/Ireland%20Dawah%20Trip/Zindagi%20aik%20Imtihaan%20.mp3 | Ireland Dawah Trip
@@ -1487,7 +1487,7 @@ khushi ki Talaash | https://nq-international.com/wp-content/uploads/Ireland%20Da
 what lagacy am i leaving behind | https://nq-international.com/wp-content/uploads/Ireland%20Dawah%20Trip/what%20lagacy%20am%20i%20leaving%20behind.mp3 | Ireland Dawah Trip
 
 # Islamic Month :: dua
-@ Curated audio collection from NQ International — 43 tracks
+@ فصبر جميل والله المستعان على ما تصفون
 10 Tips to make Ramadan best | https://nq-international.com/wp-content/uploads/Islamic%20Month/10%20Tips%20to%20make%20Ramadan%20best.mp3 | Islamic Month
 Barkat walay din | https://nq-international.com/wp-content/uploads/Islamic%20Month/Barkat_walay_din.mp3 | Islamic Month
 DQ into Ramadan ki barkatyn | https://nq-international.com/wp-content/uploads/Islamic%20Month/DQ_into%20Ramadan%20ki%20barkatyn.mp3 | Islamic Month
@@ -1533,7 +1533,7 @@ ramadan nyku ka mausam bhar | https://nq-international.com/wp-content/uploads/Is
 tips for Daura e Quran | https://nq-international.com/wp-content/uploads/Islamic%20Month/tips_for_Daura-e-Quran.mp3 | Islamic Month
 
 # Jadoo or Evil eye :: shield
-@ Curated audio collection from NQ International — 12 tracks
+@ إن الأبرار لفي نعيم
 D1 Jadoo Relity and Cures 01 (definationHistory and evil eye) | https://nq-international.com/wp-content/uploads/Jadoo%20or%20Evil%20eye/D1-Jadoo%20Relity%20and%20Cures%2001%20%28definationHistory%20and%20evil%20eye%29.mp3 | Jadoo or Evil eye
 D1 Jadoo Relity and Cures 02 ( preventions) | https://nq-international.com/wp-content/uploads/Jadoo%20or%20Evil%20eye/D1-Jadoo%20Relity%20and%20Cures%2002%20%28%20preventions%29.mp3 | Jadoo or Evil eye
 D1 Jadoo Relity and Cures 03 (what magician do video) | https://nq-international.com/wp-content/uploads/Jadoo%20or%20Evil%20eye/D1-Jadoo%20Relity%20and%20Cures%2003%20%28what%20magician%20do%20video%29.mp3 | Jadoo or Evil eye
@@ -1548,7 +1548,7 @@ Jadoo relity and Cures 07 Sehar e Amraaz | https://nq-international.com/wp-conte
 Jadoo relity and Cures 08 Sehar e Istehaza | https://nq-international.com/wp-content/uploads/Jadoo%20or%20Evil%20eye/Jadoo%20relity%20and%20Cures%2008%20Sehar%20e%20Istehaza.mp3 | Jadoo or Evil eye
 
 # Journey Through The Quran 2021 :: quran
-@ Curated audio collection from NQ International — 13 tracks
+@ وأن ليس للإنسان إلا ما سعى وأن سعيه سوف يرى
 DQ Juzz 4 (Day 5) 2021 | https://nq-international.com/wp-content/uploads/Journey%20Through%20The%20Quran%202021/DQ%20Juzz%204%20%28Day%205%29%202021.mp3 | Journey Through The Quran 2021
 Journy through Quran Day 1 Mar 29th | https://nq-international.com/wp-content/uploads/Journey%20Through%20The%20Quran%202021/Journy%20through%20Quran%20-Day%201-Mar%2029th.mp3 | Journey Through The Quran 2021
 Juz 10 Eng 2021 | https://nq-international.com/wp-content/uploads/Journey%20Through%20The%20Quran%202021/Juz%2010%20Eng%202021.mp3 | Journey Through The Quran 2021
@@ -1564,7 +1564,7 @@ Juz12 Eng 2021 | https://nq-international.com/wp-content/uploads/Journey%20Throu
 juz 1 | https://nq-international.com/wp-content/uploads/Journey%20Through%20The%20Quran%202021/juz%201.mp3 | Journey Through The Quran 2021
 
 # Kitabu taharah :: heart
-@ Curated audio collection from NQ International — 20 tracks
+@ من عمل صالحا من ذكر أو أنثى وهو مؤمن فلنحيينه حياة طيبة
 KT Ch1 NiyathKeyMasayel re edited | https://nq-international.com/wp-content/uploads/Kitabu%20taharah/KT_Ch1-NiyathKeyMasayel-re-edited.mp3 | Kitabu taharah
 KT Ch10 a Wudu re edited (2) | https://nq-international.com/wp-content/uploads/Kitabu%20taharah/KT_Ch10%20a-Wudu-re%20edited%20%282%29.mp3 | Kitabu taharah
 KT Ch10 b Wudu re edited | https://nq-international.com/wp-content/uploads/Kitabu%20taharah/KT_Ch10%20b-Wudu-re%20edited.mp3 | Kitabu taharah
@@ -1587,7 +1587,7 @@ KT Ch9 b Gusal re edited | https://nq-international.com/wp-content/uploads/Kitab
 KT Introduction re edited | https://nq-international.com/wp-content/uploads/Kitabu%20taharah/KT_Introduction-re%20edited.mp3 | Kitabu taharah
 
 # Lecture 2016 :: kaaba
-@ Curated audio collection from NQ International — 9 tracks
+@ سلام عليكم بما صبرتم فنعم عقبى الدار
 ## Aaj ki baat
 Aaj I love you all | https://nq-international.com/wp-content/uploads/Lecture-2016/Aaj%20ki%20baat/Aaj_I%20love%20you%20all.mp3 | Lecture 2016
 Aaj Is main bhi khair hai motivational | https://nq-international.com/wp-content/uploads/Lecture-2016/Aaj%20ki%20baat/Aaj_Is%20main%20bhi%20khair%20hai-%20motivational.mp3 | Lecture 2016
@@ -1603,7 +1603,7 @@ Aaj kibaat momin kon hota hai | https://nq-international.com/wp-content/uploads/
 01 rabbiulsani awr aaj ka muslim 01 14 17 edited | https://nq-international.com/wp-content/uploads/Lecture-2016/Rabbithani%20aur%20aaj%20ka%20musalmaan/01-rabbiulsani-awr-aaj-ka-muslim-01-14-17-edited.mp3 | Lecture 2016
 
 # Lecture 2017 :: mosque
-@ Curated audio collection from NQ International — 112 tracks
+@ فمن يعمل مثقال ذرة خيرا يره ومن يعمل مثقال ذرة شرا يره
 ## Asma al Husna
 AlAsmaul Alhusna D1 Part 03 2017 | https://nq-international.com/wp-content/uploads/Lecture%202017/Asma%20al%20Husna/AlAsmaul%20Alhusna%20D1%20Part%2003%202017.mp3 | Lecture 2017
 AlAsmaul Alhusna D1 Part 4 Allah ke sab naam taufeeqi hain 2017 | https://nq-international.com/wp-content/uploads/Lecture%202017/Asma%20al%20Husna/AlAsmaul%20Alhusna%20D1%20Part%204%20Allah%20ke%20sab%20naam%20taufeeqi%20hain%202017.mp3 | Lecture 2017
@@ -1732,7 +1732,7 @@ ramadan sabr aur shukar prt1 | https://nq-international.com/wp-content/uploads/L
 ramadan sabr aur shukar prt2 | https://nq-international.com/wp-content/uploads/Lecture%202017/welcome%20Ramadan/ramadan-sabr_aur_shukar_prt2.mp3 | Lecture 2017
 
 # Lecture 2017 2018 :: book
-@ Curated audio collection from NQ International — 6 tracks
+@ إن الله يحب التوابين ويحب المتطهرين
 ## Bachoon mein Saber
 01 bachon mein sabr kase dalein March 2018 Oslo | https://nq-international.com/wp-content/uploads/Lecture%202017-2018/Bachoon%20mein%20Saber/01-bachon-mein-sabr-kase-dalein-March-2018-Oslo.mp3 | Lecture 2017 2018
 02 bachon mein sabr kase dalein March 2018 Oslo | https://nq-international.com/wp-content/uploads/Lecture%202017-2018/Bachoon%20mein%20Saber/02-bachon-mein-sabr-kase-dalein-March-2018-Oslo.mp3 | Lecture 2017 2018
@@ -1743,14 +1743,14 @@ Nursing Terbiati Session Feburary 9 2018 Johraabad | https://nq-international.co
 Parents are a treasure 1 13 2018 Lahore | https://nq-international.com/wp-content/uploads/Lecture%202017-2018/Pakistan/Parents-are-a-treasure-1-13-2018-Lahore.mp3 | Lecture 2017 2018
 
 # Lecture 2019 :: scroll
-@ Curated audio collection from NQ International — 2 tracks
+@ وإذا سألك عبادي عني فإني قريب أجيء دعوة الداع إذا دعان
 ## August 2019
 Lec Sikhay kisne Ismaeel ko adabay ferzandge 8 26 2019 | https://nq-international.com/wp-content/uploads/Lecture%202019/August%202019/Lec-Sikhay-kisne-Ismaeel-ko-adabay-ferzandge-8-26-2019.mp3 | Lecture 2019
 ## Pk Trip
 wo mayn kidhar hey jinko fikry akhrat thee 6 29 2019 | https://nq-international.com/wp-content/uploads/Lecture%202019/Pk%20Trip/wo-mayn-kidhar-hey-jinko-fikry-akhrat-thee-6-29-2019.mp3 | Lecture 2019
 
 # Lecture 2020 :: lantern
-@ Curated audio collection from NQ International — 24 tracks
+@ إن الله لا يغير ما بقوم حتى يغيروا ما بأنفسهم
 ## Be like a Bee
 01 Be like a Bee | https://nq-international.com/wp-content/uploads/Lecture%202020/Be%20like%20a%20Bee/01-Be-like-a-Bee.mp3 | Lecture 2020
 02 Be like a Bee | https://nq-international.com/wp-content/uploads/Lecture%202020/Be%20like%20a%20Bee/02-Be-like-a-Bee.mp3 | Lecture 2020
@@ -1784,7 +1784,7 @@ Rasool ullah ka tuhfa 3 2 2020 welcome Ramadan | https://nq-international.com/wp
 03 Slat aboodiat ki amali shakal | https://nq-international.com/wp-content/uploads/Lecture%202020/Salat/03-Slat-aboodiat-ki-amali-shakal.mp3 | Lecture 2020
 
 # Live Radio programe recording :: crescent
-@ Curated audio collection from NQ International — 5 tracks
+@ وما توفيقي إلا بالله عليه توكلت وإليه أنيب
 LOI P1 4 5 09 | https://nq-international.com/wp-content/uploads/Live%20Radio%20programe%20recording/LOI_P1_4-5-09.mp3 | Live Radio programe recording
 LOI P2 4 12 09 | https://nq-international.com/wp-content/uploads/Live%20Radio%20programe%20recording/LOI_P2_4-12-09.mp3 | Live Radio programe recording
 LOI P3 4 19 09 | https://nq-international.com/wp-content/uploads/Live%20Radio%20programe%20recording/LOI_P3_4-19-09.mp3 | Live Radio programe recording
@@ -1792,7 +1792,7 @@ LOI P4 6 14 09 | https://nq-international.com/wp-content/uploads/Live%20Radio%20
 LOI P5 6 21 09 | https://nq-international.com/wp-content/uploads/Live%20Radio%20programe%20recording/LOI_P5_6-21-09.mp3 | Live Radio programe recording
 
 # Marriage :: flower
-@ Curated audio collection from NQ International — 9 tracks
+@ رب اجعلني مقيم الصلاة ومن ذريتي ربنا وتقبل دعاء
 Mera Ghar Meri Jannat 42mins | https://nq-international.com/wp-content/uploads/Marriage/Mera-Ghar-Meri-Jannat-42mins.mp3 | Marriage
 Nikkaah A Z Part 01 | https://nq-international.com/wp-content/uploads/Marriage/Nikkaah-A-Z-Part-01.mp3 | Marriage
 Nikkaah A Z Part 02 | https://nq-international.com/wp-content/uploads/Marriage/Nikkaah-A-Z-Part-02.mp3 | Marriage
@@ -1804,7 +1804,7 @@ SL Naey rishtun ko keysy nibhaaien | https://nq-international.com/wp-content/upl
 Surah Tahreem Ayah6 SaveYourself&YourFamily FromHellfire | https://nq-international.com/wp-content/uploads/Marriage/Surah-Tahreem-Ayah6-SaveYourself%26YourFamily-FromHellfire.mp3 | Marriage
 
 # Miftah ul Quran :: quran
-@ Curated audio collection from NQ International — 9 tracks
+@ يرفع الله الذين آمنوا منكم والذين أوتوا العلم درجات
 Miftahul Quran CH 10 (hunna kunna tunna sakin harf + nun zabar) | https://nq-international.com/wp-content/uploads/Miftah-ul-Quran/Miftahul%20Quran%20CH%2010%20%28hunna-%20kunna-%20tunna-%20sakin-harf%20%2B%20nun-zabar%29.mp3 | Miftah ul Quran
 Miftahul Quran CH 2 (Fail ki pehchaan aur misaalein) | https://nq-international.com/wp-content/uploads/Miftah-ul-Quran/Miftahul%20Quran%20CH%202%20%28Fail%20ki%20pehchaan%20aur%20misaalein%29.mp3 | Miftah ul Quran
 Miftahul Quran CH 7 (Kaa kee) | https://nq-international.com/wp-content/uploads/Miftah-ul-Quran/Miftahul%20Quran%20CH%207%20%28Kaa%20kee%29.mp3 | Miftah ul Quran
@@ -1816,7 +1816,7 @@ Miftahul Quran Ch 6( huwa hiya hu he ha) | https://nq-international.com/wp-conte
 Miftahul Quran ch 8 (huma kuma tuma) | https://nq-international.com/wp-content/uploads/Miftah-ul-Quran/Miftahul%20Quran%20ch%208%20%28huma-kuma-tuma%29.mp3 | Miftah ul Quran
 
 # Mohsin e Insaaniyut :: star
-@ Curated audio collection from NQ International — 130 tracks
+@ هو الأول والآخر والظاهر والباطن وهو بكل شيء عليم
 ## CH 2 Personality
 MI CH2 A pag 91 99 Personality August8 2 16 Mohsnay Insaniat edited | https://nq-international.com/wp-content/uploads/Mohsin%20e%20Insaaniyut/CH-2-Personality/MI_CH2_A-pag-91-99-Personality-August8-2-16-Mohsnay-Insaniat-edited.mp3 | Mohsin e Insaaniyut
 MI CH2 B Prt1 pag 100 103 Personality August8 3 16 Mohsnay Insaniat edited | https://nq-international.com/wp-content/uploads/Mohsin%20e%20Insaaniyut/CH-2-Personality/MI_CH2_B-Prt1-pag-100-103-Personality-August8-3-16-Mohsnay-Insaniat-edited%20.mp3 | Mohsin e Insaaniyut
@@ -1955,7 +1955,7 @@ intro5 buchpan sy jwani sy shadi tuk Prt1 8 1 2016 | https://nq-international.co
 intro6 buchpan sy jwani sy shadi tuk Prt2 8 1 2016 | https://nq-international.com/wp-content/uploads/Mohsin%20e%20Insaaniyut/Intro/intro6_buchpan-sy-jwani-sy-shadi-tuk-Prt2-8-1-2016.mp3 | Mohsin e Insaaniyut
 
 # NQ13 new edited tafseer :: book
-@ Curated audio collection from NQ International — 1289 tracks
+@ ولله الأسماء الحسنى فادعوه بها
 ## Para1
 NQ13 L 8 previous lesson sharing | https://nq-international.com/wp-content/uploads/NQ13%20new%20edited%20tafseer/Para1/NQ13_L%208_previous%20lesson%20%20sharing.mp3 | NQ13 new edited tafseer
 NQ13 L1 Taf(a)(Alhumdulillah) | https://nq-international.com/wp-content/uploads/NQ13%20new%20edited%20tafseer/Para1/NQ13_L1_Taf%28a%29%28Alhumdulillah%29.mp3 | NQ13 new edited tafseer
@@ -3274,7 +3274,7 @@ Tilawat Nisa 86 93 | https://nq-international.com/wp-content/uploads/NQ13%20new%
 Tilawat Nisa 94 104 | https://nq-international.com/wp-content/uploads/NQ13%20new%20edited%20tafseer/para5/Tilawat-Nisa-94-104.mp3 | NQ13 new edited tafseer
 
 # Naik Amaal :: scale
-@ Curated audio collection from NQ International — 16 tracks
+@ وأن استغفروا ربكم ثم توبوا إليه يمتعكم متاعا حسنا
 SL Ahmiyat & Sharooty Laa ilaaha illalaah | https://nq-international.com/wp-content/uploads/Naik%20Amaal/SL-%20Ahmiyat%20%26%20Sharooty%20Laa%20ilaaha%20%20illalaah.mp3 | Naik Amaal
 SL Ajj ka bacha kul ka baap | https://nq-international.com/wp-content/uploads/Naik%20Amaal/SL-Ajj%20ka%20bacha%20kul%20ka%20baap.mp3 | Naik Amaal
 SL Allah ko pane k rasty | https://nq-international.com/wp-content/uploads/Naik%20Amaal/SL-Allah_ko_pane_k_rasty.mp3 | Naik Amaal
@@ -3293,7 +3293,7 @@ SL sakoon e Qulb | https://nq-international.com/wp-content/uploads/Naik%20Amaal/
 SL ummat ki shaan awr kaam | https://nq-international.com/wp-content/uploads/Naik%20Amaal/SL-ummat_ki_shaan_awr_kaam.mp3 | Naik Amaal
 
 # New Lectures :: gem
-@ Curated audio collection from NQ International — 12 tracks
+@ يا أيها الناس قد جاءتكم موعظة من ربكم وشفاء لما في الصدور
 Hajj ky asraat zindagi per (oslo programm) | https://nq-international.com/wp-content/uploads/New%20Lectures/Hajj%20ky%20asraat%20zindagi%20per%20%28oslo%20programm%29.mp3 | New Lectures
 Lec CA trip t2015 Akhir kub ....nice (SJ class nadia ) 7 4 2015 (part 1) | https://nq-international.com/wp-content/uploads/New%20Lectures/Lec_CA%20trip%20t2015_Akhir%20kub%20....nice%20%20%20%28SJ%20class%20nadia%20%29%207-4-2015%20%28part%201%29.mp3 | New Lectures
 Lec CA trip t2015 Akhir kub ....nice (SJ class nadia ) 7 4 2015 (part 2) | https://nq-international.com/wp-content/uploads/New%20Lectures/Lec_CA%20trip%20t2015_Akhir%20kub%20....nice%20%20%20%28SJ%20class%20nadia%20%29%207-4-2015%20%28part%202%29.mp3 | New Lectures
@@ -3308,7 +3308,7 @@ Lect Qoolu lnnasi husnaa Track3 | https://nq-international.com/wp-content/upload
 Nabi Pak Ky Daur Ki Dursgahyn | https://nq-international.com/wp-content/uploads/New%20Lectures/Nabi%20Pak%20Ky%20Daur%20Ki%20Dursgahyn.mp3 | New Lectures
 
 # Paigham e Quran :: book
-@ Curated audio collection from NQ International — 91 tracks
+@ وما أرسلناك إلا رحمة للعالمين
 ## Intro
 01 PQ Intro 4 24 2020 | https://nq-international.com/wp-content/uploads/Paigham%20e%20Quran/Intro/01-PQ_Intro%204-24-2020.mp3 | Paigham e Quran
 02 PQ Intro Albaqarah Jaizah | https://nq-international.com/wp-content/uploads/Paigham%20e%20Quran/Intro/02-PQ_Intro%20-Albaqarah%20Jaizah.mp3 | Paigham e Quran
@@ -3433,7 +3433,7 @@ Nabi Pak Ky Daur Ki Dursgahyn | https://nq-international.com/wp-content/uploads/
 02 PQ Para 9 An'fal Khulasa e Mazameen & Hidayaat | https://nq-international.com/wp-content/uploads/Paigham%20e%20Quran/Para%209/02-%20PQ_Para%209%20%20An%27fal%20Khulasa%20e%20Mazameen%20%26%20Hidayaat.mp3 | Paigham e Quran
 
 # Para 10 :: scroll
-@ Curated audio collection from NQ International — 49 tracks
+@ واعلموا أنما غنمتم من شيء فأن لله خمسه وللرسول ولذي القربى
 SJ Tafseer(a) L102 Atawbah (1 06) | https://nq-international.com/wp-content/uploads/Para%2010/SJ_Tafseer%28a%29_L102_Atawbah_%20%281-06%29.mp3 | Para 10
 SJ Tafseer(b) L102 Atawbah (07 11) (1) | https://nq-international.com/wp-content/uploads/Para%2010/SJ_Tafseer%28b%29_L102_Atawbah_%20%2807-11%29%20%281%29.mp3 | Para 10
 SJ Tafseer(c) L102 Atawbah (12 15) | https://nq-international.com/wp-content/uploads/Para%2010/SJ_Tafseer%28c%29_L102_Atawbah_%20%2812-15%29.mp3 | Para 10
@@ -3485,7 +3485,7 @@ takmeel para 10 part1 attendence&sharing | https://nq-international.com/wp-conte
 takmeel para 10 part2 ustaza ji lecture&sharing | https://nq-international.com/wp-content/uploads/Para%2010/takmeel%20para%2010%20part2%20ustaza%20ji%20lecture%26sharing.mp3 | Para 10
 
 # Para 12 :: scroll
-@ Curated audio collection from NQ International — 20 tracks
+@ وما من دابة في الأرض إلا على الله رزقها ويعلم مستقرها ومستودعها
 Kitaab Ul Janaaiz Day 4 | https://nq-international.com/wp-content/uploads/Para%2012/Kitaab%20Ul%20Janaaiz%20Day%204.MP3 | Para 12
 Meem Sakin Rules | https://nq-international.com/wp-content/uploads/Para%2012/Meem%20Sakin%20Rules.mp3 | Para 12
 SH D77 SJ L119 trans Surah Hood 50 83 [re recorded in SS12] | https://nq-international.com/wp-content/uploads/Para%2012/SH-D77-SJ_L119%20trans%20-%20Surah%20Hood%2050-83%20%5Bre-recorded%20in%20SS12%5D.mp3 | Para 12
@@ -3508,7 +3508,7 @@ nq13 part5 tafseer al hood 84 101 | https://nq-international.com/wp-content/uplo
 nq13 tafseer yousaf 36 57(A) | https://nq-international.com/wp-content/uploads/Para%2012/nq13_tafseer_yousaf_36-57%28A%29.mp3 | Para 12
 
 # Para 13 :: lantern
-@ Curated audio collection from NQ International — 29 tracks
+@ وما أبرئ نفسي إن النفس لأمارة بالسوء إلا ما رحم ربي
 L127 Araad Tafseer(b) (4 10) | https://nq-international.com/wp-content/uploads/Para%2013/L127_Araad_Tafseer%28b%29_%284-10%29.mp3 | Para 13
 L127 Rkp P13 R8 Taf(c) Al Raad 11 13 | https://nq-international.com/wp-content/uploads/Para%2013/L127_Rkp_P13_R8%20_Taf%28c%29%20Al%20Raad%2011-13.mp3 | Para 13
 NQ Part 5 Tafseer After Break Surah Ar Ra'aad 17 to 43 | https://nq-international.com/wp-content/uploads/Para%2013/NQ_Part%205_Tafseer%20After%20Break_Surah%20Ar%20Ra%27aad%2017%20to%2043.mp3 | Para 13
@@ -3540,7 +3540,7 @@ nq13 part5 tafseer al yousaf 88 111 | https://nq-international.com/wp-content/up
 nq13 part5 tafseer(B)after break al Ibrahim 18 34 | https://nq-international.com/wp-content/uploads/Para%2013/nq13_part5_tafseer%28B%29after%20break_al-Ibrahim%2018-34.mp3 | Para 13
 
 # Para 14 :: lantern
-@ Curated audio collection from NQ International — 31 tracks
+@ الر تلك آيات الكتاب وقرآن مبين
 Nq13 part5 tafseer)after Break) Al Hijr 51 to 99 | https://nq-international.com/wp-content/uploads/Para%2014/Nq13_part5_tafseer%29after%20Break%29_Al%20Hijr%2051%20to%2099.mp3 | Para 14
 SurahNahl 80 95 | https://nq-international.com/wp-content/uploads/Para%2014/SurahNahl-80-95.mp3 | Para 14
 eid special part1 | https://nq-international.com/wp-content/uploads/Para%2014/eid%20special_part1.mp3 | Para 14
@@ -3574,7 +3574,7 @@ nq13 part6 tafseer1 onwards bani israel 1 10 | https://nq-international.com/wp-c
 nq13 part7 tafseer al nahl 80 95) | https://nq-international.com/wp-content/uploads/Para%2014/nq13_part7_tafseer_al-nahl_80-95%29.mp3 | Para 14
 
 # Para 15 :: star
-@ Curated audio collection from NQ International — 44 tracks
+@ سبحان الذي أسرى بعبده ليلا من المسجد الحرام إلى المسجد الأقصى
 lecture zindagi aik imtehan 22 08 2014 | https://nq-international.com/wp-content/uploads/Para%2015/lecture%20zindagi%20aik%20imtehan%2022-08-2014.mp3 | Para 15
 lesson 148 isra para 15 Tafseer a 9 1 2014 | https://nq-international.com/wp-content/uploads/Para%2015/lesson%20148%20%20%20isra%20%20para%2015%20%20Tafseer%20a%20%209-1-2014%20%20.mp3 | Para 15
 lesson 149 1 8 kahaf para 15 Tafseer b 9 2 2014 | https://nq-international.com/wp-content/uploads/Para%2015/lesson%20149%20%201-8%20kahaf%20%20para%2015%20%20Tafseer%20b%20%20%209-2-2014.mp3 | Para 15
@@ -3621,7 +3621,7 @@ nq13 part61 65 tafseer bani israel 53 65 after break 26 08 2014 | https://nq-int
 nq13 part7 recap+student sharings | https://nq-international.com/wp-content/uploads/Para%2015/nq13_part7_recap%2Bstudent%20sharings.mp3 | Para 15
 
 # Para 16 :: star
-@ Curated audio collection from NQ International — 32 tracks
+@ قال ألم أقل لك إنك لن تستطيع معي صبرا
 Miftahul Quran Ch 1(Ism fail harf & ism ki pehchaan | https://nq-international.com/wp-content/uploads/Para%2016/Miftahul%20Quran-Ch%201%28Ism-fail-harf%20%26%20ism%20ki%20pehchaan.mp3 | Para 16
 NQ L155+156 Tarjuma Al kahaf 83 110 re adit | https://nq-international.com/wp-content/uploads/Para%2016/NQ_%20L155%2B156_Tarjuma_Al%20kahaf%2083-110%20re%20adit.mp3 | Para 16
 NQ13 Part 6 Tafseer (After Break) Ta'ha 77 to 104 23 09 14 | https://nq-international.com/wp-content/uploads/Para%2016/NQ13_Part%206_Tafseer%20%28After%20Break%29_Ta%27ha%2077%20to%20104_23-09-14.MP3 | Para 16
@@ -3656,7 +3656,7 @@ nq13 part4 translation maryam1 40 15 09 2014 | https://nq-international.com/wp-c
 nq13 part5 tafseer1 14 maryam1 40 before break 15 09 2014 | https://nq-international.com/wp-content/uploads/Para%2016/nq13_part5_tafseer1-14_maryam1-40_before%20break___%2015-09-2014.mp3 | Para 16
 
 # Para 17 :: crescent
-@ Curated audio collection from NQ International — 27 tracks
+@ اقترب للناس حسابهم وهم في غفلة معرضون
 Nq13 Part 2 Grammar Session Al Anbiya 83 to 112 02 10 14 | https://nq-international.com/wp-content/uploads/Para%2017/Nq13_Part%202_Grammar%20Session_Al%20Anbiya%2083%20to%20112_02-10-14.MP3 | Para 17
 Nq13 Part 3 Grammar Review Al Hajj 25 to 41 14 10 14 | https://nq-international.com/wp-content/uploads/Para%2017/Nq13_Part%203_Grammar%20Review_Al%20Hajj%2025%20to%2041_14-10-14.MP3 | Para 17
 Nq13 Part 3 Grammar Review Al Hajj 65 to 78 16 10 14 | https://nq-international.com/wp-content/uploads/Para%2017/Nq13_Part%203_Grammar%20Review_Al%20Hajj%2065%20to%2078_16-10-14.MP3 | Para 17
@@ -3686,7 +3686,7 @@ Nq13 Part 7 Tafseer (After Break) Al Anbiya 83 to 112 02 10 14 | https://nq-inte
 Nq13 Part 7 Tafseer (File B) Al Anbiya 30 to 50 30 09 14 | https://nq-international.com/wp-content/uploads/Para%2017/Nq13_Part%207_Tafseer%20%28File%20B%29%20Al%20Anbiya%2030%20to%2050_30-09-14.mp3 | Para 17
 
 # Para 18 :: crescent
-@ Curated audio collection from NQ International — 35 tracks
+@ قد أفلح المؤمنون الذين هم في صلاتهم خاشعون
 Nq13 Part 4 Tafseer Al Noor 53 to 64 (Before Break) 5 11 14 | https://nq-international.com/wp-content/uploads/Para%2018/Nq13_Part%204_Tafseer%20Al%20Noor%2053%20to%2064%20%28Before%20Break%29_5-11-14.mp3 | Para 18
 Nq13 Part 4 Translation Surah Al Furqan 1 to 20 6 11 14 | https://nq-international.com/wp-content/uploads/Para%2018/Nq13_Part%204_Translation%20Surah%20Al%20Furqan%201%20to%2020_6-11-14.mp3 | Para 18
 Nq13 Part 5 Khulasa of Surah Noor & Students Sharing Al Furqan 1 to 20 6 11 14 | https://nq-international.com/wp-content/uploads/Para%2018/Nq13_Part%205_Khulasa%20of%20Surah%20Noor%20%26%20Students%20Sharing_Al%20Furqan%201%20to%2020_6-11-14.mp3 | Para 18
@@ -3724,7 +3724,7 @@ nq13 part5 tafseer(C) al mominoon 1 22 after break 20 10 2014 | https://nq-inter
 nq13 part6 tafseer36 39 al noor 35 50 after break 03 11 2014 | https://nq-international.com/wp-content/uploads/Para%2018/nq13_part6_tafseer36-39_al-noor%2035-50_after%20break____%2003-11-2014.mp3 | Para 18
 
 # Para 19 :: gem
-@ Curated audio collection from NQ International — 24 tracks
+@ وقال الذين لا يرجون لقاءنا لولا أنزل علينا الملائكة أو نرى ربنا
 Nq13 Part 2 Transaltion Al Furqan 41 to 77 11 11 14 | https://nq-international.com/wp-content/uploads/Para%2019/Nq13_Part%202_Transaltion%20Al%20Furqan%2041%20to%2077_11-11-14.mp3 | Para 19
 Nq13 Part 2 Translation Surah Ash Shuraa 60 to 140 17 11 14 | https://nq-international.com/wp-content/uploads/Para%2019/Nq13_Part%202_Translation%20Surah%20Ash%20Shuraa%2060%20to%20140_17-11-14.MP3 | Para 19
 Nq13 Part 2 Translation Surah Ash Shuraa 60 to 140 17 11 14 | https://nq-international.com/wp-content/uploads/Para%2019/Nq13_Part%202_Translation%20Surah%20Ash%20Shuraa%2060%20to%20140_17-11-14.mp3 | Para 19
@@ -3751,7 +3751,7 @@ Nq13 Part 6 Tafseer Ash Shuara 141 t0 171 (After Break) Ash Shuara 141 to 227 18
 Nq13 Part 6 Ustaazahji took mike after class for conclusion Al Furqan 61 to 77 12 11 14 | https://nq-international.com/wp-content/uploads/Para%2019/Nq13_Part%206_Ustaazahji%20took%20mike%20after%20class%20for%20conclusion_Al%20Furqan%2061%20to%2077_12-11-14.mp3 | Para 19
 
 # Para 20 :: gem
-@ Curated audio collection from NQ International — 19 tracks
+@ فما كان جواب قومه إلا أن قالوا أخرجوا آل لوط من قريتكم
 Nq13 Part 2 Tafseer (Before Break ) Al Ankaboot 24 to 40 Al Ankaboot 24 to 44 4 12 14 | https://nq-international.com/wp-content/uploads/Para%2020/Nq13_Part%202_Tafseer%20%28Before%20Break%20%29%20Al%20Ankaboot%2024%20to%2040_Al%20Ankaboot%2024%20to%2044_4-12-14.mp3 | Para 20
 Nq13 Part 3 SPECIAL TAKMEEL SESSION (LIVE FROM NORWAY) Before Break Al Ankaboot 45 to 69 8 12 14 | https://nq-international.com/wp-content/uploads/Para%2020/Nq13_Part%203_SPECIAL%20TAKMEEL%20SESSION%20%28LIVE%20FROM%20NORWAY%29%20Before%20Break_Al%20Ankaboot%2045%20to%2069_8-12-14.mp3 | Para 20
 Nq13 Part 3 Tafseer (After Break) Al Ankaboot 41 to 44 Al Ankaboot 24 to 44 4 12 14 | https://nq-international.com/wp-content/uploads/Para%2020/Nq13_Part%203_Tafseer%20%28After%20Break%29%20Al%20Ankaboot%2041%20to%2044_Al%20Ankaboot%2024%20to%2044_4-12-14.mp3 | Para 20
@@ -3773,7 +3773,7 @@ Nq13 Part 5 Tafseer (After break) Surah Al Qasas Aayah 1 Onwards Al Qasas 1 to 2
 Nq13 Part 5 Tafseer After Break (Al Qasas 57 to 77) Surah Al Qasas 57 to 88 1 12 14 | https://nq-international.com/wp-content/uploads/Para%2020/Nq13_Part%205_Tafseer_After%20Break%20%28Al%20Qasas%2057%20to%2077%29_Surah%20Al%20Qasas%2057%20to%2088_1-12-14.mp3 | Para 20
 
 # Para 21 :: diamond
-@ Curated audio collection from NQ International — 46 tracks
+@ اتل ما أوحي إليك من الكتاب وأقم الصلاة إن الصلاة تنهى عن الفحشاء والمنكر
 NQ13 Part 1 Attendance & Hifz (Surah As Sajdaah 16 to 22) & Studetns Tilaawat Parenting Seminar Day 3 31 12 14 | https://nq-international.com/wp-content/uploads/Para%2021/NQ13_Part%201_Attendance%20%26%20Hifz%20%28Surah%20As%20Sajdaah%2016%20to%2022%29%20%26%20Studetns%20Tilaawat_Parenting%20Seminar%20Day%203_31-12-14.mp3 | Para 21
 NQ13 Part 1 Hifz Surah As Sajdaah 1 to 9 Parenting Seminar Day 1 29 12 14 | https://nq-international.com/wp-content/uploads/Para%2021/NQ13_Part%201_Hifz%20Surah%20As%20Sajdaah%201%20to%209_Parenting%20Seminar%20Day%201_29-12-14.mp3 | Para 21
 NQ13 Part 2 Book Zindagi ki aakhri Tasveer Parenting Seminar Day 3 31 12 14 | https://nq-international.com/wp-content/uploads/Para%2021/NQ13_Part%202_Book%20Zindagi%20ki%20aakhri%20Tasveer_Parenting%20Seminar%20Day%203_31-12-14.mp3 | Para 21
@@ -3822,7 +3822,7 @@ lesson 198 room 20 40 para 21 Trans 12 4 2014 | https://nq-international.com/wp-
 lesson 199 room 41 60 para 21 Trans 12 4 2014 (1) | https://nq-international.com/wp-content/uploads/Para%2021/lesson%20199%20%20room%2041-60%20%20%20para%2021%20%20%20%20Trans%20%20%2012-4-2014%20%281%29.mp3 | Para 21
 
 # Para 22 :: diamond
-@ Curated audio collection from NQ International — 24 tracks
+@ ومن يقنت منكن لله ورسوله وتعمل صالحا نؤتها أجرها مرتين
 Nq13 Part 1 Attendance & Student Sharing & Sulaiman AS Story Al Ahzaab 53 to 73 15 01 15 | https://nq-international.com/wp-content/uploads/Para%2022/Nq13_Part%201_Attendance%20%26%20Student%20Sharing%20%26%20Sulaiman%20AS%20Story_Al%20Ahzaab%2053%20to%2073_15-01-15.mp3 | Para 22
 Nq13 Part 2 Onsite Quiz Rizwanabaaji Sharing & Break Announcement (Before Break) Al Ahzaab 53 to 73 15 01 15 | https://nq-international.com/wp-content/uploads/Para%2022/Nq13_Part%202_Onsite%20Quiz_%20Rizwanabaaji%20Sharing%20%26%20Break%20Announcement%20%28Before%20Break%29_Al%20Ahzaab%2053%20to%2073_15-01-15.mp3 | Para 22
 Nq13 Part 2 Tafseer Surah Faatir 1 to 26 Surah Faatir 1 to 26 27 01 15 | https://nq-international.com/wp-content/uploads/Para%2022/Nq13_Part%202_Tafseer%20Surah%20Faatir%201%20to%2026_Surah%20Faatir%201%20to%2026_27-01-15.mp3 | Para 22
@@ -3849,7 +3849,7 @@ Nq13 Part 6 Khulasa of Lesson Al Ahzaab 49 to 52 (After Break) Al Ahzaab 49 to 5
 Nq13 Part 7 Tafseer (New Lesson) Al Ahzaab 53 to 73 Al Ahzaab 49 to 52 14 01 15 | https://nq-international.com/wp-content/uploads/Para%2022/Nq13_Part%207_Tafseer%20%28New%20Lesson%29%20Al%20Ahzaab%2053%20to%2073_Al%20Ahzaab%2049%20to%2052_14-01-15.mp3 | Para 22
 
 # Para 23 :: diamond
-@ Curated audio collection from NQ International — 22 tracks
+@ وما أنزلنا على قومه من بعده من جند من السماء وما كنا منزلين
 NQ13 Live Translation L 208 Surah Saba 01 21 2015 02 04 08 51 22 | https://nq-international.com/wp-content/uploads/Para%2023/NQ13%20Live%20Translation%20L-208%20Surah%20Saba%2001-21%20--%202015-02-04-08-51-22.mp3 | Para 23
 Nq13 Part 2 Tafseer Surah Zumar 5 to 21 Surah Az Zumar 1 to 31 12 02 15 | https://nq-international.com/wp-content/uploads/Para%2023/Nq13_Part%202_Tafseer%20Surah%20Zumar%205%20to%2021_Surah%20Az%20Zumar%201%20to%2031_12-02-15.mp3 | Para 23
 Nq13 Part 3 Tafseer As Saffat 114 to 148 (Before Break) Surah As Saffat 114 to 182 09 02 15 | https://nq-international.com/wp-content/uploads/Para%2023/Nq13_Part%203_Tafseer%20As%20Saffat%20114%20to%20148%20%28Before%20Break%29_Surah%20As%20Saffat%20114%20to%20182_09-02-15.mp3 | Para 23
@@ -3874,7 +3874,7 @@ lesson 214 yasin 48 84 para 22 Trans 2 9 2015 | https://nq-international.com/wp-
 lesson 215 Saffat (76 end) Tafseer a 2 5 2015 | https://nq-international.com/wp-content/uploads/Para%2023/lesson%20215%20%20Saffat%20%20%20%2876-end%29%20%20Tafseer%20a%20%20%202-5-2015.mp3 | Para 23
 
 # Para 24 :: arch
-@ Curated audio collection from NQ International — 10 tracks
+@ فمن أظلم ممن كذب على الله وكذب بالصدق إذ جاءه أليس في جهنم مثوى للكافرين
 Nq13 Part 2 Khulaasa Az Zumar 22 to 31 & Tafseer 32 to 58 (Before Break) Surah Az Zumar 32 to 75 16 02 15 | https://nq-international.com/wp-content/uploads/Para%2024/Nq13_Part%202_Khulaasa%20Az%20Zumar%2022%20to%2031%20%26%20Tafseer%2032%20to%2058%20%28Before%20Break%29_Surah%20Az%20Zumar%2032%20to%2075_16-02-15.mp3 | Para 24
 Nq13 Part 2 Tafseer Al Momin 1 to 22 (Before Break) Surah Al Momin 1 to 45 17 02 15 | https://nq-international.com/wp-content/uploads/Para%2024/Nq13_Part%202_Tafseer%20Al%20Momin%201%20to%2022%20%28Before%20Break%29_Surah%20Al%20Momin%201%20to%2045_17-02-15.mp3 | Para 24
 Nq13 Part 2 Tafseer Haa Meem Sajdaah 1 to 25 & Recap (Before Break) Surah Haa Meem Sajdaah 1 to 31 19 02 15 | https://nq-international.com/wp-content/uploads/Para%2024/Nq13_Part%202_Tafseer%20Haa%20Meem%20Sajdaah%201%20to%2025%20%26%20Recap%20%28Before%20Break%29_Surah%20Haa%20Meem%20Sajdaah%201%20to%2031%20_19-02-15.mp3 | Para 24
@@ -3887,7 +3887,7 @@ Nq13 Part 4 Tafseer Al Ghaafir 66 to 85 (After Break) Surah Al Ghaafir 46 to 85 
 Nq13 Part 4 Tafseer Surah Fussilat 47 to 52 (After Break) Surah Haa Meem Sajdaah 32 to 54 23 02 15 | https://nq-international.com/wp-content/uploads/Para%2024/Nq13_Part%204_Tafseer%20Surah%20Fussilat%2047%20to%2052%20%28After%20Break%29_Surah%20Haa%20Meem%20Sajdaah%2032%20to%2054_23-02-15.mp3 | Para 24
 
 # Para 25 :: arch
-@ Curated audio collection from NQ International — 12 tracks
+@ إليه يرد علم الساعة وما تخرج من ثمرات من أكمامها وما تحمل من أنثى
 Nq13 Part 1 Attendance & Tafseer Surah Zukhruff 36 to 89 (Before Break) 2 3 15 | https://nq-international.com/wp-content/uploads/Para%2025/Nq13_Part%201_Attendance%20%26%20Tafseer%20Surah%20Zukhruff%2036%20to%2089%20%28Before%20Break%29_2-3-15.MP3 | Para 25
 Nq13 Part 2 Tafseer Ash Shuraa 1 to 19 & Live Session by Ustaazahji (Before Break) Surah Ash Shuraa 1 to 35 24 02 15 | https://nq-international.com/wp-content/uploads/Para%2025/Nq13_Part%202_Tafseer%20Ash%20Shuraa%201%20to%2019%20%26%20Live%20Session%20by%20Ustaazahji%20%28Before%20Break%29_Surah%20Ash%20Shuraa%201%20to%2035_24-02-15.mp3 | Para 25
 Nq13 Part 2 Tafseer Surah Ad Dukhaan 1 to 59 (After Break) 2 3 15 | https://nq-international.com/wp-content/uploads/Para%2025/Nq13_Part%202_Tafseer%20Surah%20Ad%20Dukhaan%201%20to%2059%20%28After%20Break%29_2-3-15.MP3 | Para 25
@@ -3902,7 +3902,7 @@ nq13 Part 4 Tafseer Ash Shuraa 36 to 48 (Before Break) Surah Ash Shuraa 36 to 53
 nq13 Part 5 Tafseer Ash Shuraa 49 to 53 (After Break) Surah Ash Shuraa 36 to 53 25 02 15 | https://nq-international.com/wp-content/uploads/Para%2025/nq13_Part%205_Tafseer%20Ash%20Shuraa%2049%20to%2053%20%28After%20Break%29_Surah%20Ash%20Shuraa%2036%20to%2053_25-02-15.mp3 | Para 25
 
 # Para 26 :: arch
-@ Curated audio collection from NQ International — 19 tracks
+@ حم تنزيل الكتاب من الله العزيز الحكيم
 Nq13 Part 1 Attendace & Tafseer Surah Al Ahkaaf 1 to 35 (Before Break) 4 3 15 | https://nq-international.com/wp-content/uploads/Para%2026/Nq13_Part%201_Attendace%20%26%20Tafseer_Surah%20Al%20Ahkaaf%201%20to%2035%20%28Before%20Break%29_4-3-15.MP3 | Para 26
 Nq13 Part 1 Attendance & Dua Session Surah At Toor 1 to 49 12 03 15 | https://nq-international.com/wp-content/uploads/Para%2026/Nq13_Part%201_Attendance%20%26%20Dua%20Session_Surah%20At%20Toor%201%20to%2049_12-03-15.mp3 | Para 26
 Nq13 Part 1 Attendance & Tafseer (Surah Al Hujraat 13 to 18 Cont'd) 11 03 15 | https://nq-international.com/wp-content/uploads/Para%2026/Nq13_Part%201_Attendance%20%26%20Tafseer%20%28Surah%20Al%20Hujraat%2013%20to%2018%20Cont%27d%29_11-03-15.MP3 | Para 26
@@ -3924,7 +3924,7 @@ Nq13 Part 4 Ustaazahji & Students Sharings Surah Al Hujraat 1 to 13 10 03 15 | h
 Nq13 Part 5 Ustaazahji & Students Sharing 11 03 15 | https://nq-international.com/wp-content/uploads/Para%2026/Nq13_Part%205_Ustaazahji%20%26%20Students%20Sharing_11-03-15.MP3 | Para 26
 
 # Para 27 :: key
-@ Curated audio collection from NQ International — 15 tracks
+@ قال فما خطبكم أيها المرسلون قالوا إنا أرسلنا إلى قوم مجرمين
 NQ13 Surah Al Hadid After break from Ayah 18 ..... 2015 03 19 08 06 53 | https://nq-international.com/wp-content/uploads/Para%2027/NQ13%20Surah%20Al-Hadid%20After%20break%20from%20Ayah%2018%20.....%20--%202015-03-19-08-06-53.mp3 | Para 27
 Nq13 Part 2 Tafseer Cont'd L 238 Surah Al Qamar 8 to 55 17 03 15 | https://nq-international.com/wp-content/uploads/Para%2027/Nq13_Part%202_Tafseer%20Cont%27d%20L%20238%20Surah%20Al%20Qamar%208%20to%2055_17-03-15.mp3 | Para 27
 Nq13 Part 2 Tafseer Surah Al Mujaadalah 1 to 10 (Before break) Surah Mujaadalah 1 to 22 23 03 15 | https://nq-international.com/wp-content/uploads/Para%2027/Nq13_Part%202_Tafseer%20Surah%20Al%20Mujaadalah%201%20to%2010%20%28Before%20break%29_Surah%20Mujaadalah%201%20to%2022_23-03-15.mp3 | Para 27
@@ -3942,7 +3942,7 @@ Nq13 Part 5 Tafseer Surah Al Waaqiyaah 41 to 96 (After Break) 18 03 15 | https:/
 nq13 Part 1 Attendance & Tafseer Surah Al Hadeed 21 to 29 Surah Al Mujaadalah 1 to 22 23 03 15 | https://nq-international.com/wp-content/uploads/Para%2027/nq13_Part%201_Attendance%20%26%20Tafseer%20Surah%20Al%20Hadeed%2021%20to%2029_Surah%20Al%20Mujaadalah%201%20to%2022_23-03-15.mp3 | Para 27
 
 # Para 28 :: key
-@ Curated audio collection from NQ International — 22 tracks
+@ قد سمع الله قول التي تجادلك في زوجها وتشتكي إلى الله
 JKK 1 intro & 7 amaal 3 28 2015 | https://nq-international.com/wp-content/uploads/Para%2028/JKK_1_intro%20%26%207%20amaal%203-28-2015.mp3 | Para 28
 JKK 3 next amaal 3 30 2015 | https://nq-international.com/wp-content/uploads/Para%2028/JKK_3_next%20%20amaal%203-30-2015.mp3 | Para 28
 JKK intro & 7 amaal 3 28 2015 | https://nq-international.com/wp-content/uploads/Para%2028/JKK_intro%20%26%207%20amaal%203-28-2015.mp3 | Para 28
@@ -3967,7 +3967,7 @@ UTM15 intro sharing 3 27 2015 | https://nq-international.com/wp-content/uploads/
 UTM15 sharing london student and saff khulasa (need to add to SJ tafseer) 3 27 2015 | https://nq-international.com/wp-content/uploads/Para%2028/UTM15_sharing%20london%20student%20and%20saff%20khulasa%20%28need%20to%20add%20to%20SJ%20tafseer%29%20%203-27-2015.mp3 | Para 28
 
 # Para 29 :: key
-@ Curated audio collection from NQ International — 15 tracks
+@ تبارك الذي بيده الملك وهو على كل شيء قدير
 Nq13 Part 2 Khulaasa & Explanation of Surah Al Haqqah 14 04 15 | https://nq-international.com/wp-content/uploads/Para%2029/Nq13_Part%202_Khulaasa%20%26%20Explanation%20of%20Surah%20Al%20Haqqah_14-04-15.mp3 | Para 29
 Nq13 Part 2 Tafseer Surah Al Qalam 1 to 52 (Before Break) 13 04 15 | https://nq-international.com/wp-content/uploads/Para%2029/Nq13_Part%202_Tafseer_Surah%20Al%20Qalam%201%20to%2052%20%28Before%20Break%29_13-04-15.mp3 | Para 29
 Nq13 Part 3 Khulaasa & Recap of Surah An Nooh Live Session with Ustaazahji 15 04 15 | https://nq-international.com/wp-content/uploads/Para%2029/Nq13_Part%203_Khulaasa%20%26%20Recap%20of%20Surah%20An%20Nooh%20Live%20Session%20with%20Ustaazahji_15-04-15.mp3 | Para 29
@@ -3985,7 +3985,7 @@ surah al mursalat | https://nq-international.com/wp-content/uploads/Para%2029/su
 surah al qiyamat khulasa | https://nq-international.com/wp-content/uploads/Para%2029/surah_al%20qiyamat_khulasa.mp3 | Para 29
 
 # Para 30 :: fountain
-@ Curated audio collection from NQ International — 40 tracks
+@ عم يتساءلون عن النبأ العظيم
 NQ13 Part 7 Tafseer Surah Al Zalzala 1 to 8 29 04 15 | https://nq-international.com/wp-content/uploads/Para%2030/NQ13_Part%207_Tafseer%20Surah%20Al%20Zalzala%201%20to%208_29-04-15.mp3 | Para 30
 Nadia naz daughter | https://nq-international.com/wp-content/uploads/Para%2030/Nadia%20naz%20daughter.mp3 | Para 30
 NadiaNaz Sharing | https://nq-international.com/wp-content/uploads/Para%2030/NadiaNaz%20Sharing.mp3 | Para 30
@@ -4028,11 +4028,11 @@ Nq13 Part 9 Onsite Students Sharings (Before Break) Takmeel Session 30 04 15 | h
 lesson 197 LAIL para 30 Tafseer 4 28 2015 | https://nq-international.com/wp-content/uploads/Para%2030/lesson%20197%20%20LAIL%20%20para%2030%20Tafseer%20%20%204-28-2015.mp3 | Para 30
 
 # Para 5 :: fountain
-@ Curated audio collection from NQ International — 1 tracks
+@ والمحصنات من النساء إلا ما ملكت أيمانكم كتاب الله عليكم
 SJ L58 trans An Nisa36 50(with students)fxd | https://nq-international.com/wp-content/uploads/Para%205/SJ_L58_trans_An-Nisa36-50%28with_students%29fxd.mp3 | Para 5
 
 # Para 7 :: fountain
-@ Curated audio collection from NQ International — 13 tracks
+@ لتجدن أشد الناس عداوة للذين آمنوا اليهود والذين أشركوا
 Al Anaam 60 66 part tafseer(a) | https://nq-international.com/wp-content/uploads/Para%207/Al%20Anaam%2060-66%20part%20tafseer%28a%29.mp3 | Para 7
 Al Anaam 67 73 part tafseer(b) | https://nq-international.com/wp-content/uploads/Para%207/Al%20Anaam%2067-73%20part%20tafseer%28b%29.mp3 | Para 7
 SJ L 81 Taf(a) (Al Anaam 60 66 part | https://nq-international.com/wp-content/uploads/Para%207/SJ_L%2081_Taf%28a%29%20%28Al%20Anaam%2060-66%20part.mp3 | Para 7
@@ -4048,7 +4048,7 @@ al maida 83 93 part3 tafseer 20 02 2014 11;01;14 | https://nq-international.com/
 al maida 94 105 part4 tafseer 24 02 2014 11;19;29 | https://nq-international.com/wp-content/uploads/Para%207/al-maida%2094-105%20part4%20tafseer%2024-02-2014_11%3B19%3B29.mp3 | Para 7
 
 # Para 8 :: tree
-@ Curated audio collection from NQ International — 19 tracks
+@ ولو أننا نزلنا إليهم الملائكة وكلمهم الموتى وحشرنا عليهم كل شيء قبلا
 al an'aam 111 127 part2 translation 10 03 2014 10;33;46 | https://nq-international.com/wp-content/uploads/Para%208%20/al-an%27aam%20111-127%20part2%20translation%20%2010-03-2014_10%3B33%3B46.mp3 | Para 8
 al an'aam 111 127 part3 tafseer 10 03 2014 11;02;45 | https://nq-international.com/wp-content/uploads/Para%208%20/al-an%27aam%20111-127%20part3%20tafseer%20%2010-03-2014_11%3B02%3B45.mp3 | Para 8
 al an'aam 128 140 part2 translation 11 03 2014 10;42;34 | https://nq-international.com/wp-content/uploads/Para%208%20/al-an%27aam%20128-140%20part2%20translation%2011-03-2014_10%3B42%3B34.mp3 | Para 8
@@ -4070,7 +4070,7 @@ al arraf 54 84 part4 tafseer 20 03 2014 11;53;00 | https://nq-international.com/
 al arraf 65 84 part3 translation(b) 20 03 2014 11;24;23 | https://nq-international.com/wp-content/uploads/Para%208%20/al-arraf%2065-84%20part3%20translation%28b%29%2020-03-2014_11%3B24%3B23.mp3 | Para 8
 
 # Para 9 :: tree
-@ Curated audio collection from NQ International — 18 tracks
+@ قال الملأ الذين استكبروا من قومه لنخرجنك يا شعيب والذين آمنوا معك
 Kitaab Ul Janaaiz Day 2 | https://nq-international.com/wp-content/uploads/Para%209/Kitaab%20Ul%20Janaaiz%20Day%202.mp3 | Para 9
 al anfaal ayah 1 19 part2 translation | https://nq-international.com/wp-content/uploads/Para%209/al-anfaal%20ayah%201-19%20part2%20translation.mp3 | Para 9
 al anfaal ayah 1 19 part4 tafseer | https://nq-international.com/wp-content/uploads/Para%209/al-anfaal%20ayah%201-19%20part4%20tafseer.mp3 | Para 9
@@ -4091,7 +4091,7 @@ book kitab ul janaiz day4 | https://nq-international.com/wp-content/uploads/Para
 kitab ul janaiz day3 | https://nq-international.com/wp-content/uploads/Para%209/kitab-ul-janaiz%20day3.mp3 | Para 9
 
 # Parenting and Parents :: flower
-@ Curated audio collection from NQ International — 35 tracks
+@ إن أحسنتم أحسنتم لأنفسكم وإن أسأتكم فلها
 ## General
 AurJabAnkheinThandiHongi UK | https://nq-international.com/wp-content/uploads/Parenting%20and%20Parents/AurJabAnkheinThandiHongi-UK.mp3 | Parenting and Parents
 DL Hamari awlaadoon ki kamyaabi kis cheese meyn hey | https://nq-international.com/wp-content/uploads/Parenting%20and%20Parents/DL_%20Hamari%20awlaadoon%20ki%20kamyaabi%20kis%20cheese%20meyn%20hey.mp3 | Parenting and Parents
@@ -4132,7 +4132,7 @@ NMKMK Umm Musa Ka Kirdar Story 2 PG 41 Prt 4 Day 2 | https://nq-international.co
 8. PRNT A Z D2 Teenage last letures with end dua | https://nq-international.com/wp-content/uploads/Parenting%20and%20Parents/Parenting%20A-Z%20/8.%20PRNT-A-Z_D2_Teenage_last%20letures%20with%20end%20dua.mp3 | Parenting and Parents
 
 # Personal Grooming :: tree
-@ Curated audio collection from NQ International — 35 tracks
+@ وجعلناكم شعوبا وقبائل لتعارفوا إن أكرمكم عند الله أتقاكم
 ## Session 1
 01 Goal Setting | https://nq-international.com/wp-content/uploads/Personal%20Grooming/Session%201/01-Goal-Setting.mp3 | Personal Grooming
 02 Goal Setting | https://nq-international.com/wp-content/uploads/Personal%20Grooming/Session%201/02-Goal-Setting.mp3 | Personal Grooming
@@ -4183,7 +4183,7 @@ codewords of personality | https://nq-international.com/wp-content/uploads/Perso
 02 Red signals of Success | https://nq-international.com/wp-content/uploads/Personal%20Grooming/Session%209/02-Red-signals-of-Success.mp3 | Personal Grooming
 
 # Quran :: leaf
-@ Curated audio collection from NQ International — 12 tracks
+@ ولذكر الله أكبر والله يعلم ما تصنعون
 ## General
 Quran Say Ruknay Ka Ozar 01 Fa Aina Tazhaboon | https://nq-international.com/wp-content/uploads/Quran/Quran%20Say%20Ruknay%20Ka%20Ozar-01-Fa%20Aina%20Tazhaboon.mp3 | Quran
 Quran Say Ruknay Ka Ozar 02 Bacchon Ki Tarbiyath Aik Ozar | https://nq-international.com/wp-content/uploads/Quran/Quran%20Say%20Ruknay%20Ka%20Ozar-02-Bacchon%20Ki%20Tarbiyath%20Aik%20Ozar.mp3 | Quran
@@ -4200,7 +4200,7 @@ D2 SurahAl Fatiha1 3 | https://nq-international.com/wp-content/uploads/Quran/Qur
 D3 SurahAl Fatiha4 7 | https://nq-international.com/wp-content/uploads/Quran/Quran%20ki%20kirnein/D3-SurahAl-Fatiha4-7.mp3 | Quran
 
 # Quran ki Kirnein :: leaf
-@ Curated audio collection from NQ International — 22 tracks
+@ ففروا إلى الله إني لكم منه نذير مبين
 17 Hujrat 1 10 Prt1 QKK 2017 | https://nq-international.com/wp-content/uploads/Quran%20ki%20Kirnein/17-Hujrat-1-10-Prt1-QKK-2017.mp3 | Quran ki Kirnein
 18 Hujrat 1 10 Prt2 QKK 2017 | https://nq-international.com/wp-content/uploads/Quran%20ki%20Kirnein/18-Hujrat-1-10-Prt2-QKK-2017.mp3 | Quran ki Kirnein
 21 Waqya 1 38 Prt1 QKK August1 2017 | https://nq-international.com/wp-content/uploads/Quran%20ki%20Kirnein/21-Waqya-1-38-Prt1-QKK-August1-2017.mp3 | Quran ki Kirnein
@@ -4225,7 +4225,7 @@ SurahHujuraat11 20 c | https://nq-international.com/wp-content/uploads/Quran%20k
 SurahHujuraat11 20 d | https://nq-international.com/wp-content/uploads/Quran%20ki%20Kirnein/SurahHujuraat11-20-d.mp3 | Quran ki Kirnein
 
 # Rabbaniya :: cloud
-@ Curated audio collection from NQ International — 41 tracks
+@ قل إن صلاتي ونسكي ومحياي ومماتي لله رب العالمين
 Aatraafy haqeeqat Book Rbbaniah edited | https://nq-international.com/wp-content/uploads/Rabbaniya%20/Aatraafy-haqeeqat-Book-Rbbaniah-edited.mp3 | Rabbaniya
 izalay sabab Book Rbbaniah edited | https://nq-international.com/wp-content/uploads/Rabbaniya%20/izalay-sabab-Book-Rbbaniah-edited.mp3 | Rabbaniya
 jwabi mistake nahi Book Rbbaniah edited | https://nq-international.com/wp-content/uploads/Rabbaniya%20/jwabi-mistake-nahi-Book-Rbbaniah-edited.mp3 | Rabbaniya
@@ -4269,7 +4269,7 @@ sabr aur aeraaz Book Rbbaniah edited | https://nq-international.com/wp-content/u
 tabdeeli ka nizam Book Rbbaniah edited | https://nq-international.com/wp-content/uploads/Rabbaniya%20/tabdeeli-ka-nizam-Book-Rbbaniah-edited.mp3 | Rabbaniya
 
 # Ramadan 2018 :: mosque
-@ Curated audio collection from NQ International — 56 tracks
+@ الذين ينفقون في السراء والضراء والكاظمين الغيظ والعافين عن الناس
 ## Dawrah e Quran
 DQ18 Day 5 May 10th2018 | https://nq-international.com/wp-content/uploads/Ramadan%202018/Dawrah%20e%20Quran/DQ18_Day%205_May%2010th2018.mp3 | Ramadan 2018
 DQ18 Day01 05 04 2018 | https://nq-international.com/wp-content/uploads/Ramadan%202018/Dawrah%20e%20Quran/DQ18-Day01-05-04-2018%20-.mp3 | Ramadan 2018
@@ -4332,7 +4332,7 @@ TBQ Day8 12.06.2018 | https://nq-international.com/wp-content/uploads/Ramadan%20
 TBQ Day9 06.13.2018 | https://nq-international.com/wp-content/uploads/Ramadan%202018/Tadubbur%20ul%20Quran/TBQ_Day9-06.13.2018.mp3 | Ramadan 2018
 
 # Ramadan 2019 :: mosque
-@ Curated audio collection from NQ International — 157 tracks
+@ والله يحب المحسنين
 ## Day 01
 01 istqbal Ramadan Khushab 5 1 2019 | https://nq-international.com/wp-content/uploads/Ramadan%202019/Day%2001/01-istqbal-Ramadan-Khushab-5-1-2019.mp3 | Ramadan 2019
 02 istqbal Ramadan Khushab 5 1 2019 | https://nq-international.com/wp-content/uploads/Ramadan%202019/Day%2001/02-istqbal-Ramadan-Khushab-5-1-2019.mp3 | Ramadan 2019
@@ -4522,12 +4522,12 @@ juz 22 summry | https://nq-international.com/wp-content/uploads/Ramadan%202019/D
 8 DQ19 Juzz30 Surah Al Kafiroon to An Naas | https://nq-international.com/wp-content/uploads/Ramadan%202019/Day%2031/8-DQ19-Juzz30-Surah%20Al%20Kafiroon-to-An%20Naas.mp3 | Ramadan 2019
 
 # Ramadan 2019 Lectures :: mosque
-@ Curated audio collection from NQ International — 2 tracks
+@ ربنا هب لنا من أزواجنا وذرياتنا قرة أعين واجعلنا للمتقين إماما
 Ramadan quick over view April 26 2019 Edited | https://nq-international.com/wp-content/uploads/Ramadan%202019-Lectures/Ramadan-quick-over-view-April-26-2019-Edited.mp3 | Ramadan 2019 Lectures
 how to prepare family and friends for Ramadan short clip | https://nq-international.com/wp-content/uploads/Ramadan%202019-Lectures/how-to-prepare-family-and-friends-for-Ramadan-short-clip.mp3 | Ramadan 2019 Lectures
 
 # Ramadan DQ2020 English :: mountain
-@ Curated audio collection from NQ International — 33 tracks
+@ ولا تمش في الأرض مرحا إنك لن تخرق الأرض ولن تبلغ الجبال طولا
 DQ2020 Eng Juz 1 | https://nq-international.com/wp-content/uploads/Ramadan-%20DQ2020%20English/DQ2020%20Eng%20Juz%201.mp3 | Ramadan DQ2020 English
 DQ2020 Eng Juz 2 recording | https://nq-international.com/wp-content/uploads/Ramadan-%20DQ2020%20English/DQ2020%20Eng%20Juz%202%20recording.mp3 | Ramadan DQ2020 English
 NQ DQ E 2020 DAY 04 K | https://nq-international.com/wp-content/uploads/Ramadan-%20DQ2020%20English/NQ%20DQ%20E%202020%20DAY%2004%20K.MP3 | Ramadan DQ2020 English
@@ -4563,7 +4563,7 @@ NQ DQ E 2020Juz 30 K | https://nq-international.com/wp-content/uploads/Ramadan-%
 Welcome Ramadan 2020 | https://nq-international.com/wp-content/uploads/Ramadan-%20DQ2020%20English/Welcome%20Ramadan%202020.mp3 | Ramadan DQ2020 English
 
 # Roohul Quran :: leaf
-@ Curated audio collection from NQ International — 5 tracks
+@ وإذا مرضت فهو يشفين
 ## Juz 04
 AnNisa 15 16 Tafseer Juz 04 January 09 2017 RQ | https://nq-international.com/wp-content/uploads/Roohul%20Quran/Juz%2004/AnNisa-15-16-Tafseer-Juz-04-January-09-2017-RQ.mp3 | Roohul Quran
 AnNisa 17 18 Tafseer Juz 04 January 09 2017 RQ | https://nq-international.com/wp-content/uploads/Roohul%20Quran/Juz%2004/AnNisa-17-18-Tafseer-Juz-04-January-09-2017-RQ.mp3 | Roohul Quran
@@ -4572,7 +4572,7 @@ Sura AleImran Summary Part 1 Juz03 1 91 | https://nq-international.com/wp-conten
 Sura AleImran Summary Part 2 Juz04 92 200 | https://nq-international.com/wp-content/uploads/Roohul%20Quran/Juz%2004/Sura-AleImran-Summary-Part-2-Juz04-92-200.mp3 | Roohul Quran
 
 # SJ :: dua
-@ Curated audio collection from NQ International — 991 tracks
+@ الذي خلقني فهو يهدين والذي هو يطعمني ويسقين
 ## Para1
 SJ L 15 Taf(b) Al Baqrah 114 115) | https://nq-international.com/wp-content/uploads/SJ/Para1/SJ-L-15-Taf%28b%29-Al%20Baqrah%20114-115%29.mp3 | SJ
 SJ L 15 Taf(c) Al Baqrah 116 118 | https://nq-international.com/wp-content/uploads/SJ/Para1/SJ-L-15-Taf%28c%29-Al%20Baqrah%20116-118.mp3 | SJ
