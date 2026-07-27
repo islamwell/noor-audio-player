@@ -614,7 +614,7 @@ const st={cats:[],all:[],view:{t:'home'},queue:[],qi:-1,cur:null,shuffle:false,r
   fav:new Set(JSON.parse(localStorage.getItem('noor.fav')||'[]')),
   recent:JSON.parse(localStorage.getItem('noor.recent')||'[]'),
   pos:JSON.parse(localStorage.getItem('noor.pos')||'{}'),
-  rate:1,sleep:0,sleepT:null,muted:false,search:''};
+  resumePos:0,rate:1,sleep:0,sleepT:null,muted:false,search:''};
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmt=s=>{if(!isFinite(s)||s<0)s=0;const m=Math.floor(s/60),x=Math.floor(s%60);return m+':'+String(x).padStart(2,'0')};
@@ -623,6 +623,21 @@ const savePos=()=>{
   if(st.cur && A && isFinite(A.currentTime) && A.currentTime > 3 && (!A.duration || A.duration - A.currentTime > 3)){
     st.pos[st.cur.id] = Math.floor(A.currentTime);
     localStorage.setItem('noor.pos', JSON.stringify(st.pos));
+  }
+};
+const checkResume=()=>{
+  if(st.cur && st.resumePos > 3 && (!A.duration || A.duration - st.resumePos > 3)){
+    if(A.currentTime < st.resumePos - 2){
+      const target = st.resumePos;
+      A.currentTime = target;
+      toast(I.clock, 'Resumed from ' + fmt(target));
+      const p = A.duration ? target/A.duration*100 : 0;
+      $('#f1').style.width = p+'%'; $('#f2').style.width = p+'%';
+      $('#h1').style.left = p+'%'; $('#h2').style.left = p+'%'; $('#pline').style.width = p+'%';
+      $('#tCur').textContent = $('#tCur2').textContent = fmt(target);
+    } else {
+      st.resumePos = 0;
+    }
   }
 };
 window.addEventListener('beforeunload', savePos);
@@ -694,6 +709,7 @@ const byId=id=>st.all.find(t=>t.id===id);
     st.cur = byId(st.recent[0]);
     st.queue = st.all.map(x=>x.id);
     st.qi = st.queue.indexOf(st.cur.id);
+    st.resumePos = (st.pos[st.cur.id] && isFinite(st.pos[st.cur.id]) && st.pos[st.cur.id] > 3) ? st.pos[st.cur.id] : 0;
     A.src = st.cur.url;
     paintNow();
     $('#pbar').classList.add('up');
@@ -897,7 +913,7 @@ function render(){
     <footer style="margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--stroke); color: var(--text-3); font-size: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
       <div>NurulQuran · Islamic Audio Player</div>
       <div class="footer-bottom">
-        <div id="footer-version">v1.0.11 (updated 2026-07-27 08:08)</div>
+        <div id="footer-version">v1.0.12 (updated 2026-07-27 08:18)</div>
         <div style="font-size: 11px; opacity: 0.7;">Click version number to clear cache & force reload</div>
       </div>
     </footer>`;
@@ -969,6 +985,7 @@ function play(id,ctx){
   if(ctx&&ctx.length){st.queue=ctx.map(x=>x.id)}else if(!st.queue.length){st.queue=st.all.map(x=>x.id)}
   st.qi=st.queue.indexOf(id);
   st.cur=t;
+  st.resumePos = (st.pos[id] && isFinite(st.pos[id]) && st.pos[id] > 3) ? st.pos[id] : 0;
   A.src=t.url;A.playbackRate=st.rate;
   A.play().catch(()=>toast(I.info,'Could not load audio — check the URL'));
   st.recent=[id,...st.recent.filter(x=>x!==id)];save();
@@ -1014,6 +1031,7 @@ function next(user){
   A.pause();
 }
 function prev(){
+  st.resumePos = 0;
   if(A.currentTime>4){
     A.currentTime=0;
     if(st.cur){delete st.pos[st.cur.id];localStorage.setItem('noor.pos',JSON.stringify(st.pos));}
@@ -1048,6 +1066,7 @@ A.addEventListener('pause',()=>{
   savePos();
 });
 A.addEventListener('ended',()=>{
+  st.resumePos = 0;
   if(st.cur){delete st.pos[st.cur.id];localStorage.setItem('noor.pos',JSON.stringify(st.pos));}
   if(st.repeat==='one'){A.currentTime=0;A.play()}else next(false);
 });
@@ -1055,12 +1074,19 @@ A.addEventListener('error',()=>toast(I.info,'Playback failed — the source may 
 A.addEventListener('loadedmetadata',()=>{
   const d=fmt(A.duration);$('#tDur').textContent=d;$('#tDur2').textContent=d;
   if(st.cur){durCache[st.cur.id]=d;const e=$('.tr.on .dur');if(e)e.textContent=d}
-  if(st.cur && st.pos[st.cur.id] && isFinite(st.pos[st.cur.id]) && st.pos[st.cur.id] > 3 && (!A.duration || A.duration - st.pos[st.cur.id] > 3)){
-    A.currentTime = st.pos[st.cur.id];
-    toast(I.clock, 'Resumed from ' + fmt(st.pos[st.cur.id]));
-  }
+  checkResume();
 });
+A.addEventListener('canplay', checkResume);
+A.addEventListener('playing', checkResume);
 A.addEventListener('timeupdate',()=>{
+  if(st.cur && st.resumePos > 3){
+    if(A.currentTime < st.resumePos - 2){
+      A.currentTime = st.resumePos;
+      return;
+    } else {
+      st.resumePos = 0;
+    }
+  }
   const p=A.duration?A.currentTime/A.duration*100:0;
   $('#f1').style.width=p+'%';$('#f2').style.width=p+'%';
   $('#h1').style.left=p+'%';$('#h2').style.left=p+'%';$('#pline').style.width=p+'%';
@@ -1071,9 +1097,6 @@ A.addEventListener('timeupdate',()=>{
       if(Math.floor(A.currentTime) % 5 === 0){
         localStorage.setItem('noor.pos', JSON.stringify(st.pos));
       }
-    } else if(A.currentTime <= 3 && st.pos[st.cur.id]){
-      delete st.pos[st.cur.id];
-      localStorage.setItem('noor.pos', JSON.stringify(st.pos));
     }
   }
 });
@@ -1082,7 +1105,15 @@ A.addEventListener('timeupdate',()=>{
 [['#seek1','#f1','#h1'],['#seek2','#f2','#h2']].forEach(([tk])=>{
   const el=$(tk);let drag=false;
   const set=e=>{const r=el.getBoundingClientRect();const x=Math.min(Math.max((e.clientX-r.left)/r.width,0),1);
-    if(A.duration)A.currentTime=x*A.duration;};
+    if(A.duration){
+      A.currentTime=x*A.duration;
+      st.resumePos = 0;
+      if(st.cur && A.currentTime <= 3){
+        delete st.pos[st.cur.id];
+        localStorage.setItem('noor.pos',JSON.stringify(st.pos));
+      }
+    }
+  };
   el.addEventListener('pointerdown',e=>{drag=true;el.classList.add('drag');el.setPointerCapture(e.pointerId);set(e)});
   el.addEventListener('pointermove',e=>drag&&set(e));
   el.addEventListener('pointerup',e=>{drag=false;el.classList.remove('drag')});
