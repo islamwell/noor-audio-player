@@ -680,7 +680,8 @@ function parse(txt){
   });
   return cats.filter(x=>x.tracks.length);
 }
-const byId=id=>st.all.find(t=>t.id===id);
+let byIdMap=new Map();
+const byId=id=>byIdMap.get(id);
 
 /* ═══════════ BOOT ═══════════ */
 (async function boot(){
@@ -702,6 +703,7 @@ const byId=id=>st.all.find(t=>t.id===id);
   }catch(e){txt=$('#demo').textContent;src='demo collection';}
   st.cats=parse(txt);
   st.all=st.cats.flatMap(c=>c.tracks);
+  byIdMap=new Map(st.all.map(t=>[t.id,t]));
   const note=$('#srcNote'); if(note) note.textContent=st.all.length+' tracks · '+src;
   buildNav();render();
   const v=+(localStorage.getItem('noor.vol')??85);$('#volR').value=v;setVol(v);
@@ -913,7 +915,7 @@ function render(){
     <footer style="margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--stroke); color: var(--text-3); font-size: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
       <div>NurulQuran · Islamic Audio Player</div>
       <div class="footer-bottom">
-        <div id="footer-version">v1.0.12 (updated 2026-07-27 08:18)</div>
+        <div id="footer-version">v1.0.13 (updated 2026-07-27 15:26)</div>
         <div style="font-size: 11px; opacity: 0.7;">Click version number to clear cache & force reload</div>
       </div>
     </footer>`;
@@ -1285,7 +1287,7 @@ $('#searchDrop').addEventListener('click',e=>{
   if(trBtn){
     closeSearchDrop();
     const tr=byId(trBtn.dataset.strack);
-    if(tr)play(tr);return;
+    if(tr)play(tr.id,st.all);return;
   }
   const fullBtn=e.target.closest('[data-sfull]');
   if(fullBtn){
