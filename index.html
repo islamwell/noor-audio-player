@@ -104,8 +104,8 @@ main{min-width:0;padding-bottom:calc(var(--bar-h) + 30px)}
   background:var(--surface);color:var(--text);font:inherit;font-size:14.5px;outline:none;transition:.25s var(--ease)}
 .search input::placeholder{color:var(--text-3)}
 .search input:focus{border-color:color-mix(in srgb,var(--em) 55%,transparent);background:var(--surface-2);box-shadow:0 0 0 4px rgba(34,201,154,.1)}
-.kbd{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:11px;color:var(--text-3);border:1px solid var(--stroke);padding:2px 6px;border-radius:6px}
-.search-drop{position:absolute;left:0;right:0;top:calc(100% + 8px);z-index:150;background:var(--surface-2);border:1px solid var(--stroke-str);border-radius:16px;box-shadow:0 14px 40px rgba(0,0,0,.35);backdrop-filter:blur(24px);padding:12px;max-height:450px;overflow-y:auto;display:none;flex-direction:column;gap:12px;}
+.search-drop{position:absolute;left:0;right:0;top:calc(100% + 8px);z-index:150;background:#111514;border:1px solid var(--stroke-str);border-radius:16px;box-shadow:0 14px 40px rgba(0,0,0,.6);padding:12px;max-height:450px;overflow-y:auto;display:none;flex-direction:column;gap:12px;}
+html[data-theme="light"] .search-drop{background:#ffffff;box-shadow:0 14px 40px rgba(0,0,0,.15);}
 .search-drop.on{display:flex;}
 .search-drop .sd-sec{display:flex;flex-direction:column;gap:6px;}
 .search-drop h6{margin:0;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--text-3);padding:0 6px;}
@@ -358,6 +358,7 @@ canvas#viz{width:100%;height:56px;display:block;opacity:.9}
 @media(max-width:1180px){.seekrow{width:min(340px,34vw)}.vol{width:96px}}
 @media(max-width:1000px){
   .app{grid-template-columns:1fr}
+  .app.side-collapsed{grid-template-columns:1fr}
   .side{position:fixed;left:0;top:0;z-index:50;width:290px;transform:translateX(-102%);transition:transform .45s var(--ease);
     background:color-mix(in srgb,var(--bg-2) 98%,#000);backdrop-filter:none}
   .side.open{transform:none;box-shadow:var(--shadow)}
@@ -397,6 +398,12 @@ canvas#viz{width:100%;height:56px;display:block;opacity:.9}
       </div>
       <button class="iconbtn" id="sideCollapseBtn" title="Minimize sidebar" aria-label="Minimize sidebar" style="width:32px;height:32px;margin-left:auto;border:none;background:none;color:var(--text-3);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
     </div>
+    <div style="padding: 6px 12px 2px;">
+      <button class="nitem" id="themeBtn" style="cursor:pointer;width:100%;border:1px solid var(--stroke);background:var(--surface);margin-bottom:2px;border-radius:12px;padding:9px 12px;display:flex;align-items:center;gap:10px;color:var(--text);font:inherit;font-size:13.5px;transition:.2s var(--ease);">
+        <span id="themeIco" style="display:grid;place-items:center;color:var(--em);width:20px;height:20px;"></span>
+        <span id="themeTxt" style="font-weight:500;">Toggle theme</span>
+      </button>
+    </div>
     <nav class="nav" id="nav"></nav>
   </aside>
 
@@ -410,8 +417,6 @@ canvas#viz{width:100%;height:56px;display:block;opacity:.9}
         <span class="kbd">/</span>
         <div class="search-drop" id="searchDrop"></div>
       </div>
-      <button class="iconbtn" id="favBtn" title="Favourites"></button>
-      <button class="iconbtn" id="themeBtn" title="Toggle theme"></button>
     </div>
     <div class="chips" id="chips"></div>
     <div class="wrap" id="view"></div>
@@ -655,8 +660,8 @@ const byId=id=>st.all.find(t=>t.id===id);
 
 /* ═══════════ BOOT ═══════════ */
 (async function boot(){
-  $('#menuBtn').innerHTML=I.menu;$('#searchIco').innerHTML=I.search;$('#favBtn').innerHTML=I.heart;
-  $('#themeBtn').innerHTML=I.sun;$('#closeSheet').innerHTML=I.chevD;$('#qToggle').innerHTML=I.list;$('#qIco').innerHTML=I.list;
+  $('#menuBtn').innerHTML=I.menu;$('#searchIco').innerHTML=I.search;updateThemeUI();
+  $('#closeSheet').innerHTML=I.chevD;$('#qToggle').innerHTML=I.list;$('#qIco').innerHTML=I.list;
   $('#playB').innerHTML=I.play;$('#playB2').innerHTML=I.play;
   [['#prevB',I.prev],['#nextB',I.next],['#shufB',I.shuffle],['#repB',I.repeat],['#favNow',I.heart],['#muteB',I.vol],['#expandB',I.up],
    ['#prevB2',I.prev],['#nextB2',I.next],['#shufB2',I.shuffle],['#repB2',I.repeat]].forEach(([s,h])=>$(s).innerHTML=h);
@@ -874,7 +879,7 @@ function render(){
     <footer style="margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--stroke); color: var(--text-3); font-size: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
       <div>NurulQuran · Islamic Audio Player</div>
       <div class="footer-bottom">
-        <div id="footer-version">v1.0.9 (updated 2026-07-27 07:32)</div>
+        <div id="footer-version">v1.0.10 (updated 2026-07-27 07:58)</div>
         <div style="font-size: 11px; opacity: 0.7;">Click version number to clear cache & force reload</div>
       </div>
     </footer>`;
@@ -1121,7 +1126,7 @@ function updateSearchDrop(){
       <div class="sd-sec">
         <h6>Popular Topics & Keywords</h6>
         <div class="sd-pills">
-          ${recTags.map(t=>`<button class="sd-pill" data-stag="${t}">${I.search} ${t}</button>`).join('')}
+          ${recTags.map(t=>`<button class="sd-pill" data-stag="${t}">${t}</button>`).join('')}
         </div>
       </div>
       <div class="sd-sec" style="margin-top:6px;">
@@ -1216,20 +1221,33 @@ $('#q').addEventListener('click',()=>updateSearchDrop());
 let sT;$('#q').addEventListener('input',e=>{updateSearchDrop();clearTimeout(sT);sT=setTimeout(()=>{st.search=e.target.value.trim();render()},170)});
 document.addEventListener('click',e=>{if(!e.target.closest('.search'))closeSearchDrop();});
 
-$('#favBtn').onclick=()=>go({t:'fav'});
-$('#themeBtn').onclick=()=>{
+function updateThemeUI(){
+  const isLight=document.documentElement.dataset.theme==='light';
+  const ico=$('#themeIco'), txt=$('#themeTxt');
+  if(ico) ico.innerHTML=isLight?I.moon:I.sun;
+  if(txt) txt.textContent=isLight?'Dark Mode':'Light Mode';
+}
+const themeBtn=$('#themeBtn');
+if(themeBtn) themeBtn.onclick=()=>{
   const l=document.documentElement.dataset.theme==='light';
   document.documentElement.dataset.theme=l?'dark':'light';
-  $('#themeBtn').innerHTML=l?I.sun:I.moon;
   localStorage.setItem('noor.theme',l?'dark':'light');
+  updateThemeUI();
 };
-if(localStorage.getItem('noor.theme')==='light'){document.documentElement.dataset.theme='light';$('#themeBtn').innerHTML=I.moon}
+if(localStorage.getItem('noor.theme')==='light'){
+  document.documentElement.dataset.theme='light';
+}
+updateThemeUI();
 const side=$('#side'),scrim=$('#scrim');
 $('#menuBtn').onclick=()=>{
   if(window.innerWidth<=1000){side.classList.add('open');scrim.classList.add('on')}
   else{$('.app').classList.toggle('side-collapsed')}
 };
-const colBtn=$('#sideCollapseBtn');if(colBtn)colBtn.onclick=()=>$('.app').classList.add('side-collapsed');
+const colBtn=$('#sideCollapseBtn');
+if(colBtn) colBtn.onclick=()=>{
+  if(window.innerWidth<=1000) closeSide();
+  else $('.app').classList.toggle('side-collapsed');
+};
 const bLink=$('#brandLink');if(bLink)bLink.onclick=()=>{go({t:'home'});if(window.innerWidth<=1000)closeSide();};
 function closeSide(){side.classList.remove('open');scrim.classList.remove('on')}
 scrim.onclick=closeSide;
