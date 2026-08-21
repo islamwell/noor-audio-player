@@ -249,7 +249,27 @@ html[data-theme="light"] .banner .bico{background:rgba(255,255,255,.92);color:va
 .bc-link svg{width:13.5px;height:13.5px}
 .bc-sep{color:var(--text-3);opacity:.45;font-size:12px;display:inline-flex;align-items:center;user-select:none}
 .bc-curr{color:var(--gold);font-weight:500;display:inline-flex;align-items:center;gap:5px;padding:4px 6px;font-size:13px}
-.bc-curr svg{width:13.5px;height:13.5px}
+/* Language Flag Buttons */
+.flag-btn{
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  padding: 0;
+  border: 2px solid rgba(255,255,255,0.12);
+  background: var(--surface);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  transition: transform .2s var(--ease), border-color .2s var(--ease), box-shadow .2s var(--ease);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  flex-shrink: 0;
+}
+html[data-theme="light"] .flag-btn{border-color:rgba(0,0,0,0.12);box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.flag-btn svg{width:100%;height:100%;display:block;border-radius:50%}
+.flag-btn:hover{transform:scale(1.18) translateY(-2px);border-color:var(--gold)}
+.flag-btn.active{border-color:var(--em);box-shadow:0 0 0 2px var(--em),0 4px 12px rgba(34,201,154,0.4);transform:scale(1.1)}
+html[data-rtl="true"] .hero-txt h2, html[data-rtl="true"] .hero-txt p{direction:rtl;text-align:right}
 
 /* Skeleton / empty */
 .sk{height:70px;border-radius:14px;background:linear-gradient(100deg,var(--surface) 25%,var(--surface-2) 45%,var(--surface) 65%);background-size:220% 100%;animation:sh 1.4s infinite}
@@ -703,9 +723,207 @@ const GRADS=[
  'linear-gradient(140deg,#b2543f,#4a1a13)','linear-gradient(140deg,#14a08c,#0b3f4a)',
  'linear-gradient(140deg,#8f7b2f,#33290a)','linear-gradient(140deg,#2f7f5f,#123a2b)'];
 
+/* ═══════════ MULTI-LANGUAGE (i18n) ═══════════ */
+const FLAGS = {
+  en: `<svg viewBox="0 0 32 32" fill="none"><clipPath id="flag_us"><circle cx="16" cy="16" r="16"/></clipPath><g clip-path="url(#flag_us)"><rect width="32" height="32" fill="#b22234"/><path d="M0 2.46h32M0 7.38h32M0 12.3h32M0 17.22h32M0 22.14h32M0 27.06h32" stroke="#ffffff" stroke-width="2.46"/><rect width="14" height="17.22" fill="#3c3b6e"/><circle cx="3.5" cy="3.5" r="0.8" fill="#fff"/><circle cx="7" cy="3.5" r="0.8" fill="#fff"/><circle cx="10.5" cy="3.5" r="0.8" fill="#fff"/><circle cx="5.25" cy="6.2" r="0.8" fill="#fff"/><circle cx="8.75" cy="6.2" r="0.8" fill="#fff"/><circle cx="3.5" cy="8.9" r="0.8" fill="#fff"/><circle cx="7" cy="8.9" r="0.8" fill="#fff"/><circle cx="10.5" cy="8.9" r="0.8" fill="#fff"/><circle cx="5.25" cy="11.6" r="0.8" fill="#fff"/><circle cx="8.75" cy="11.6" r="0.8" fill="#fff"/><circle cx="3.5" cy="14.3" r="0.8" fill="#fff"/><circle cx="7" cy="14.3" r="0.8" fill="#fff"/><circle cx="10.5" cy="14.3" r="0.8" fill="#fff"/></g></svg>`,
+  no: `<svg viewBox="0 0 32 32" fill="none"><clipPath id="flag_no"><circle cx="16" cy="16" r="16"/></clipPath><g clip-path="url(#flag_no)"><rect width="32" height="32" fill="#ba0c2f"/><path d="M0 16h32M11 0v32" stroke="#ffffff" stroke-width="6.5"/><path d="M0 16h32M11 0v32" stroke="#00205b" stroke-width="3.2"/></g></svg>`,
+  fr: `<svg viewBox="0 0 32 32" fill="none"><clipPath id="flag_fr"><circle cx="16" cy="16" r="16"/></clipPath><g clip-path="url(#flag_fr)"><rect width="10.67" height="32" fill="#002654"/><rect x="10.67" width="10.66" height="32" fill="#ffffff"/><rect x="21.33" width="10.67" height="32" fill="#ce1126"/></g></svg>`,
+  ur: `<svg viewBox="0 0 32 32" fill="none"><clipPath id="flag_pk"><circle cx="16" cy="16" r="16"/></clipPath><g clip-path="url(#flag_pk)"><rect width="32" height="32" fill="#01411c"/><rect width="8" height="32" fill="#ffffff"/><path d="M 22.2 11.5 A 6.5 6.5 0 1 0 22.2 20.5 A 5.4 5.4 0 1 1 22.2 11.5 Z" fill="#ffffff"/><polygon points="21,11 21.8,13 23.9,13 22.2,14.3 22.8,16.3 21.2,15 19.6,16.3 20.2,14.3 18.5,13 20.6,13" fill="#ffffff" transform="scale(0.85) translate(4, 2.5)"/></g></svg>`
+};
+
+const I18N = {
+  en: {
+    name: 'English',
+    discover: 'Discover',
+    favourites: 'Favourites',
+    browse: 'Browse',
+    collections: 'Collections',
+    toggle_theme: 'Toggle theme',
+    dark_mode: 'Dark Mode',
+    light_mode: 'Light Mode',
+    search_ph: 'Search recitations, lectures, reciters…',
+    all: 'All',
+    play_all: 'Play all',
+    shuffle: 'Shuffle',
+    share: 'Share',
+    tracks: 'Tracks',
+    recently_played: 'Recently played',
+    see_all: 'See all',
+    saved: 'Saved',
+    saved_tracks: 'saved tracks',
+    saved_sub: 'always one tap away',
+    empty_fav_title: 'Nothing saved yet',
+    empty_fav_desc: 'Tap the heart on any track to keep it here.',
+    empty_search_title: 'No matches found',
+    empty_search_desc: 'Try another keyword or phonetic spelling (e.g. Tafseer, Ramadan, Dua, Ruqyah, Akhirat).',
+    hero_title: 'Listen with <em>presence</em>.<br>Learn with <em>light</em>.',
+    hero_sub: 'A hand-curated library of recitation, remembrance and knowledge.',
+    hero_cont: 'Continue with',
+    start_listening: 'Start listening',
+    continue_listening: 'Continue listening',
+    shuffle_library: 'Shuffle library',
+    stat_tracks: 'Tracks',
+    stat_collections: 'Collections',
+    stat_saved: 'Saved',
+    nothing_playing: 'Nothing playing',
+    select_track: 'Select a track to begin',
+    now_playing: 'Now Playing',
+    all_collections: 'All collections',
+    footer_copyright: 'NurulQuran · Islamic Audio Player',
+    footer_cache_hint: 'Click version number to clear cache & force reload',
+    lang_changed: 'Language set to English 🇺🇸'
+  },
+  no: {
+    name: 'Norsk',
+    discover: 'Oppdag',
+    favourites: 'Favoritter',
+    browse: 'Utforsk',
+    collections: 'Samlinger',
+    toggle_theme: 'Endre tema',
+    dark_mode: 'Mørk modus',
+    light_mode: 'Lys modus',
+    search_ph: 'Søk etter resitasjoner, forelesninger…',
+    all: 'Alle',
+    play_all: 'Spill alle',
+    shuffle: 'Bland',
+    share: 'Del',
+    tracks: 'Spor',
+    recently_played: 'Nylig spilt',
+    see_all: 'Se alle',
+    saved: 'Lagret',
+    saved_tracks: 'lagrede spor',
+    saved_sub: 'alltid ett trykk unna',
+    empty_fav_title: 'Ingenting lagret ennå',
+    empty_fav_desc: 'Trykk på hjertet på et spor for å lagre det her.',
+    empty_search_title: 'Ingen treff funnet',
+    empty_search_desc: 'Prøv et annet emne eller stavemåte (f.eks. Tafseer, Ramadan, Dua).',
+    hero_title: 'Lytt med <em>nærvær</em>.<br>Lær med <em>lys</em>.',
+    hero_sub: 'Et kuratert bibliotek av resitasjon, erindring og kunnskap.',
+    hero_cont: 'Fortsett med',
+    start_listening: 'Begynn å lytte',
+    continue_listening: 'Fortsett å lytte',
+    shuffle_library: 'Bland bibliotek',
+    stat_tracks: 'Spor',
+    stat_collections: 'Samlinger',
+    stat_saved: 'Lagret',
+    nothing_playing: 'Ingenting spilles',
+    select_track: 'Velg et spor for å starte',
+    now_playing: 'Spilles nå',
+    all_collections: 'Alle samlinger',
+    footer_copyright: 'NurulQuran · Islamsk Lydspiller',
+    footer_cache_hint: 'Klikk på versjonsnummeret for å tømme hurtigbufferen',
+    lang_changed: 'Språk endret til Norsk 🇳🇴'
+  },
+  fr: {
+    name: 'Français',
+    discover: 'Découvrir',
+    favourites: 'Favoris',
+    browse: 'Parcourir',
+    collections: 'Collections',
+    toggle_theme: 'Changer de thème',
+    dark_mode: 'Mode Sombre',
+    light_mode: 'Mode Clair',
+    search_ph: 'Rechercher des récitations, conférences…',
+    all: 'Tous',
+    play_all: 'Tout lire',
+    shuffle: 'Mélanger',
+    share: 'Partager',
+    tracks: 'Pistes',
+    recently_played: 'Récemment écouté',
+    see_all: 'Voir tout',
+    saved: 'Enregistrés',
+    saved_tracks: 'pistes enregistrées',
+    saved_sub: 'toujours à portée d’un clic',
+    empty_fav_title: 'Rien d’enregistré pour le moment',
+    empty_fav_desc: 'Appuyez sur le cœur d’une piste pour la garder ici.',
+    empty_search_title: 'Aucun résultat trouvé',
+    empty_search_desc: 'Essayez un autre mot-clé ou sujet (ex: Tafseer, Ramadan, Dua).',
+    hero_title: 'Écoutez avec <em>présence</em>.<br>Apprenez avec <em>lumière</em>.',
+    hero_sub: 'Une bibliothèque audio soignée de récitation, rappel et savoir.',
+    hero_cont: 'Continuer avec',
+    start_listening: 'Commencer l’écoute',
+    continue_listening: 'Continuer l’écoute',
+    shuffle_library: 'Mélanger la bibliothèque',
+    stat_tracks: 'Pistes',
+    stat_collections: 'Collections',
+    stat_saved: 'Favoris',
+    nothing_playing: 'Aucune lecture en cours',
+    select_track: 'Sélectionnez une piste pour commencer',
+    now_playing: 'En cours de lecture',
+    all_collections: 'Toutes les collections',
+    footer_copyright: 'NurulQuran · Lecteur Audio Islamique',
+    footer_cache_hint: 'Cliquez sur le numéro de version pour vider le cache',
+    lang_changed: 'Langue changée en Français 🇫🇷'
+  },
+  ur: {
+    name: 'اردو',
+    discover: 'دریافت کریں',
+    favourites: 'پسندیدہ',
+    browse: 'فہرست',
+    collections: 'مجموعے',
+    toggle_theme: 'تھیم تبدیل کریں',
+    dark_mode: 'ڈارک موڈ',
+    light_mode: 'لائٹ موڈ',
+    search_ph: 'تلاوت، بیانات اور قاری تلاش کریں…',
+    all: 'تمام',
+    play_all: 'سب چلائیں',
+    shuffle: 'بے ترتیبی',
+    share: 'شیئر کریں',
+    tracks: 'ٹریکس',
+    recently_played: 'حالیہ سنے گئے',
+    see_all: 'تمام دیکھیں',
+    saved: 'محفوظ شدہ',
+    saved_tracks: 'محفوظ ٹریکس',
+    saved_sub: 'ہمیشہ صرف ایک کلک کی دوری پر',
+    empty_fav_title: 'ابھی تک کچھ محفوظ نہیں',
+    empty_fav_desc: 'کسی بھی ٹریک کو یہاں محفوظ کرنے کے لیے دل کے نشان پر ٹیپ کریں۔',
+    empty_search_title: 'کوئی نتیجہ نہیں ملا',
+    empty_search_desc: 'کوئی دوسرا لفظ یا عنوان تلاش کریں (مثلاً تفسیر، رمضان، دعا، رقیہ)۔',
+    hero_title: 'سنیں <em>حضورِ قلب</em> کے ساتھ۔<br>پائیں نورِ <em>ہدایت و علم</em>۔',
+    hero_sub: 'تلاوت، ذکر اور اسلامی علم کا منتخب اور خوبصورت آڈیو ذخیرہ۔',
+    hero_cont: 'جاری رکھیں مع',
+    start_listening: 'سننا شروع کریں',
+    continue_listening: 'سننا جاری رکھیں',
+    shuffle_library: 'پوری لائبریری شفل کریں',
+    stat_tracks: 'ٹریکس',
+    stat_collections: 'مجموعے',
+    stat_saved: 'محفوظ',
+    nothing_playing: 'کچھ نہیں چل رہا',
+    select_track: 'آغاز کے لیے کوئی ٹریک منتخب کریں',
+    now_playing: 'اب چل رہا ہے',
+    all_collections: 'تمام مجموعے',
+    footer_copyright: 'نور القرآن · اسلامی آڈیو پلیئر',
+    footer_cache_hint: 'کیشے صاف کرنے اور نیا ڈیٹا لوڈ کرنے کے لیے ورژن پر کلک کریں',
+    lang_changed: 'زبان اردو پر تبدیل کر دی گئی ہے 🇵🇰'
+  }
+};
+
+function t(k, fallback = ''){
+  const lang = st.lang || 'en';
+  return I18N[lang]?.[k] ?? I18N.en?.[k] ?? fallback;
+}
+
+function setLanguage(lang){
+  if(!I18N[lang]) lang = 'en';
+  st.lang = lang;
+  localStorage.setItem('noor.lang', lang);
+  document.documentElement.lang = lang;
+  if(lang === 'ur') document.documentElement.dataset.rtl = 'true';
+  else delete document.documentElement.dataset.rtl;
+  
+  const qInput = $('#q');
+  if(qInput) qInput.placeholder = t('search_ph', 'Search recitations, lectures, reciters…');
+  
+  updateThemeUI();
+  buildNav();
+  render();
+  toast(FLAGS[lang], t('lang_changed', 'Language updated!'));
+}
+
 /* ═══════════ STATE ═══════════ */
 const A=document.getElementById('audio');
 const st={cats:[],all:[],view:{t:'home'},queue:[],qi:-1,cur:null,shuffle:false,repeat:'off',
+  lang:localStorage.getItem('noor.lang')||'en',
   fav:new Set(JSON.parse(localStorage.getItem('noor.fav')||'[]')),
   recent:JSON.parse(localStorage.getItem('noor.recent')||'[]'),
   pos:JSON.parse(localStorage.getItem('noor.pos')||'{}'),
@@ -1134,6 +1352,11 @@ function searchSubcategories(query){
   byIdMap=new Map(st.all.map(t=>[t.id,t]));
   indexLibrary();
   const note=$('#srcNote'); if(note) note.textContent=st.all.length+' tracks · '+src;
+  document.documentElement.lang = st.lang;
+  if(st.lang === 'ur') document.documentElement.dataset.rtl = 'true';
+  const qInput = $('#q');
+  if(qInput) qInput.placeholder = t('search_ph', 'Search recitations, lectures, reciters…');
+  updateThemeUI();
   buildNav();
 
   const v=+(localStorage.getItem('noor.vol')??85);$('#volR').value=v;setVol(v);
@@ -1177,10 +1400,10 @@ function forceUpdate(){
 /* ═══════════ NAV & CHIPS ═══════════ */
 function buildNav(){
   const nav=$('#nav'),ch=$('#chips');
-  let h=`<div class="nav-lbl">Browse</div>
-   <button class="nitem" data-go="home">${I.star}<span>Discover</span></button>
-   <button class="nitem" data-go="fav">${I.heart}<span>Favourites</span><span class="cnt">${st.fav.size}</span></button>
-   <div class="nav-lbl">Collections</div>`;
+  let h=`<div class="nav-lbl">${t('browse', 'Browse')}</div>
+   <button class="nitem" data-go="home">${I.star}<span>${t('discover', 'Discover')}</span></button>
+   <button class="nitem" data-go="fav">${I.heart}<span>${t('favourites', 'Favourites')}</span><span class="cnt">${st.fav.size}</span></button>
+   <div class="nav-lbl">${t('collections', 'Collections')}</div>`;
   st.cats.forEach(c=>{
     const hasSub = c.subcats && (c.subcats.length>1 || c.subcats[0].name !== 'General');
     h+=`<div class="nav-grp" style="display:flex;flex-direction:column;">
@@ -1194,9 +1417,9 @@ function buildNav(){
     </div>`;
   });
   nav.innerHTML=h;
-  ch.innerHTML=`<button class="chip" data-go="home">${I.star} All</button>`+
+  ch.innerHTML=`<button class="chip" data-go="home">${I.star} ${t('all', 'All')}</button>`+
     st.cats.map(c=>`<button class="chip" data-go="cat" data-id="${c.id}">${I[c.icon]} ${esc(c.name)}</button>`).join('')+
-    `<button class="chip" data-go="fav">${I.heart} Favourites</button>`;
+    `<button class="chip" data-go="fav">${I.heart} ${t('favourites', 'Favourites')}</button>`;
   [nav,ch].forEach(el=>el.addEventListener('click',e=>{
     const exp=e.target.closest('[data-exp]');
     if(exp){
@@ -1254,12 +1477,12 @@ function go(v, skipUrlUpdate, scrollToSub){
   }
 }
 
-/* ═══════════ BREADCRUMB & RENDER ═══════════ */
+/* ═══════════ BREADCRUMB & FOOTER ═══════════ */
 function breadcrumbHTML(){
   const v=st.view;
   if(st.search){
     return `<nav class="bc-wrap" aria-label="Breadcrumb">
-      <button class="bc-link" data-bchome="1">${I.star} Home</button>
+      <button class="bc-link" data-bchome="1">${I.star} ${t('discover', 'Home')}</button>
       <span class="bc-sep">/</span>
       <span class="bc-curr">${I.search} Search: “${esc(st.search)}”</span>
     </nav>`;
@@ -1272,22 +1495,43 @@ function breadcrumbHTML(){
       const sc=c.subcats.find(s=>s.id===v.sub);
       if(sc) subName=sc.name;
     } else if(v.sub==='all'){
-      subName='All Tracks';
+      subName=t('all', 'All Tracks');
     }
     return `<nav class="bc-wrap" aria-label="Breadcrumb">
-      <button class="bc-link" data-bchome="1">${I.star} Home</button>
+      <button class="bc-link" data-bchome="1">${I.star} ${t('discover', 'Home')}</button>
       <span class="bc-sep">/</span>
       ${subName ? `<button class="bc-link" data-bccat="${c.id}">${I[c.icon]||I.star} ${esc(c.name)}</button><span class="bc-sep">/</span><span class="bc-curr">${esc(subName)}</span>` : `<span class="bc-curr">${I[c.icon]||I.star} ${esc(c.name)}</span>`}
     </nav>`;
   }
   if(v.t==='fav'){
     return `<nav class="bc-wrap" aria-label="Breadcrumb">
-      <button class="bc-link" data-bchome="1">${I.star} Home</button>
+      <button class="bc-link" data-bchome="1">${I.star} ${t('discover', 'Home')}</button>
       <span class="bc-sep">/</span>
-      <span class="bc-curr">${I.heart} Favourites</span>
+      <span class="bc-curr">${I.heart} ${t('favourites', 'Favourites')}</span>
     </nav>`;
   }
   return '';
+}
+
+function footerHTML(){
+  return `<footer style="margin-top: 40px; padding: 22px 0 28px; border-top: 1px solid var(--stroke); color: var(--text-3); font-size: 12px; display: flex; flex-direction: column; gap: 14px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; width: 100%;">
+      <div>${t('footer_copyright', 'NurulQuran · Islamic Audio Player')}</div>
+      <div class="footer-bottom">
+        <div id="footer-version">v1.0.17 (updated 2026-08-21 12:58)</div>
+        <div style="font-size: 11px; opacity: 0.7;">${t('footer_cache_hint', 'Click version number to clear cache & force reload')}</div>
+      </div>
+    </div>
+    <div class="footer-lang-sec" style="display: flex; align-items: center; justify-content: center; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.05); flex-wrap: wrap;">
+      <span style="font-size: 11.5px; color: var(--text-3); font-weight: 500; letter-spacing: 0.5px;">LANGUAGE:</span>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <button class="flag-btn ${st.lang==='en'?'active':''}" data-setlang="en" title="English (USA)" aria-label="English">${FLAGS.en}</button>
+        <button class="flag-btn ${st.lang==='no'?'active':''}" data-setlang="no" title="Norsk (Norway)" aria-label="Norsk">${FLAGS.no}</button>
+        <button class="flag-btn ${st.lang==='fr'?'active':''}" data-setlang="fr" title="Français (France)" aria-label="Français">${FLAGS.fr}</button>
+        <button class="flag-btn ${st.lang==='ur'?'active':''}" data-setlang="ur" title="اردو (Pakistan)" aria-label="اردو">${FLAGS.ur}</button>
+      </div>
+    </div>
+  </footer>`;
 }
 
 function artHTML(t,cls){return `<div class="art ${cls||''}" style="--grad:${t.grad}"><div class="pat"></div>${I[t.icon]}<div class="ov">${I.play}</div></div>`}
@@ -1310,7 +1554,8 @@ function render(){
   if(st.search){
     const res=searchTracks(st.search);
     el.innerHTML=`${breadcrumbHTML()}<div class="shead"><h3>Results for “${esc(st.search)}”</h3><div class="line"></div><span style="font-size:12px;background:rgba(34,201,154,0.12);color:var(--em);padding:2px 8px;border-radius:10px;font-weight:500;">${res.length} found · Roman Urdu & Fuzzy Search</span></div>`+
-      (res.length?`<div class="rowgrid">${res.map(rowHTML).join('')}</div>`:emptyHTML('No matches found','Try another spelling or topic (e.g. Tafseer, Ramadan, Dua, Ruqyah, Akhirat).'));
+      (res.length?`<div class="rowgrid">${res.map(rowHTML).join('')}</div>`:emptyHTML(t('empty_search_title', 'No matches found'),t('empty_search_desc', 'Try another spelling or topic (e.g. Tafseer, Ramadan, Dua, Ruqyah, Akhirat).')))+
+      footerHTML();
     markNav();bind(res);return;
   }
   if(v.t==='cat'){
@@ -1319,7 +1564,7 @@ function render(){
     let subHTML='';
     if(hasSub){
       subHTML=`<div class="sub-chips" id="subChipsSec" style="display:flex;gap:8px;margin:20px 0;flex-wrap:wrap;">
-        <button class="chip ${!v.sub||v.sub==='all'?'on':''}" data-subbtn="all" style="cursor:pointer;">All (${c.tracks.length})</button>
+        <button class="chip ${!v.sub||v.sub==='all'?'on':''}" data-subbtn="all" style="cursor:pointer;">${t('all', 'All')} (${c.tracks.length})</button>
         ${c.subcats.map(sc=>`<button class="chip ${v.sub===sc.id?'on':''}" data-subbtn="${sc.id}" style="cursor:pointer;">${esc(sc.name)} (${sc.tracks.length})</button>`).join('')}
       </div>`;
     }
@@ -1331,10 +1576,10 @@ function render(){
             <div class="subcat-hdr" data-toggleacc="${sc.id}" style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(255,255,255,0.03);cursor:pointer;border-bottom:1px solid var(--stroke);">
               <div style="display:flex;align-items:center;gap:10px;">
                 <span style="color:var(--text-1);font-weight:600;font-size:15px;">${esc(sc.name)}</span>
-                <span style="font-size:12px;color:var(--text-3);background:rgba(255,255,255,0.06);padding:2px 8px;border-radius:12px;">${sc.tracks.length} tracks</span>
+                <span style="font-size:12px;color:var(--text-3);background:rgba(255,255,255,0.06);padding:2px 8px;border-radius:12px;">${sc.tracks.length} ${t('tracks', 'tracks')}</span>
               </div>
               <div style="display:flex;align-items:center;gap:8px;">
-                <button class="btn p" data-playsub="${sc.id}" style="padding:6px 12px;font-size:12.5px;min-height:32px;" onclick="event.stopPropagation()">${I.play} Play</button>
+                <button class="btn p" data-playsub="${sc.id}" style="padding:6px 12px;font-size:12.5px;min-height:32px;" onclick="event.stopPropagation()">${I.play} ${t('play_all', 'Play')}</button>
                 <button class="iconbtn" data-sharesub="${c.id}" data-subid="${sc.id}" style="width:32px;height:32px;border-radius:9px;padding:0;" title="Share sub-collection" onclick="event.stopPropagation()">${I.share}</button>
                 <span class="acc-arr" id="arr_${sc.id}" style="color:var(--text-3);transition:transform 0.2s;">▾</span>
               </div>
@@ -1354,24 +1599,26 @@ function render(){
     el.innerHTML=`${breadcrumbHTML()}
       <div class="banner" style="--grad:${c.grad}"><div class="glow"></div><div class="pat"></div>
         <div class="banner-in"><div class="bico">${I[c.icon]}</div>
-          <div style="flex:1;min-width:200px;overflow:hidden;"><h2>${esc(c.name)}</h2>${c.desc?`<p class="ar" style="margin:6px 0 4px;font-size:16.5px;color:var(--gold);direction:rtl;text-align:right;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(c.desc)}</p>`:''}<p style="margin:2px 0 0;font-size:13px;color:var(--text-2);">${c.tracks.length} tracks</p></div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;"><button class="btn p" data-all="${c.id}">${I.play} Play all</button>
-          <button class="btn g" data-shuf="${c.id}">${I.shuffle} Shuffle</button>
-          <button class="btn g" data-sharecat="${c.id}">${I.share} Share</button></div>
+          <div style="flex:1;min-width:200px;overflow:hidden;"><h2>${esc(c.name)}</h2>${c.desc?`<p class="ar" style="margin:6px 0 4px;font-size:16.5px;color:var(--gold);direction:rtl;text-align:right;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(c.desc)}</p>`:''}<p style="margin:2px 0 0;font-size:13px;color:var(--text-2);">${c.tracks.length} ${t('tracks', 'tracks')}</p></div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;"><button class="btn p" data-all="${c.id}">${I.play} ${t('play_all', 'Play all')}</button>
+          <button class="btn g" data-shuf="${c.id}">${I.shuffle} ${t('shuffle', 'Shuffle')}</button>
+          <button class="btn g" data-sharecat="${c.id}">${I.share} ${t('share', 'Share')}</button></div>
         </div></div>
       ${subHTML}
-      <div class="shead" id="tracksHead"><h3>Tracks</h3><div class="line"></div></div>
-      ${bodyHTML}`;
+      <div class="shead" id="tracksHead"><h3>${t('tracks', 'Tracks')}</h3><div class="line"></div></div>
+      ${bodyHTML}
+      ${footerHTML()}`;
     markNav();bind(c.tracks);return;
   }
   if(v.t==='fav'){
     const f=st.all.filter(t=>st.fav.has(t.id));
     el.innerHTML=`${breadcrumbHTML()}<div class="banner" style="--grad:linear-gradient(140deg,#c9a24a,#5d3f12)"><div class="glow"></div><div class="pat"></div>
-      <div class="banner-in"><div class="bico">${I.heart}</div><div style="flex:1;min-width:200px"><h2>Favourites</h2>
-      <p>${f.length} saved track${f.length===1?'':'s'} · always one tap away</p></div>
-      ${f.length?`<button class="btn p" data-favall="1">${I.play} Play all</button>`:''}</div></div>
-      <div class="shead"><h3>Saved</h3><div class="line"></div></div>
-      ${f.length?`<div class="rowgrid">${f.map(rowHTML).join('')}</div>`:emptyHTML('Nothing saved yet','Tap the heart on any track to keep it here.')}`;
+      <div class="banner-in"><div class="bico">${I.heart}</div><div style="flex:1;min-width:200px"><h2>${t('favourites', 'Favourites')}</h2>
+      <p>${f.length} ${t('saved_tracks', 'saved tracks')} · ${t('saved_sub', 'always one tap away')}</p></div>
+      ${f.length?`<button class="btn p" data-favall="1">${I.play} ${t('play_all', 'Play all')}</button>`:''}</div></div>
+      <div class="shead"><h3>${t('saved', 'Saved')}</h3><div class="line"></div></div>
+      ${f.length?`<div class="rowgrid">${f.map(rowHTML).join('')}</div>`:emptyHTML(t('empty_fav_title', 'Nothing saved yet'),t('empty_fav_desc', 'Tap the heart on any track to keep it here.'))}
+      ${footerHTML()}`;
     markNav();bind(f);return;
   }
   /* HOME */
@@ -1381,38 +1628,32 @@ function render(){
     <section class="hero"><div class="hero-in">
       <div class="hero-txt">
         <p class="bism ar">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
-        <h2>Listen with <em>presence</em>.<br>Learn with <em>light</em>.</h2>
-        <p>${feat?`Continue with <strong>${esc(feat.title)}</strong> — ${esc(feat.artist)}.`:'A hand-curated library of recitation, remembrance and knowledge.'}</p>
+        <h2>${t('hero_title', 'Listen with <em>presence</em>.<br>Learn with <em>light</em>.')}</h2>
+        <p>${feat?`${t('hero_cont', 'Continue with')} <strong>${esc(feat.title)}</strong> — ${esc(feat.artist)}.` : t('hero_sub', 'A hand-curated library of recitation, remembrance and knowledge.')}</p>
         <div class="hero-cta">
-          ${feat?`<button class="btn p" data-play="${feat.id}">${I.play} ${st.recent.length?'Continue':'Start'} listening</button>`:''}
-          <button class="btn g" data-shufall="1">${I.shuffle} Shuffle library</button>
+          ${feat?`<button class="btn p" data-play="${feat.id}">${I.play} ${st.recent.length?t('continue_listening', 'Continue listening'):t('start_listening', 'Start listening')}</button>`:''}
+          <button class="btn g" data-shufall="1">${I.shuffle} ${t('shuffle_library', 'Shuffle library')}</button>
         </div>
       </div>
       <div class="stats">
-        <div class="stat"><b>${st.all.length}</b><span>Tracks</span></div>
-        <div class="stat"><b>${st.cats.length}</b><span>Collections</span></div>
-        <div class="stat"><b>${st.fav.size}</b><span>Saved</span></div>
+        <div class="stat"><b>${st.all.length}</b><span>${t('stat_tracks', 'Tracks')}</span></div>
+        <div class="stat"><b>${st.cats.length}</b><span>${t('stat_collections', 'Collections')}</span></div>
+        <div class="stat"><b>${st.fav.size}</b><span>${t('stat_saved', 'Saved')}</span></div>
       </div>
     </div></section>
-    <div class="shead"><h3>Collections</h3><div class="line"></div></div>
+    <div class="shead"><h3>${t('collections', 'Collections')}</h3><div class="line"></div></div>
     <div class="tiles">${st.cats.map(c=>`
       <button class="tile" data-go="cat" data-id="${c.id}" style="--grad:${c.grad}">
         <div class="glow"></div><div class="pat"></div>
         <div class="ico">${I[c.icon]}</div>
-        <div style="position:relative;width:100%;overflow:hidden;"><h4>${esc(c.name)}</h4>${c.desc?`<p class="ar" style="margin:4px 0 2px;font-size:13.2px;color:var(--gold);direction:rtl;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100%;">${esc(c.desc)}</p>`:''}<p style="margin:2px 0 0;font-size:11.5px;color:var(--text-3);">${c.tracks.length} tracks</p></div>
+        <div style="position:relative;width:100%;overflow:hidden;"><h4>${esc(c.name)}</h4>${c.desc?`<p class="ar" style="margin:4px 0 2px;font-size:13.2px;color:var(--gold);direction:rtl;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100%;">${esc(c.desc)}</p>`:''}<p style="margin:2px 0 0;font-size:11.5px;color:var(--text-3);">${c.tracks.length} ${t('tracks', 'tracks')}</p></div>
         <div class="arrow">${I.chevR}</div>
       </button>`).join('')}</div>
-    ${rec.length?`<div class="shead"><h3>Recently played</h3><div class="line"></div></div><div class="rowgrid">${rec.map(rowHTML).join('')}</div>`:''}
+    ${rec.length?`<div class="shead"><h3>${t('recently_played', 'Recently played')}</h3><div class="line"></div></div><div class="rowgrid">${rec.map(rowHTML).join('')}</div>`:''}
     ${st.cats.map(c=>`
-      <div class="shead"><h3>${esc(c.name)}</h3><div class="line"></div><button class="more" data-go="cat" data-id="${c.id}">See all ${c.tracks.length} →</button></div>
+      <div class="shead"><h3>${esc(c.name)}</h3><div class="line"></div><button class="more" data-go="cat" data-id="${c.id}">${t('see_all', 'See all')} ${c.tracks.length} →</button></div>
       <div class="rowgrid">${c.tracks.slice(0,4).map(rowHTML).join('')}</div>`).join('')}
-    <footer style="margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--stroke); color: var(--text-3); font-size: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-      <div>NurulQuran · Islamic Audio Player</div>
-      <div class="footer-bottom">
-        <div id="footer-version">v1.0.16 (updated 2026-08-21 12:22)</div>
-        <div style="font-size: 11px; opacity: 0.7;">Click version number to clear cache & force reload</div>
-      </div>
-    </footer>`;
+    ${footerHTML()}`;
   el.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go({t:'cat',id:b.dataset.id}));
   markNav();bind(st.all);
 }
@@ -1420,6 +1661,12 @@ const emptyHTML=(h,p)=>`<div class="empty">${I.sad}<h4>${h}</h4><p>${p}</p></div
 let currentCtx=null;
 function bind(ctx){currentCtx=ctx||st.all}
 $('#view').addEventListener('click',e=>{
+  const langBtn=e.target.closest('[data-setlang]');
+  if(langBtn){
+    e.stopPropagation();e.preventDefault();
+    setLanguage(langBtn.dataset.setlang);
+    return;
+  }
   const bch=e.target.closest('[data-bchome]');
   if(bch){e.stopPropagation();e.preventDefault();go({t:'home'});return}
   const bcc=e.target.closest('[data-bccat]');
@@ -1822,7 +2069,7 @@ function updateThemeUI(){
   const isLight=document.documentElement.dataset.theme==='light';
   const ico=$('#themeIco'), txt=$('#themeTxt');
   if(ico) ico.innerHTML=isLight?I.moon:I.sun;
-  if(txt) txt.textContent=isLight?'Dark Mode':'Light Mode';
+  if(txt) txt.textContent=isLight?t('dark_mode', 'Dark Mode'):t('light_mode', 'Light Mode');
 }
 const themeBtn=$('#themeBtn');
 if(themeBtn) themeBtn.onclick=()=>{
