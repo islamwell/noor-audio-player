@@ -3,6 +3,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#070b0d">
 <title>NurulQuran · Islamic Audio Library</title>
+<meta name="description" content="NurulQuran Islamic Audio Library - Listen to Quran recitations, Islamic lectures, Duas, and Tafseer with presence and light. Easily shareable on WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NurulQuran">
+<meta property="og:title" content="NurulQuran · Islamic Audio Library">
+<meta property="og:description" content="Listen to Quran recitations, Islamic lectures, Duas, and Tafseer with presence and light. Easily shareable on WhatsApp.">
+<meta property="og:url" content="https://noor-audio-player.pages.dev">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NurulQuran · Islamic Audio Library">
+<meta name="twitter:description" content="Listen to Quran recitations, Islamic lectures, Duas, and Tafseer with presence and light.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200..800&amp;family=Amiri:wght@400;700&amp;display=swap" rel="stylesheet">
@@ -200,12 +209,15 @@ html[data-theme="light"] .tile .ico{background:rgba(255,255,255,.92);color:var(-
 .tmeta h5{margin:0;font-size:14.8px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tr.on .tmeta h5{color:var(--em)}
 .tmeta p{margin:2px 0 0;font-size:12.4px;color:var(--text-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tright{display:flex;align-items:center;gap:6px}
+.tright{display:flex;align-items:center;gap:4px}
 .dur{font-size:12.4px;color:var(--text-3);font-variant-numeric:tabular-nums;min-width:42px;text-align:right}
-.fav{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;border:0;background:none;color:var(--text-3);cursor:pointer;transition:.2s}
-.fav svg{width:17px;height:17px}
+.fav,.shb{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;border:0;background:none;color:var(--text-3);cursor:pointer;transition:.2s}
+.fav svg,.shb svg{width:16.5px;height:16.5px}
 .fav:hover{color:var(--gold);background:var(--surface-2)}
 .fav.on{color:var(--gold)}.fav.on svg{fill:var(--gold)}
+.shb:hover{color:var(--em);background:var(--surface-2)}
+@keyframes pulseHighlight{0%{box-shadow:0 0 0 0 rgba(34,201,154,.7);background:rgba(34,201,154,.25)}70%{box-shadow:0 0 0 12px rgba(34,201,154,0);background:rgba(34,201,154,.1)}100%{box-shadow:0 0 0 0 rgba(34,201,154,0)}}
+.highlight-pulse{animation:pulseHighlight 1.8s ease-out 2;border-color:var(--em)!important}
 .eq{display:flex;gap:2.5px;align-items:flex-end;height:15px}
 .eq i{width:2.5px;background:var(--em);border-radius:2px;animation:eq .9s ease-in-out infinite}
 .eq i:nth-child(2){animation-delay:.2s}.eq i:nth-child(3){animation-delay:.4s}.eq i:nth-child(4){animation-delay:.15s}
@@ -354,6 +366,42 @@ canvas#viz{width:100%;height:56px;display:block;opacity:.9}
 .scrim{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:.3s}
 .scrim.on{opacity:1;pointer-events:auto}
 
+/* ============ SHARE MODAL ============ */
+.modal-scrim{position:fixed;inset:0;z-index:250;background:rgba(0,0,0,.7);backdrop-filter:blur(10px);display:none;place-items:center;padding:16px;opacity:0;transition:opacity .25s var(--ease)}
+.modal-scrim.open{display:grid;opacity:1}
+.modal{position:relative;width:min(440px,100%);background:color-mix(in srgb,var(--bg-2) 94%,transparent);border:1px solid var(--stroke-str);border-radius:24px;box-shadow:var(--shadow);padding:22px;display:flex;flex-direction:column;gap:16px;backdrop-filter:blur(24px);transform:scale(.94) translateY(10px);transition:transform .25s var(--ease);overflow:hidden}
+.modal-scrim.open .modal{transform:none}
+html[data-theme="light"] .modal{background:#ffffff;box-shadow:0 24px 60px rgba(0,0,0,.16)}
+.modal-hd{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.modal-hd h3{margin:0;font-size:17.5px;font-weight:600;display:flex;align-items:center;gap:9px}
+.modal-hd h3 svg{width:19px;height:19px;color:var(--em)}
+.modal-close{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;border:1px solid var(--stroke);background:var(--surface);color:var(--text-2);cursor:pointer;transition:.2s}
+.modal-close:hover{background:var(--surface-2);color:var(--text)}
+.modal-close svg{width:18px;height:18px}
+.share-card{display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:16px;background:var(--surface);border:1px solid var(--stroke)}
+.share-card .art{width:52px;height:52px;border-radius:12px;flex:none}
+.share-card .art svg{width:22px;height:22px}
+.share-card-info{min-width:0;flex:1}
+.share-card-badge{display:inline-block;font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:2px}
+.share-card-title{font-size:14.8px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.share-card-sub{font-size:12.2px;color:var(--text-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.share-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.share-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 13px;border-radius:13px;font:inherit;font-size:13.4px;font-weight:500;cursor:pointer;border:1px solid transparent;transition:.2s var(--ease);text-decoration:none;white-space:nowrap}
+.share-btn svg{width:18px;height:18px;flex:none}
+.share-btn.wa{grid-column:1 / -1;background:linear-gradient(135deg,#25D366,#128C7E);color:#ffffff;font-weight:600;font-size:14.5px;padding:13px;box-shadow:0 8px 24px -6px rgba(37,211,102,.5)}
+.share-btn.wa:hover{transform:translateY(-2px);box-shadow:0 12px 28px -6px rgba(37,211,102,.65)}
+.share-btn.tg{background:linear-gradient(135deg,#2AABEE,#229ED9);color:#ffffff;font-weight:500}
+.share-btn.tg:hover{transform:translateY(-2px);box-shadow:0 8px 20px -4px rgba(42,171,238,.4)}
+.share-btn.native{background:linear-gradient(135deg,var(--em),#0f9d7c);color:#03110d;font-weight:600}
+.share-btn.native:hover{transform:translateY(-2px)}
+.share-btn.sec{background:var(--surface);border-color:var(--stroke);color:var(--text)}
+.share-btn.sec:hover{background:var(--surface-2);border-color:var(--stroke-str);transform:translateY(-1px)}
+.share-link-box{display:flex;align-items:center;gap:8px;padding:5px 5px 5px 12px;background:var(--surface);border:1px solid var(--stroke);border-radius:13px}
+.share-link-box input{flex:1;background:none;border:none;color:var(--text-2);font:inherit;font-size:12.4px;outline:none;min-width:0;text-overflow:ellipsis}
+.share-link-box button{padding:8px 13px;border-radius:10px;border:none;background:var(--surface-2);color:var(--text);font:inherit;font-size:12.4px;font-weight:500;cursor:pointer;transition:.2s;display:flex;align-items:center;gap:6px;flex:none}
+.share-link-box button svg{width:14px;height:14px}
+.share-link-box button:hover{background:var(--em);color:#000}
+
 /* ============ RESPONSIVE ============ */
 @media(max-width:1180px){.seekrow{width:min(340px,34vw)}.vol{width:96px}}
 @media(max-width:1000px){
@@ -447,6 +495,7 @@ canvas#viz{width:100%;height:56px;display:block;opacity:.9}
     </div>
   </div>
   <div class="pb-r">
+    <button class="cbtn" id="shareNow" title="Share (h)"></button>
     <button class="cbtn" id="favNow" title="Favourite (f)"></button>
     <div class="vol"><button class="cbtn" id="muteB"></button><input id="volR" type="range" min="0" max="100" value="85"></div>
     <button class="cbtn" id="expandB" title="Expand"></button>
@@ -482,6 +531,7 @@ canvas#viz{width:100%;height:56px;display:block;opacity:.9}
         <button class="cbtn" id="repB2"></button>
       </div>
       <div class="sh-extra">
+        <button class="tag" id="shareTag"></button>
         <button class="tag" id="favTag"></button>
         <button class="tag" id="rateTag"></button>
         <button class="tag" id="sleepTag"></button>
@@ -498,6 +548,35 @@ canvas#viz{width:100%;height:56px;display:block;opacity:.9}
 
 <div class="pop" id="pop"></div>
 <div class="toasts" id="toasts"></div>
+
+<!-- ░░ SHARE MODAL ░░ -->
+<div class="modal-scrim" id="shareModal" role="dialog" aria-modal="true" aria-labelledby="shareModalTitle">
+  <div class="modal">
+    <div class="modal-hd">
+      <h3 id="shareModalTitle"><span id="shareHdIco"></span> Share</h3>
+      <button class="modal-close" id="shareClose" aria-label="Close share dialog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="share-card">
+      <div class="art" id="shareCardArt" style="--grad:linear-gradient(140deg,#0f8f74,#053b34)"><div class="pat"></div><span id="shareCardIco" style="display:grid;place-items:center;"></span></div>
+      <div class="share-card-info">
+        <span class="share-card-badge" id="shareCardBadge">Lecture</span>
+        <div class="share-card-title" id="shareCardTitle">—</div>
+        <div class="share-card-sub" id="shareCardSub">—</div>
+      </div>
+    </div>
+    <div class="share-grid">
+      <a class="share-btn wa" id="shareWaBtn" target="_blank" rel="noopener" href="#"><span id="shareWaIco"></span> Share on WhatsApp</a>
+      <a class="share-btn tg" id="shareTgBtn" target="_blank" rel="noopener" href="#"><span id="shareTgIco"></span> Telegram</a>
+      <button class="share-btn sec" id="shareMsgBtn"><span id="shareMsgIco"></span> Copy Message</button>
+      <button class="share-btn native" id="shareNativeBtn" style="grid-column:1 / -1;display:none;"><span id="shareNatIco"></span> More Share Options...</button>
+    </div>
+    <div class="share-link-box">
+      <input type="text" id="shareLinkInput" readonly spellcheck="false">
+      <button id="shareCopyBtn"><span id="shareCopyIco"></span> Copy Link</button>
+    </div>
+  </div>
+</div>
+
 <audio id="audio" preload="metadata"></audio>
 
 <!-- ░░ FALLBACK PLAYLIST (used if playlist.txt is missing) ░░ -->
@@ -599,7 +678,13 @@ const I={
  key:S('<circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.5 12.5l9-9M16.5 3.5l3 3M14.5 5.5l2 2"/>'),
  cloud:S('<path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10Z"/><path d="M8 14v2M12 15v2M16 14v2"/>'),
  leaf:S('<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 2 8 0 5.5-4.5 10-10 10Z"/><path d="M2 21c0-3 1.8-5.2 5-6"/>'),
- diamond:S('<path d="M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41l-7.59-7.59a2.41 2.41 0 0 0-3.41 0Z"/>')
+ diamond:S('<path d="M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41l-7.59-7.59a2.41 2.41 0 0 0-3.41 0Z"/>'),
+ share:S('<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>'),
+ whatsapp:`<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.301-.15-1.78-.879-2.056-.98-.276-.1-.477-.15-.678.15-.2.3-.778.98-.953 1.18-.176.2-.351.226-.652.076-.301-.15-1.272-.469-2.423-1.496-.896-.799-1.5-1.787-1.676-2.088-.175-.301-.019-.464.132-.614.136-.135.301-.351.452-.527.15-.175.2-.3.301-.501.1-.2.05-.376-.025-.526-.075-.15-.678-1.636-.928-2.241-.244-.589-.493-.509-.678-.519-.176-.009-.376-.01-.577-.01-.2 0-.526.075-.802.376-.276.301-1.053 1.028-1.053 2.507 0 1.48 1.078 2.908 1.229 3.109.15.2 2.122 3.24 5.141 4.544.718.31 1.279.496 1.716.635.721.23 1.377.197 1.896.12.578-.087 1.78-.727 2.03-1.429.251-.702.251-1.304.176-1.43-.075-.125-.276-.201-.577-.351z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.399C8.423 21.493 10.154 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.63 0-3.14-.486-4.408-1.323l-.316-.209-2.955.83.843-2.879-.228-.337A8.156 8.156 0 0 1 3.8 12c0-4.522 3.678-8.2 8.2-8.2 4.522 0 8.2 3.678 8.2 8.2 0 4.522-3.678 8.2-8.2 8.2z"/></svg>`,
+ telegram:`<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.284l-17 9.5a2.25 2.25 0 0 0 .131 3.966l4.24 1.82 1.62 4.86a1.5 1.5 0 0 0 2.47.58l2.64-2.45 4.54 3.33a2.25 2.25 0 0 0 3.53-1.57l2.5-17a2.25 2.25 0 0 0-3.649-2.32zm-12.72 12.35l7.94-6.42-6.52 7.37-.42 2.94-.99-3.89z"/></svg>`,
+ copy:S('<rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>'),
+ link:S('<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>'),
+ chat:S('<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>')
 };
 const CAT_ICON={quran:'quran',book:'book',dua:'dua',mic:'mic',lecture:'mic',music:'music',nasheed:'music',scroll:'scroll',hadith:'scroll',shield:'shield',ruqyah:'shield',kids:'flower',mosque:'mosque',adhan:'mosque',star:'star',heart:'heart',kaaba:'kaaba',mecca:'kaaba',crescent:'crescent',lantern:'lantern',compass:'compass',tree:'tree',fountain:'fountain',sun:'sun',mountain:'mountain',gem:'gem',arch:'arch',flower:'flower',globe:'globe',scale:'scale',key:'key',cloud:'cloud',leaf:'leaf',diamond:'diamond'};
 const GRADS=[
@@ -688,12 +773,19 @@ const byId=id=>byIdMap.get(id);
   $('#menuBtn').innerHTML=I.menu;$('#searchIco').innerHTML=I.search;updateThemeUI();
   $('#closeSheet').innerHTML=I.chevD;$('#qToggle').innerHTML=I.list;$('#qIco').innerHTML=I.list;
   $('#playB').innerHTML=I.play;$('#playB2').innerHTML=I.play;
-  [['#prevB',I.prev],['#nextB',I.next],['#shufB',I.shuffle],['#repB',I.repeat],['#favNow',I.heart],['#muteB',I.vol],['#expandB',I.up],
+  [['#prevB',I.prev],['#nextB',I.next],['#shufB',I.shuffle],['#repB',I.repeat],['#shareNow',I.share],['#favNow',I.heart],['#muteB',I.vol],['#expandB',I.up],
    ['#prevB2',I.prev],['#nextB2',I.next],['#shufB2',I.shuffle],['#repB2',I.repeat]].forEach(([s,h])=>$(s).innerHTML=h);
   $('#favTag').innerHTML=I.heart+'<span>Favourite</span>';
+  $('#shareTag').innerHTML=I.share+'<span>Share</span>';
   $('#rateTag').innerHTML=I.gauge+'<span>1.0×</span>';
   $('#sleepTag').innerHTML=I.clock+'<span>Sleep</span>';
   $('#dlTag').innerHTML=I.dl+'<span>Source</span>';
+  $('#shareHdIco').innerHTML=I.share;
+  $('#shareWaIco').innerHTML=I.whatsapp;
+  $('#shareTgIco').innerHTML=I.telegram;
+  $('#shareMsgIco').innerHTML=I.copy;
+  $('#shareCopyIco').innerHTML=I.link;
+  $('#shareNatIco').innerHTML=I.share;
   $('#view').innerHTML='<div class="tracks">'+'<div class="sk"></div>'.repeat(6)+'</div>';
 
   let txt='',src='playlist.txt';
@@ -705,16 +797,22 @@ const byId=id=>byIdMap.get(id);
   st.all=st.cats.flatMap(c=>c.tracks);
   byIdMap=new Map(st.all.map(t=>[t.id,t]));
   const note=$('#srcNote'); if(note) note.textContent=st.all.length+' tracks · '+src;
-  buildNav();render();
+  buildNav();
+
   const v=+(localStorage.getItem('noor.vol')??85);$('#volR').value=v;setVol(v);
-  if(st.recent.length && byId(st.recent[0])){
-    st.cur = byId(st.recent[0]);
-    st.queue = st.all.map(x=>x.id);
-    st.qi = st.queue.indexOf(st.cur.id);
-    st.resumePos = (st.pos[st.cur.id] && isFinite(st.pos[st.cur.id]) && st.pos[st.cur.id] > 3) ? st.pos[st.cur.id] : 0;
-    A.src = st.cur.url;
-    paintNow();
-    $('#pbar').classList.add('up');
+
+  const fromParam = handleInitialParams();
+  if(!fromParam){
+    render();
+    if(st.recent.length && byId(st.recent[0])){
+      st.cur = byId(st.recent[0]);
+      st.queue = st.all.map(x=>x.id);
+      st.qi = st.queue.indexOf(st.cur.id);
+      st.resumePos = (st.pos[st.cur.id] && isFinite(st.pos[st.cur.id]) && st.pos[st.cur.id] > 3) ? st.pos[st.cur.id] : 0;
+      A.src = st.cur.url;
+      paintNow();
+      $('#pbar').classList.add('up');
+    }
   }
   toast(I.check,st.all.length+' tracks loaded from '+src);
 
@@ -723,6 +821,8 @@ const byId=id=>byIdMap.get(id);
       forceUpdate();
     }
   });
+
+  initShareHandlers();
 })();
 
 function forceUpdate(){
@@ -791,20 +891,27 @@ function markNav(){
     if(snav)snav.style.display='flex';
   }
 }
-function go(v){st.view=v;st.search='';$('#q').value='';if(typeof closeSearchDrop === 'function') closeSearchDrop();render();window.scrollTo({top:0,behavior:'smooth'})}
+function go(v, skipUrlUpdate){
+  st.view=v;st.search='';$('#q').value='';
+  if(typeof closeSearchDrop === 'function') closeSearchDrop();
+  render();
+  if(!skipUrlUpdate) updateUrl({ view: v });
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 
 /* ═══════════ RENDER ═══════════ */
 function artHTML(t,cls){return `<div class="art ${cls||''}" style="--grad:${t.grad}"><div class="pat"></div>${I[t.icon]}<div class="ov">${I.play}</div></div>`}
 function rowHTML(t,i){
   const on=st.cur&&st.cur.id===t.id;
   const posBadge=st.pos[t.id] && st.pos[t.id]>3 ? `<span style="font-size:11px;color:var(--em);background:color-mix(in srgb,var(--em) 15%,transparent);padding:2px 6px;border-radius:6px;margin-right:6px;display:inline-flex;align-items:center;gap:3px;" title="Resumes at ${fmt(st.pos[t.id])}">⏱ ${fmt(st.pos[t.id])}</span>` : '';
-  return `<div class="tr ${on?'on':''} ${on&&A.paused?'paused':''}" data-play="${t.id}">
+  return `<div class="tr ${on?'on':''} ${on&&A.paused?'paused':''}" data-play="${t.id}" id="track_${t.id}">
     ${artHTML(t)}
     <div class="tmeta"><h5>${esc(t.title)}</h5><p>${esc(t.artist)} · ${esc(t.cname)}</p></div>
     <div class="tright">
       ${on?`<div class="eq"><i></i><i></i><i></i><i></i></div>`:''}
       <span class="dur">${posBadge}${t.dur||durCache[t.id]||''}</span>
-      <button class="fav ${st.fav.has(t.id)?'on':''}" data-fav="${t.id}" aria-label="Favourite">${I.heart}</button>
+      <button class="shb" data-sh="${t.id}" title="Share lecture" aria-label="Share">${I.share}</button>
+      <button class="fav ${st.fav.has(t.id)?'on':''}" data-fav="${t.id}" title="Save to favourites" aria-label="Favourite">${I.heart}</button>
     </div></div>`;
 }
 const durCache={};
@@ -840,8 +947,9 @@ function render(){
                 <span style="color:var(--text-1);font-weight:600;font-size:15px;">${esc(sc.name)}</span>
                 <span style="font-size:12px;color:var(--text-3);background:rgba(255,255,255,0.06);padding:2px 8px;border-radius:12px;">${sc.tracks.length} tracks</span>
               </div>
-              <div style="display:flex;align-items:center;gap:12px;">
+              <div style="display:flex;align-items:center;gap:8px;">
                 <button class="btn p" data-playsub="${sc.id}" style="padding:6px 12px;font-size:12.5px;min-height:32px;" onclick="event.stopPropagation()">${I.play} Play</button>
+                <button class="iconbtn" data-sharesub="${c.id}" data-subid="${sc.id}" style="width:32px;height:32px;border-radius:9px;padding:0;" title="Share sub-collection" onclick="event.stopPropagation()">${I.share}</button>
                 <span class="acc-arr" id="arr_${sc.id}" style="color:var(--text-3);transition:transform 0.2s;">▾</span>
               </div>
             </div>
@@ -861,8 +969,9 @@ function render(){
       <div class="banner" style="--grad:${c.grad}"><div class="glow"></div><div class="pat"></div>
         <div class="banner-in"><div class="bico">${I[c.icon]}</div>
           <div style="flex:1;min-width:200px;overflow:hidden;"><h2>${esc(c.name)}</h2>${c.desc?`<p class="ar" style="margin:6px 0 4px;font-size:16.5px;color:var(--gold);direction:rtl;text-align:right;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(c.desc)}</p>`:''}<p style="margin:2px 0 0;font-size:13px;color:var(--text-2);">${c.tracks.length} tracks</p></div>
-          <div style="display:flex;gap:10px"><button class="btn p" data-all="${c.id}">${I.play} Play all</button>
-          <button class="btn g" data-shuf="${c.id}">${I.shuffle} Shuffle</button></div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;"><button class="btn p" data-all="${c.id}">${I.play} Play all</button>
+          <button class="btn g" data-shuf="${c.id}">${I.shuffle} Shuffle</button>
+          <button class="btn g" data-sharecat="${c.id}">${I.share} Share</button></div>
         </div></div>
       ${subHTML}
       <div class="shead"><h3>Tracks</h3><div class="line"></div></div>
@@ -915,7 +1024,7 @@ function render(){
     <footer style="margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--stroke); color: var(--text-3); font-size: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
       <div>NurulQuran · Islamic Audio Player</div>
       <div class="footer-bottom">
-        <div id="footer-version">v1.0.13 (updated 2026-07-27 15:26)</div>
+        <div id="footer-version">v1.0.14 (updated 2026-08-21 11:18)</div>
         <div style="font-size: 11px; opacity: 0.7;">Click version number to clear cache & force reload</div>
       </div>
     </footer>`;
@@ -926,6 +1035,27 @@ const emptyHTML=(h,p)=>`<div class="empty">${I.sad}<h4>${h}</h4><p>${p}</p></div
 let currentCtx=null;
 function bind(ctx){currentCtx=ctx||st.all}
 $('#view').addEventListener('click',e=>{
+  const sh=e.target.closest('[data-sh]');
+  if(sh){
+    e.stopPropagation();e.preventDefault();
+    const t=byId(sh.dataset.sh);
+    if(t) openShareModal({ type: 'track', item: t });
+    return;
+  }
+  const shCat=e.target.closest('[data-sharecat]');
+  if(shCat){
+    e.stopPropagation();e.preventDefault();
+    const c=st.cats.find(x=>x.id===shCat.dataset.sharecat);
+    if(c) openShareModal({ type: 'cat', item: c, subId: st.view.sub || null });
+    return;
+  }
+  const shSub=e.target.closest('[data-sharesub]');
+  if(shSub){
+    e.stopPropagation();e.preventDefault();
+    const c=st.cats.find(x=>x.id===shSub.dataset.sharesub);
+    if(c) openShareModal({ type: 'cat', item: c, subId: shSub.dataset.subid });
+    return;
+  }
   const f=e.target.closest('[data-fav]');
   if(f){e.stopPropagation();e.preventDefault();toggleFav(f.dataset.fav);return}
   const tacc=e.target.closest('[data-toggleacc]');
@@ -993,6 +1123,7 @@ function play(id,ctx){
   st.recent=[id,...st.recent.filter(x=>x!==id)];save();
   paintNow();$('#pbar').classList.add('up');
   render();
+  updateUrl({ track: t });
   if('mediaSession' in navigator){
     navigator.mediaSession.metadata=new MediaMetadata({title:t.title,artist:t.artist,album:t.cname});
     navigator.mediaSession.setActionHandler('previoustrack',prev);
@@ -1297,7 +1428,17 @@ $('#searchDrop').addEventListener('click',e=>{
 });
 $('#q').addEventListener('focus',()=>updateSearchDrop());
 $('#q').addEventListener('click',()=>updateSearchDrop());
-let sT;$('#q').addEventListener('input',e=>{updateSearchDrop();clearTimeout(sT);sT=setTimeout(()=>{st.search=e.target.value.trim();render()},170)});
+let sT;$('#q').addEventListener('input',e=>{
+  updateSearchDrop();
+  clearTimeout(sT);
+  sT=setTimeout(()=>{
+    st.search=e.target.value.trim();
+    render();
+    if(st.search) updateUrl({ search: st.search }, true);
+    else if(st.view.t === 'cat') updateUrl({ view: st.view }, true);
+    else updateUrl({ view: { t: 'home' } }, true);
+  },170);
+});
 document.addEventListener('click',e=>{if(!e.target.closest('.search'))closeSearchDrop();});
 
 function updateThemeUI(){
@@ -1334,6 +1475,283 @@ function toast(ic,msg){
   const d=document.createElement('div');d.className='toast';d.innerHTML=ic+'<span>'+msg+'</span>';
   $('#toasts').appendChild(d);setTimeout(()=>{d.style.transition='.4s';d.style.opacity=0;d.style.transform='translateY(10px)';setTimeout(()=>d.remove(),400)},2600);
 }
+
+/* ═══════════ SHARING & DEEP LINKING ═══════════ */
+function getBaseUrl(){
+  if(window.location.origin && window.location.origin !== 'null' && !window.location.origin.startsWith('file:')){
+    return window.location.origin + window.location.pathname;
+  }
+  return 'https://noor-audio-player.pages.dev/';
+}
+
+function getTrackShareUrl(t){
+  return `${getBaseUrl()}?t=${encodeURIComponent(t.id)}`;
+}
+
+function getCatShareUrl(c, subId){
+  let url = `${getBaseUrl()}?c=${encodeURIComponent(c.id)}`;
+  if(subId) url += `&s=${encodeURIComponent(subId)}`;
+  return url;
+}
+
+function getTrackShareData(t){
+  const url = getTrackShareUrl(t);
+  const text = `🎧 *${t.title}*\n👤 ${t.artist}\n📁 ${t.cname}\n\n▶️ Listen on NurulQuran:\n${url}`;
+  return {
+    type: 'track',
+    item: t,
+    title: `${t.title} - ${t.artist}`,
+    text: text,
+    url: url,
+    waUrl: `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`,
+    tgUrl: `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(`🎧 *${t.title}* - ${t.artist}\n📁 ${t.cname}`)}`,
+    preview: {
+      title: t.title,
+      sub: `${t.artist} · ${t.cname}`,
+      badge: 'Lecture / Recitation',
+      icon: t.icon,
+      grad: t.grad
+    }
+  };
+}
+
+function getCatShareData(c, subId){
+  const sub = subId && c.subcats ? c.subcats.find(s => s.id === subId) : null;
+  const url = getCatShareUrl(c, subId);
+  const catTitle = sub ? `${c.name} - ${sub.name}` : c.name;
+  const count = sub ? sub.tracks.length : c.tracks.length;
+  const descLine = c.desc ? `📖 ${c.desc}\n` : '';
+  const text = `📁 *${catTitle}*\n${descLine}✨ ${count} audio tracks\n\n▶️ Explore on NurulQuran:\n${url}`;
+  return {
+    type: 'cat',
+    item: c,
+    subId: subId,
+    title: `${catTitle} · NurulQuran`,
+    text: text,
+    url: url,
+    waUrl: `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`,
+    tgUrl: `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(`📁 *${catTitle}* (${count} tracks)`)}`,
+    preview: {
+      title: catTitle,
+      sub: `${count} tracks · ${c.desc || 'Audio Collection'}`,
+      badge: sub ? 'Sub-Collection' : 'Collection',
+      icon: c.icon,
+      grad: c.grad
+    }
+  };
+}
+
+let currentShareData = null;
+
+function openShareModal(config){
+  const data = config.type === 'track' ? getTrackShareData(config.item) : getCatShareData(config.item, config.subId);
+  currentShareData = data;
+
+  $('#shareModalTitle').innerHTML = I.share + ' <span>Share ' + (config.type === 'track' ? 'Lecture' : 'Collection') + '</span>';
+  $('#shareCardBadge').textContent = data.preview.badge;
+  $('#shareCardTitle').textContent = data.preview.title;
+  $('#shareCardSub').textContent = data.preview.sub;
+  $('#shareCardArt').style.setProperty('--grad', data.preview.grad);
+  $('#shareCardIco').innerHTML = I[data.preview.icon] || I.star;
+
+  $('#shareWaBtn').href = data.waUrl;
+  $('#shareTgBtn').href = data.tgUrl;
+  $('#shareLinkInput').value = data.url;
+
+  const natBtn = $('#shareNativeBtn');
+  if (navigator.share) {
+    natBtn.style.display = 'flex';
+  } else {
+    natBtn.style.display = 'none';
+  }
+
+  $('#shareModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeShareModal(){
+  $('#shareModal').classList.remove('open');
+  if (!$('#sheet').classList.contains('up')) {
+    document.body.style.overflow = '';
+  }
+}
+
+function initShareHandlers(){
+  $('#shareClose').onclick = closeShareModal;
+  $('#shareModal').addEventListener('click', e => {
+    if (e.target === $('#shareModal')) closeShareModal();
+  });
+
+  const shNow = $('#shareNow');
+  if(shNow) shNow.onclick = () => {
+    if(st.cur) openShareModal({ type: 'track', item: st.cur });
+    else toast(I.info, 'Play a track first to share');
+  };
+
+  const shTag = $('#shareTag');
+  if(shTag) shTag.onclick = () => {
+    if(st.cur) openShareModal({ type: 'track', item: st.cur });
+  };
+
+  $('#shareCopyBtn').onclick = async () => {
+    if (!currentShareData) return;
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(currentShareData.url);
+      } else {
+        $('#shareLinkInput').select();
+        document.execCommand('copy');
+      }
+      const btn = $('#shareCopyBtn');
+      const orig = btn.innerHTML;
+      btn.innerHTML = I.check + ' Copied!';
+      toast(I.check, 'Link copied to clipboard!');
+      setTimeout(() => { btn.innerHTML = orig; }, 2000);
+    } catch (err) {
+      $('#shareLinkInput').select();
+      document.execCommand('copy');
+      toast(I.check, 'Link copied to clipboard!');
+    }
+  };
+
+  $('#shareMsgBtn').onclick = async () => {
+    if (!currentShareData) return;
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(currentShareData.text);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = currentShareData.text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+      }
+      const btn = $('#shareMsgBtn');
+      const orig = btn.innerHTML;
+      btn.innerHTML = I.check + ' Copied Message!';
+      toast(I.check, 'Full message copied with link!');
+      setTimeout(() => { btn.innerHTML = orig; }, 2000);
+    } catch (err) {
+      toast(I.info, 'Could not copy message automatically');
+    }
+  };
+
+  $('#shareNativeBtn').onclick = async () => {
+    if (!currentShareData || !navigator.share) return;
+    try {
+      await navigator.share({
+        title: currentShareData.title,
+        text: currentShareData.text,
+        url: currentShareData.url
+      });
+      closeShareModal();
+      toast(I.check, 'Shared successfully!');
+    } catch (err) {}
+  };
+}
+
+function updateUrl(state, replace = false){
+  try {
+    const url = new URL(window.location.href);
+    ['t', 'track', 'c', 'cat', 's', 'sub', 'q', 'search'].forEach(p => url.searchParams.delete(p));
+    if (state.track) {
+      url.searchParams.set('t', state.track.id);
+    } else if (state.view && state.view.t === 'cat') {
+      url.searchParams.set('c', state.view.id);
+      if (state.view.sub) url.searchParams.set('s', state.view.sub);
+    } else if (state.search) {
+      url.searchParams.set('q', state.search);
+    }
+    if (replace) {
+      window.history.replaceState({ view: st.view, curId: st.cur?.id, search: st.search }, '', url.toString());
+    } else {
+      window.history.pushState({ view: st.view, curId: st.cur?.id, search: st.search }, '', url.toString());
+    }
+  } catch (e) {}
+}
+
+function handleInitialParams(){
+  const params = new URLSearchParams(window.location.search);
+  const tParam = params.get('t') || params.get('track');
+  const cParam = params.get('c') || params.get('cat');
+  const sParam = params.get('s') || params.get('sub');
+  const qParam = params.get('q') || params.get('search');
+
+  if (qParam) {
+    $('#q').value = qParam;
+    st.search = qParam.trim().toLowerCase();
+    render();
+    return true;
+  }
+
+  if (tParam) {
+    let targetTrack = byId(tParam) || byId('t' + tParam);
+    if (!targetTrack) {
+      const norm = tParam.toLowerCase().replace(/[-_]/g, ' ');
+      targetTrack = st.all.find(x => x.title.toLowerCase() === norm || x.title.toLowerCase().includes(norm));
+    }
+    if (targetTrack) {
+      const cat = st.cats.find(c => c.id === targetTrack.cid);
+      let targetSub = null;
+      if (cat && cat.subcats) {
+        const foundSub = cat.subcats.find(sc => sc.tracks.some(tr => tr.id === targetTrack.id));
+        if (foundSub && foundSub.name !== 'General') targetSub = foundSub.id;
+      }
+      if (cat) st.view = { t: 'cat', id: cat.id, sub: targetSub };
+      render();
+      play(targetTrack.id, cat ? cat.tracks : st.all);
+      toast(I.share, 'Loaded shared lecture: ' + targetTrack.title);
+      setTimeout(() => {
+        const row = document.getElementById('track_' + targetTrack.id);
+        if (row) {
+          row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          row.classList.add('highlight-pulse');
+          setTimeout(() => row.classList.remove('highlight-pulse'), 3600);
+        }
+      }, 300);
+      return true;
+    }
+  }
+
+  if (cParam) {
+    let targetCat = st.cats.find(c => c.id === cParam || c.id === 'c' + cParam);
+    if (!targetCat) {
+      const norm = cParam.toLowerCase().replace(/[-_]/g, ' ');
+      targetCat = st.cats.find(c => c.name.toLowerCase() === norm || c.name.toLowerCase().includes(norm));
+    }
+    if (targetCat) {
+      let targetSub = null;
+      if (sParam && targetCat.subcats) {
+        const sc = targetCat.subcats.find(s => s.id === sParam || s.id === targetCat.id + '_s' + sParam || s.name.toLowerCase() === sParam.toLowerCase());
+        if (sc) targetSub = sc.id;
+      }
+      go({ t: 'cat', id: targetCat.id, sub: targetSub });
+      toast(I.share, 'Loaded collection: ' + targetCat.name);
+      return true;
+    }
+  }
+  return false;
+}
+
+window.addEventListener('popstate', () => {
+  const params = new URLSearchParams(window.location.search);
+  const tParam = params.get('t') || params.get('track');
+  const cParam = params.get('c') || params.get('cat');
+  const sParam = params.get('s') || params.get('sub');
+  const qParam = params.get('q') || params.get('search');
+  if (qParam) {
+    $('#q').value = qParam;
+    st.search = qParam.trim().toLowerCase();
+    render();
+  } else if (cParam) {
+    const c = st.cats.find(x => x.id === cParam);
+    if (c) go({ t: 'cat', id: c.id, sub: sParam || null }, true);
+  } else if (!tParam) {
+    go({ t: 'home' }, true);
+  }
+});
+
 /* keyboard */
 addEventListener('keydown',e=>{
   if(/input|textarea/i.test(e.target.tagName)){if(e.key==='Escape'){e.target.blur();closeSearchDrop();}else if(e.key==='Enter'){closeSearchDrop();}return}
@@ -1346,8 +1764,9 @@ addEventListener('keydown',e=>{
   else if(k==='n')next(true);else if(k==='p')prev();
   else if(k==='s')$('#shufB').click();else if(k==='r')$('#repB').click();
   else if(k==='f')$('#favNow').click();else if(k==='m')$('#muteB').click();
+  else if(k==='h'){if(st.cur)openShareModal({type:'track',item:st.cur})}
   else if(k==='/'){e.preventDefault();$('#q').focus()}
-  else if(k==='escape'){closeSheet();closeSide();hidePop()}
+  else if(k==='escape'){closeShareModal();closeSheet();closeSide();hidePop()}
 });
 </script>
 
