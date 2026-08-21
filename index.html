@@ -768,6 +768,332 @@ function parse(txt){
 let byIdMap=new Map();
 const byId=id=>byIdMap.get(id);
 
+/* ═══════════ ROMAN URDU & ARABIC FUZZY SEARCH ENGINE ═══════════ */
+const DIACRITICS = {
+  'ā':'a','á':'a','à':'a','â':'a','ä':'a','ã':'a','å':'a',
+  'ī':'i','í':'i','ì':'i','î':'i','ï':'i',
+  'ū':'u','ú':'u','ù':'u','û':'u','ü':'u',
+  'ē':'e','é':'e','è':'e','ê':'e','ë':'e',
+  'ō':'o','ó':'o','ò':'o','ô':'o','ö':'o',
+  'ḥ':'h','ḫ':'h','ṣ':'s','ḍ':'d','ṭ':'t','ẓ':'z','ñ':'n',
+  'ʿ':'','ʾ':'',"'":'','"':'','`':'','’':'','‘':'','^':''
+};
+
+function splitCamelCase(str){
+  return (str || '')
+    .replace(/([a-z])([A-Z0-9])/g, '$1 $2')
+    .replace(/([0-9])([a-zA-Z])/g, '$1 $2')
+    .replace(/([A-Z]+)([A-Z][a-z])/g, '$1 $2');
+}
+
+function normStr(str){
+  if (!str) return '';
+  let s = str.toLowerCase();
+  for (const [k, v] of Object.entries(DIACRITICS)) {
+    if (s.includes(k)) s = s.split(k).join(v);
+  }
+  return s.replace(/[^a-z0-9]+/g, ' ').trim();
+}
+
+function toUrduPhonetic(str){
+  if (!str) return '';
+  let s = normStr(str);
+  s = s.replace(/kh/g, 'k')
+       .replace(/gh/g, 'g')
+       .replace(/ph/g, 'f')
+       .replace(/th/g, 's')
+       .replace(/dh/g, 'z')
+       .replace(/zh/g, 'z')
+       .replace(/sh/g, 's')
+       .replace(/ch/g, 'c')
+       .replace(/aa/g, 'a')
+       .replace(/ee/g, 'i')
+       .replace(/oo/g, 'u')
+       .replace(/ou/g, 'u')
+       .replace(/ai/g, 'e')
+       .replace(/ay/g, 'e')
+       .replace(/au/g, 'o')
+       .replace(/aw/g, 'o')
+       .replace(/ei/g, 'i')
+       .replace(/ie/g, 'i')
+       .replace(/ck/g, 'k')
+       .replace(/q/g, 'k')
+       .replace(/c/g, 'k')
+       .replace(/v/g, 'w')
+       .replace(/y/g, 'i');
+  s = s.replace(/([a-z])\1+/g, '$1');
+  s = s.replace(/h\b/g, '');
+  return s.trim();
+}
+
+const URDU_SYNONYMS = {
+  'ramzan': 'ramadan',
+  'ramadhan': 'ramadan',
+  'ramzaan': 'ramadan',
+  'namaz': 'salah',
+  'salat': 'salah',
+  'salaat': 'salah',
+  'salaah': 'salah',
+  'hadis': 'hadith',
+  'hadees': 'hadith',
+  'hadeeth': 'hadith',
+  'tafseer': 'tafsir',
+  'surat': 'surah',
+  'sura': 'surah',
+  'soorah': 'surah',
+  'quraan': 'quran',
+  'koran': 'quran',
+  'kuran': 'quran',
+  'shatan': 'shaitan',
+  'shaytan': 'shaitan',
+  'qabr': 'qabar',
+  'kabar': 'qabar',
+  'kabr': 'qabar',
+  'aakhirat': 'akhirat',
+  'akherat': 'akhirat',
+  'aakherat': 'akhirat',
+  'waseeiat': 'wasiat',
+  'wasiyyah': 'wasiat',
+  'wasiyat': 'wasiat',
+  'mohabbat': 'muhabbat',
+  'mahabbat': 'muhabbat',
+  'hidayet': 'hidayat',
+  'hedayat': 'hidayat',
+  'ibadet': 'ibadat',
+  'ebadat': 'ibadat',
+  'terbiya': 'tarbiyah',
+  'tarbiya': 'tarbiyah',
+  'auranzeb': 'aurangzeb',
+  'aalamgeer': 'alamgir',
+  'duaa': 'dua',
+  'doaa': 'dua',
+  'adhkar': 'azkar',
+  'zikr': 'dhikr',
+  'ruqya': 'ruqyah',
+  'rokya': 'ruqyah',
+  'roqya': 'ruqyah',
+  'nasheed': 'nasheed',
+  'anasheed': 'nasheed',
+  'seerah': 'seerat',
+  'seera': 'seerat',
+  'sahaba': 'sahabah',
+  'sahabi': 'sahabah',
+  'nikah': 'nikaah',
+  'shadi': 'nikaah',
+  'toba': 'tauba',
+  'tawbah': 'tauba',
+  'taubah': 'tauba',
+  'istighfar': 'astaghfar',
+  'astagfirullah': 'astaghfar',
+  'momin': 'momeen',
+  'momineen': 'momeen'
+};
+
+function canonicalToken(tok){
+  const n = normStr(tok);
+  return URDU_SYNONYMS[n] || n;
+}
+
+function levDist(a, b){
+  if (a === b) return 0;
+  const la = a.length, lb = b.length;
+  if (!la) return lb;
+  if (!lb) return la;
+  if (Math.abs(la - lb) > 2) return 99;
+
+  let prev = [];
+  let curr = [];
+  for (let j = 0; j <= lb; j++) prev[j] = j;
+
+  for (let i = 1; i <= la; i++) {
+    curr[0] = i;
+    const ca = a[i - 1];
+    for (let j = 1; j <= lb; j++) {
+      const cost = ca === b[j - 1] ? 0 : 1;
+      curr[j] = Math.min(
+        prev[j] + 1,
+        curr[j - 1] + 1,
+        prev[j - 1] + cost
+      );
+    }
+    for (let j = 0; j <= lb; j++) prev[j] = curr[j];
+  }
+  return prev[lb];
+}
+
+function indexLibrary(){
+  st.all.forEach(t => {
+    const titleClean = splitCamelCase(t.title);
+    const artistClean = splitCamelCase(t.artist);
+    const catClean = splitCamelCase(t.cname);
+
+    t._normTitle = normStr(titleClean);
+    t._normArtist = normStr(artistClean);
+    t._normCat = normStr(catClean);
+
+    t._titleWords = t._normTitle.split(/\s+/).filter(Boolean);
+    t._artistWords = t._normArtist.split(/\s+/).filter(Boolean);
+    t._catWords = t._normCat.split(/\s+/).filter(Boolean);
+
+    t._allWords = [...t._titleWords, ...t._artistWords, ...t._catWords];
+    t._normFull = t._allWords.join(' ');
+    t._phoneticWords = t._allWords.map(toUrduPhonetic);
+    t._phoneticFull = t._phoneticWords.join(' ');
+    t._titlePhonetic = t._titleWords.map(toUrduPhonetic);
+    t._titlePhoneticFull = t._titlePhonetic.join(' ');
+  });
+
+  st.cats.forEach(c => {
+    const catClean = splitCamelCase(c.name + ' ' + (c.desc || ''));
+    c._normName = normStr(catClean);
+    c._words = c._normName.split(/\s+/).filter(Boolean);
+    c._normFull = c._words.join(' ');
+    c._phoneticWords = c._words.map(toUrduPhonetic);
+    c._phoneticFull = c._phoneticWords.join(' ');
+
+    (c.subcats || []).forEach(sc => {
+      const subClean = splitCamelCase(sc.name + ' ' + c.name);
+      sc._normName = normStr(subClean);
+      sc._words = sc._normName.split(/\s+/).filter(Boolean);
+      sc._normFull = sc._words.join(' ');
+      sc._phoneticWords = sc._words.map(toUrduPhonetic);
+      sc._phoneticFull = sc._phoneticWords.join(' ');
+    });
+  });
+}
+
+function scoreTokenFast(normQ, canonQ, phonQ, canonPhonQ, words, phoneticWords, normFull, phonFull){
+  if (normFull.includes(normQ) || (canonQ !== normQ && normFull.includes(canonQ))) {
+    for (let i = 0; i < words.length; i++) {
+      if (words[i] === normQ || words[i] === canonQ) return 100;
+      if (words[i].startsWith(normQ) || words[i].startsWith(canonQ)) return 88;
+    }
+    return 78;
+  }
+
+  if (phonFull.includes(phonQ) || (canonPhonQ !== phonQ && phonFull.includes(canonPhonQ))) {
+    for (let i = 0; i < phoneticWords.length; i++) {
+      if (phoneticWords[i] === phonQ || phoneticWords[i] === canonPhonQ) return 92;
+      if (phoneticWords[i].startsWith(phonQ) || phoneticWords[i].startsWith(canonPhonQ)) return 84;
+    }
+    return 74;
+  }
+
+  if (normQ.length >= 4) {
+    const maxErr = normQ.length <= 5 ? 1 : 2;
+    for (let i = 0; i < words.length; i++) {
+      const w = words[i];
+      if (Math.abs(w.length - normQ.length) <= maxErr) {
+        const d = levDist(normQ, w);
+        if (d <= maxErr) return 70 - d * 10;
+      }
+      const pw = phoneticWords[i];
+      if (Math.abs(pw.length - phonQ.length) <= maxErr) {
+        const pd = levDist(phonQ, pw);
+        if (pd <= maxErr) return 65 - pd * 10;
+      }
+    }
+  }
+
+  return 0;
+}
+
+function searchTracks(query){
+  const rawTokens = splitCamelCase(query).toLowerCase().split(/\s+/).map(normStr).filter(Boolean);
+  if (!rawTokens.length) return [];
+
+  const parsedTokens = rawTokens.map(tok => {
+    const normQ = tok;
+    const canonQ = canonicalToken(tok);
+    const phonQ = toUrduPhonetic(tok);
+    const canonPhonQ = toUrduPhonetic(canonQ);
+    return { normQ, canonQ, phonQ, canonPhonQ };
+  });
+
+  const results = [];
+  for (let i = 0; i < st.all.length; i++) {
+    const t = st.all[i];
+    let totalScore = 0;
+    let allMatched = true;
+
+    for (let j = 0; j < parsedTokens.length; j++) {
+      const pt = parsedTokens[j];
+      const titleScore = scoreTokenFast(pt.normQ, pt.canonQ, pt.phonQ, pt.canonPhonQ, t._titleWords, t._titlePhonetic, t._normTitle, t._titlePhoneticFull);
+      let tokScore = titleScore;
+      if (tokScore > 0) {
+        totalScore += tokScore * 1.5;
+      } else {
+        const allScore = scoreTokenFast(pt.normQ, pt.canonQ, pt.phonQ, pt.canonPhonQ, t._allWords, t._phoneticWords, t._normFull, t._phoneticFull);
+        if (allScore === 0) {
+          allMatched = false;
+          break;
+        }
+        totalScore += allScore;
+      }
+    }
+
+    if (allMatched) {
+      results.push({ track: t, score: totalScore });
+    }
+  }
+
+  results.sort((a, b) => b.score - a.score);
+  return results.map(r => r.track);
+}
+
+function searchCategories(query){
+  const rawTokens = splitCamelCase(query).toLowerCase().split(/\s+/).map(normStr).filter(Boolean);
+  if (!rawTokens.length) return [];
+  const parsed = rawTokens.map(tok => ({
+    normQ: tok,
+    canonQ: canonicalToken(tok),
+    phonQ: toUrduPhonetic(tok),
+    canonPhonQ: toUrduPhonetic(canonicalToken(tok))
+  }));
+
+  const res = [];
+  st.cats.forEach(c => {
+    let score = 0;
+    let ok = true;
+    for (const pt of parsed) {
+      const s = scoreTokenFast(pt.normQ, pt.canonQ, pt.phonQ, pt.canonPhonQ, c._words, c._phoneticWords, c._normFull, c._phoneticFull);
+      if (s === 0) { ok = false; break; }
+      score += s;
+    }
+    if (ok) res.push({ cat: c, score });
+  });
+  res.sort((a, b) => b.score - a.score);
+  return res.map(r => r.cat);
+}
+
+function searchSubcategories(query){
+  const rawTokens = splitCamelCase(query).toLowerCase().split(/\s+/).map(normStr).filter(Boolean);
+  if (!rawTokens.length) return [];
+  const parsed = rawTokens.map(tok => ({
+    normQ: tok,
+    canonQ: canonicalToken(tok),
+    phonQ: toUrduPhonetic(tok),
+    canonPhonQ: toUrduPhonetic(canonicalToken(tok))
+  }));
+
+  const res = [];
+  st.cats.forEach(c => {
+    (c.subcats || []).forEach(sc => {
+      if (sc.name === 'General') return;
+      let score = 0;
+      let ok = true;
+      for (const pt of parsed) {
+        const s = scoreTokenFast(pt.normQ, pt.canonQ, pt.phonQ, pt.canonPhonQ, sc._words, sc._phoneticWords, sc._normFull, sc._phoneticFull);
+        if (s === 0) { ok = false; break; }
+        score += s;
+      }
+      if (ok) res.push({ sc, c, score });
+    });
+  });
+  res.sort((a, b) => b.score - a.score);
+  return res.map(r => ({ sc: r.sc, c: r.c }));
+}
+
 /* ═══════════ BOOT ═══════════ */
 (async function boot(){
   $('#menuBtn').innerHTML=I.menu;$('#searchIco').innerHTML=I.search;updateThemeUI();
@@ -796,6 +1122,7 @@ const byId=id=>byIdMap.get(id);
   st.cats=parse(txt);
   st.all=st.cats.flatMap(c=>c.tracks);
   byIdMap=new Map(st.all.map(t=>[t.id,t]));
+  indexLibrary();
   const note=$('#srcNote'); if(note) note.textContent=st.all.length+' tracks · '+src;
   buildNav();
 
@@ -918,13 +1245,9 @@ const durCache={};
 function render(){
   const v=st.view,el=$('#view');
   if(st.search){
-    const tokens=st.search.toLowerCase().split(/\s+/).filter(Boolean);
-    const res=st.all.filter(t=>{
-      const text=(t.title+' '+t.artist+' '+t.cname).toLowerCase();
-      return tokens.every(tok=>text.includes(tok));
-    });
-    el.innerHTML=`<div class="shead"><h3>Results for “${esc(st.search)}”</h3><div class="line"></div><span style="font-size:12.5px;color:var(--text-3)">${res.length} found</span></div>`+
-      (res.length?`<div class="rowgrid">${res.map(rowHTML).join('')}</div>`:emptyHTML('No matches','Try another reciter, sūrah or topic.'));
+    const res=searchTracks(st.search);
+    el.innerHTML=`<div class="shead"><h3>Results for “${esc(st.search)}”</h3><div class="line"></div><span style="font-size:12px;background:rgba(34,201,154,0.12);color:var(--em);padding:2px 8px;border-radius:10px;font-weight:500;">${res.length} found · Roman Urdu & Fuzzy Search</span></div>`+
+      (res.length?`<div class="rowgrid">${res.map(rowHTML).join('')}</div>`:emptyHTML('No matches found','Try another spelling or topic (e.g. Tafseer, Ramadan, Dua, Ruqyah, Akhirat).'));
     markNav();bind(res);return;
   }
   if(v.t==='cat'){
@@ -1024,7 +1347,7 @@ function render(){
     <footer style="margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--stroke); color: var(--text-3); font-size: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
       <div>NurulQuran · Islamic Audio Player</div>
       <div class="footer-bottom">
-        <div id="footer-version">v1.0.14 (updated 2026-08-21 11:18)</div>
+        <div id="footer-version">v1.0.15 (updated 2026-08-21 12:15)</div>
         <div style="font-size: 11px; opacity: 0.7;">Click version number to clear cache & force reload</div>
       </div>
     </footer>`;
@@ -1350,24 +1673,12 @@ function updateSearchDrop(){
         </div>
       </div>`;
   }else{
-    const tokens=val.toLowerCase().split(/\s+/).filter(Boolean);
-    const matchCats=st.cats.filter(c=>tokens.every(tok=>(c.name+' '+(c.desc||'')).toLowerCase().includes(tok))).slice(0,3);
-    const matchSubcats=[];
-    st.cats.forEach(c=>{
-      (c.subcats||[]).forEach(sc=>{
-        if(sc.name!=='General'&&tokens.every(tok=>(sc.name+' '+c.name).toLowerCase().includes(tok))){
-          matchSubcats.push({sc,c});
-        }
-      });
-    });
-    const topSub=matchSubcats.slice(0,2);
-    const matchTracks=st.all.filter(t=>{
-      const text=(t.title+' '+t.artist+' '+t.cname).toLowerCase();
-      return tokens.every(tok=>text.includes(tok));
-    }).slice(0,5);
+    const matchCats=searchCategories(val).slice(0,3);
+    const matchSubcats=searchSubcategories(val).slice(0,2);
+    const matchTracks=searchTracks(val).slice(0,5);
 
     let h='';
-    if(matchCats.length||topSub.length){
+    if(matchCats.length||matchSubcats.length){
       h+=`<div class="sd-sec"><h6>Collections & Categories</h6><div style="display:flex;flex-direction:column;gap:2px;">`;
       matchCats.forEach(c=>{
         h+=`<button class="sd-item" data-scat="${c.id}">
@@ -1375,7 +1686,7 @@ function updateSearchDrop(){
           <div class="sd-info"><div class="sd-title">${esc(c.name)}</div><div class="sd-sub">Collection · ${c.tracks.length} tracks</div></div>
         </button>`;
       });
-      topSub.forEach(item=>{
+      matchSubcats.forEach(item=>{
         h+=`<button class="sd-item" data-scat="${item.c.id}" data-ssub="${item.sc.id}">
           <div class="sd-ico" style="background:var(--grad);color:#fff;">${I[item.c.icon]||I.star}</div>
           <div class="sd-info"><div class="sd-title">${esc(item.sc.name)}</div><div class="sd-sub">Sub-collection under ${esc(item.c.name)} · ${item.sc.tracks.length} tracks</div></div>
